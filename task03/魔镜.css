@@ -1,0 +1,37 @@
+#head {
+	float: left; padding: auto; margin: 5px;
+}
+#return {
+	width: 70%; height: 70%;
+}
+#logo {
+	text-align: center; padding: 10px; margin: 10px auto;
+	clear: left;
+}
+#picture_log {
+	width: auto; height: auto;
+}
+#introduction {
+	margin: 10px 20% 20% 20%;
+}
+#online_icon, #offline_icon {
+	padding: 5px; width: 50%; height: 50%;
+}
+#online {
+	text-align: center; float: left; margin: 10px 0 10px 20%;
+}
+#offline {
+	text-align: center; float: right; margin: 10px 20% 10px 0;
+}
+#online>p { margin: 0; }
+#offline>p { margin: 0; }
+#bottom {
+	clear: both;
+}
+#all {
+	font-family: "微软雅黑", serif; color: white; background: #68CDD6;
+	/*min-height: 100%;*/ height: 100%;
+}
+html, body {
+	/*min-height: 100%;*/ height: 100%; margin: 0;
+}

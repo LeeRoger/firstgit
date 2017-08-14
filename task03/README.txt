@@ -1,1 +1,3 @@
-It修真院任务三
+mission3 from It Coatard school
+version: 1.0
+author: 玉玲珑

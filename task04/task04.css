@@ -1,0 +1,62 @@
+* { margin: 0; padding: 0; }
+
+.sign { background-color: #5AC0CE; }
+
+.sign p { display: inline-block;
+	 color: #fff; 
+	 vertical-align: center; 
+	 line-height: 3em;
+}
+
+.first 	{ float: left; margin-left: 1.2%; width: 32.4%;}
+.second { text-align: center; font-weight: 600; width: 32.4%; }
+.third 	{ float: right; margin-right: 1.2%;}
+
+.info { background-color: #EEF0F4; }
+
+.row {
+	height: 2em;
+	background-color: #fff;
+	padding: .5em 0;
+	margin: .8em 0;
+}
+
+.row img {
+	height: 2em; width: 2em;
+	padding: 0 .8em;
+	border-right: solid 2px #EEF0F4;
+}
+
+.row input {
+	line-height: 32px;
+	margin-left: .5em;
+	vertical-align: top;
+	border: none;
+	outline: none;
+	width: auto;
+}
+
+fieldset { border: none; }
+
+form>input[type="submit"] {
+	background-color: #5AC0CE;
+	width: 100%;
+	color: #fff;
+	border: none;
+	line-height: 3em;
+	letter-spacing: 1em;
+	font-size: 1em;
+}
+
+a {
+	display: inline-block;
+	width: 98.8%;
+	text-align: right;
+	font-size: .8em;
+	color: #5AC0CE;
+	text-decoration: underline;
+	margin-top: 1em;
+	margin-right: 1.2%;
+}
+
+html, body, .page { margin: 0; height: 100%; background-color:#EEF0F4; }

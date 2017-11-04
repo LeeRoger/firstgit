@@ -33,7 +33,7 @@
 	vertical-align: top;
 	border: none;
 	outline: none;
-	width: auto;
+	width: calc(100% - 4em - 1.6em - 2px);
 }
 
 fieldset { border: none; }

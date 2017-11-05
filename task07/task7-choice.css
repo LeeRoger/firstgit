@@ -1,0 +1,122 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header { background-color: #69d1e9; }
+
+header h1 {
+	margin: 0;
+	padding: 5px;
+	color: #fff;
+}
+
+
+/* start设计整体的样式 */
+html, body {
+	height: 100%;
+	background-color: #EFF0F1;
+}
+
+main {
+	height: calc(100% - 50px);
+	background-color: #EFF0F1;
+}
+
+.container { height: 100%; }
+
+.row { text-align: center; }
+/* end设计整体的样式 */
+
+
+/* start设计上次游戏部分 */
+a.last-game {
+	margin: 0;
+	padding: 0;
+	height: 58px;
+	padding-top: calc((58px - 1.2em) / 2 );  /* 使文字居中 */
+	font-size: 1.4em;
+	line-height: 1.2em;
+	color: #A5A6A7;
+	text-decoration: none;
+}
+
+a.last-game span {
+	float: right;
+	padding-right: 5px;
+	font-size: 1.8em;
+	font-weight: 500;
+}
+
+.container>div:nth-child(1) {
+	margin: 1em 0;
+	background-color: #fff;
+}
+/* end设计上次游戏部分 */
+
+
+/* start设计轮播区域 */
+.container>div:nth-child(2) {
+	height: calc(100% - 90px);  /* 使轮播区域占满剩余的屏幕 */
+	margin: auto 0;
+	background-color: #fff;
+}
+
+#myCarousel { background-color: #fff; }  /* 使小窗口浏览器下，轮播区域溢出内容背景为白色，解决bug */
+
+div.item h2 {
+	margin: 0;
+	padding: 14px 0;
+	border-bottom: 1px solid #F8BE5D;
+	font-size: 1.4em;
+	color: #F8BE5D;
+}
+
+div.item div.row {
+	margin-top: 14px;
+}
+
+div.item div.row a {
+	width: 75%;
+	height: 6em;
+	padding-top: 2em;
+	line-height: 2em;
+	border: none;
+	border-radius: 0;
+	font-size: 1.2em;
+	color: #fff;
+	background-color: #6DD2E9;
+}
+
+div.item div.row p {
+	margin-top: 14px;
+	margin-bottom: 0;
+}
+
+ol.carousel-indicators {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 5px;
+	background: transparent;
+}
+
+.carousel-indicators li {
+	background-color: #EFF0F1;
+	border-color: #EFF0F1;
+}
+
+.carousel-indicators li.active {
+	background-color: #6DD2E9;
+	border-color: #6DD2E9;
+}
+
+a.carousel-control.right {
+	width: 30px;
+	background-image: url(images/next.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 18px auto;
+}
+
+div.reach { height: 447px; }  /* 填补轮播2、3、4的游戏具体版本部分 */
+/* end设计轮播区域 */

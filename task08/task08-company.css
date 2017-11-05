@@ -1,0 +1,242 @@
+* { margin: 0; padding: 0; }
+
+body { background-color: #fafafa; }
+
+article, section { background-color: #fff; }
+
+
+/* start to design header */
+span.telephone {
+	font-size: 16px;
+	line-height: 40px;
+	color: #29b078;
+}
+
+a.share {
+	float: right;
+	padding-top: 8px;  /* (40-24)/2=8px */
+	padding-left: 8px;
+}
+
+nav.navbar-default {
+	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
+	background-color: #29b078;
+}
+
+nav.navbar img {
+	height: 33px;
+	margin-top: 10px;   /* 因为被设置了float，为了居中只能这样了，（53px-43px)/2 = 10px */
+}
+
+nav.navbar-default ul.navbar-nav > li > a {  /* 为了覆盖bootstrap的样式 */
+	font-size: 14px;
+	color: #fff;
+}
+
+nav.navbar-default ul.navbar-nav > li.active > a {  /* 为了覆盖bootstrap的样式 */
+	border-bottom: 3px solid #fff;
+	color: #fff;
+	background-color: #29b078;
+}
+/* finish designing header */
+
+
+/* begin to design main */
+div.nav-img,
+div.nav-img img { width: 100%; }
+
+/* 开始设计面包屑部分 */
+div.bread ol.breadcrumb {
+	padding: 20px 0;
+	margin-bottom: 0;
+	font-weight: 600;
+	background-color: #fafafa;
+}
+
+ol.breadcrumb > li + li:before {
+	color: #000;
+	content: ">";
+	font-weight: normal;
+}
+
+ol.breadcrumb li.active {
+	color: #29b078;
+}
+
+ol.breadcrumb li a { color: #000; }
+/* 结束布局面包屑部分 */
+
+div.companys { margin-bottom: 100px; }
+
+/* 开始布局公司列表部分，即section.company-list */
+section.company-list { box-shadow: 0px 0px 8px #ddd; }
+
+.company-list h4 {
+	margin-top: 0;
+	padding: 20px;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 600;
+	border-bottom: 1px solid #ccc;
+}
+
+ul.company-nav {
+	width: 100%;
+	padding-bottom: 20px;
+	border-bottom: none;  /* 为了覆盖bootstrap的样式 */
+}
+
+
+ul.company-nav > li {
+	width: 100%;
+	text-align: left;
+}
+
+ul.company-nav li.active a,
+ul.company-nav li.active a:focus,
+ul.company-nav li.active a:hover {  /* 为了覆盖bootstrap的样式 */
+	color: #ff650e;
+	border: none;
+}
+
+ul.company-nav li a {  /* 为了覆盖bootstrap的样式 */
+	/* display: inline-block; */
+	margin-right: 0;
+	padding-left: calc( 50% - 40px);   /* 40为16*5/2的估算值，看来我对于行框理解不深 */
+	color:  #29b078;
+}
+
+ul.company-nav li a:before {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 8px;
+
+	content: "";
+	border: 1px solid #ff640c;
+	border-radius: 50%;
+}
+
+ul.company-nav li.active a:before,
+ul.company-nav li a:hover:before { background-color: #f9a372; }
+/* 结束布局公司列表部分，即section.company-list */
+
+/* 开始布局公司介绍部分，即article下section部分，包含div.company-pro与div.company-detail */
+article.company-info {
+	padding: 0 50px;
+	box-shadow: 1px 1px 10px #ddd;
+}
+
+.company-info p { color: #777; }
+
+div.company-pro {
+	position: relative;
+	width: calc(100% + 100px);
+	margin: 0 -50px;
+	padding: 0 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+div.company-pro img {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20%;
+}
+
+div.company-pro p {
+	margin-left: calc((100% + 100px) * 0.2 + 10px);
+	padding: 30px 0;
+}
+
+div.company-detail p { margin: 30px 0; }
+
+div.company-detail p:last-child {
+	padding-bottom: 40px;
+}
+/* 结束布局公司介绍部分，即article下section部分，包含div.company-pro与div.company-detail */
+/* finish designing main */
+
+
+/* start to design footer */
+footer {
+	color: #fff;
+	background-color: #29b078;
+}
+
+div.other-info-left {
+	float: left;
+	width: 30%;
+	letter-spacing: -6px;
+}
+
+div.other-info-right {
+	position: relative;
+	height: 140px;
+	margin-left: 30%;
+
+}
+
+div.other-info div p {
+	margin-top: 20px;
+	font-size: 16px;
+	letter-spacing: 0;
+}
+
+div.other-info div a {
+	display: inline-block;
+	padding-bottom: 2px;
+	color: #fff;
+	border-bottom: 1px solid #29b078;   /* 为了hover时页面其他部分不变动 */
+}
+
+div.other-info div a:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+}
+
+div.other-info-left a {
+	box-sizing: content-box;
+	margin-top: 60px;
+	padding-left: 8px;
+	padding-right: 8px;
+	letter-spacing: 0;
+}
+
+div.other-info-left a:nth-of-type(1) { padding-left: 0; }
+
+div.other-info-left a:nth-of-type(2) {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+div.other-info-right span {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 16px;
+}
+
+div.other-info-right img {
+	position: absolute;
+	top: 25px;
+	right: 0;
+	width: 96px;
+}
+
+div.other-info-right a {
+	margin-top: 20px;
+	margin-right: 20px;
+
+}
+
+footer > p {
+	margin-bottom: 0;
+	padding: 3px;
+	font-size: 12px;
+	text-align: center;
+	border-top: 1px solid rgba(255,255,255,.3);
+}
+/* finish deigning footer */

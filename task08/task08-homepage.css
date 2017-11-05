@@ -1,0 +1,318 @@
+* { margin: 0; padding: 0; }
+
+body { background-color: #fafafa; }
+
+h3 {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+div.introduction,
+div.study-method,
+div.excellent-student,
+div.business-partner,
+div.friendly-link { margin-top: 80px; }
+
+/* start to design header */
+span.telephone {
+	font-size: 16px;
+	line-height: 40px;
+	color: #29b078;
+}
+
+a.share {
+	float: right;
+	padding-top: 8px;  /* (40-24)/2=8px */
+	padding-left: 8px;
+}
+
+nav.navbar-default {
+	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
+	background-color: #29b078;
+}
+
+nav.navbar-default ul.navbar-nav > li > a {  /* 为了覆盖bootstrap的样式 */
+	font-size: 14px;
+	color: #fff;
+}
+
+nav.navbar-default ul.navbar-nav > li.active > a {  /* 为了覆盖bootstrap的样式 */
+	border-bottom: 3px solid #fff;
+	color: #fff;
+	background-color: #29b078;
+}
+/* finish designing header */
+
+
+/* start to design main */
+/* 开始设计轮播 */
+div.carousel a.left {
+	background: url(images/homepage/carousel-left.png) right center no-repeat;
+}
+
+div.carousel a.right {
+	background: url(images/homepage/carousel-right.png) left center no-repeat;
+}
+/* 结束设计轮播 */
+
+/* 开始布局div.introduction部分 */
+div.introduction div.row {
+	text-align: center;
+}
+
+div.introduction div.row img {
+	height: 48px;
+}
+
+p.intro-info {
+	font-size: 16px;
+	text-align: left;
+	color: #999;
+}
+
+div.introduction div.row > div:last-child {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	padding-left: 30px; 
+	border-left: 1px dashed #ccc;
+	text-align: left;
+	font-size: 18px;
+}
+
+span.icon-user {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background: url(images/homepage/icon-user.png) center no-repeat;
+}
+
+span.user-number {
+	display: inline-block;
+	line-height: 30px;
+	vertical-align: top;
+	color: #29b078;
+}
+/* 结束布局div.introduction部分 */
+
+/* 开始布局div.study-method，即如何学习部分 */
+div.study-method div.row:not(last-child) { margin-top: 30px; }
+div.study-method div.row:last-child { margin-top: 60px; }
+
+div.study-step {
+	float: left;
+	width: 20%;
+}
+
+span.number {
+	display: inline-block;
+	float: left;
+	width: 50px;
+
+	line-height: 50px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #29b078;
+	text-align: center;
+
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 1px 1px #ccc;
+}
+
+p.content {
+	display: flex;
+	min-height: 50px;
+	margin-left: 60px;
+	margin-bottom: 0;
+	align-items: center;
+}
+
+img.arrow {
+	float: left;
+	margin: 9px calc((20% / 3 - 32px) / 2);
+}
+/* 结束布局div.study-method，即如何学习部分 */
+
+/* 开始布局div.excellent-student，即优秀学员部分 */
+div.excellent-student div.row > div {
+	margin-top: 30px;
+	text-align: center;
+}
+
+div.student {
+	padding-bottom: 5px;
+	background-color: #fff;
+	box-shadow: 2px 2px 5px #ddd;
+}
+
+img.person {
+	width: 50%;
+	height: 50%;
+	margin-top: 15px;
+}
+
+div.student p {
+	text-align: left;
+	margin: 15px 20px;
+	color: #999;
+}
+
+/*div.row1 { position: relative; }
+
+div.excellent-student div.carousel-inner { overflow: visible; } */
+div.excellent-student ol.carousel-indicators { bottom: -40px; }
+div.excellent-student ol.carousel-indicators li { border-color: #29b078; }
+div.excellent-student ol.carousel-indicators li.active { background-color: #29b078; }
+/* 结束布局div.excellent-student，即优秀学员部分 */
+
+/* 开始布局div.business-partner，即合作企业部分 */
+div.business-partner { display: table; }
+
+div.business-partner div.row {
+	display: table-row;   /* 这样设是为了整体展现表格时，左右两边不会多出15px，具体原因不太明白，可能是表格有边框的关系??? */
+	width: 100%;
+	box-shadow: 1px 1px 3px #ddd;
+}
+
+div.business-partner h3 {
+	display: table-caption;
+	margin-bottom: 30px;
+}
+
+div.company {
+	display: table-cell;
+	width: 20%;
+	height: 150px;
+
+	text-align: center;
+	vertical-align: middle;
+
+	background-color: #fff;
+}
+
+div.company img {
+	display: block;
+	width: 100%;
+}
+
+div.company img[src$="alibaba.png"] { padding: 0 calc((100% - 146px) / 2); }
+div.company img[src$="jinshan.png"] { padding: 0 calc((100% - 57px) / 2); }
+div.company img[src$="huanxin.png"] { padding: 0 calc((100% - 140px) / 2); }
+div.company img[src$="ronglian.png"] { padding: 0 calc((100% - 171px) / 2); }
+div.company img[src$="qiniu.png"] { padding: 0 calc((100% - 130px) / 2); }
+
+div.company:hover {
+	position: relative;   /* 为了让中间的图片hover时右边有阴影 */
+	z-index: 100;
+	box-shadow: 0px 0px 10px #ddd;
+}
+/* 结束布局div.business-partner，即合作企业部分 */
+
+/* 开始布局div.friendly-link，即友情链接部分 */
+div.friendly-link {
+	background-color: #fff;
+}
+
+ul.links {
+	display: flex;
+	margin-bottom: 5px;
+	justify-content: space-between;
+}
+
+ul.links li {
+	list-style-position: inside;
+	border-bottom: 2px solid #fff;    /* 为了hover时页面不会产生变动，可能是设置了flex的原因 */
+}
+
+ul.links li:hover { border-bottom: 2px solid #29b078; }
+
+ul.links li a {
+	color: #999;
+}
+/* 结束布局div.friendly-link，即友情链接部分 */
+/* finish design main */
+
+
+/* start to design footer */
+footer {
+	color: #fff;
+	background-color: #29b078;
+}
+
+div.other-info-left {
+	float: left;
+	width: 30%;
+	letter-spacing: -6px;
+}
+
+div.other-info-right {
+	position: relative;
+	height: 140px;
+	margin-left: 30%;
+
+}
+
+div.other-info div p {
+	margin-top: 20px;
+	font-size: 16px;
+	letter-spacing: 0;
+}
+
+div.other-info div a {
+	display: inline-block;
+	padding-bottom: 2px;
+	color: #fff;
+	border-bottom: 1px solid #29b078;   /* 为了hover时页面其他部分不变动 */
+}
+
+div.other-info div a:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+}
+
+div.other-info-left a {
+	box-sizing: content-box;
+	margin-top: 60px;
+	padding-left: 8px;
+	padding-right: 8px;
+	letter-spacing: 0;
+}
+
+div.other-info-left a:nth-of-type(1) { padding-left: 0; }
+
+div.other-info-left a:nth-of-type(2) {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+div.other-info-right span {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 16px;
+}
+
+div.other-info-right img {
+	position: absolute;
+	top: 25px;
+	right: 0;
+	width: 96px;
+}
+
+div.other-info-right a {
+	margin-top: 20px;
+	margin-right: 20px;
+
+}
+
+footer > p {
+	margin-bottom: 0;
+	padding: 3px;
+	font-size: 12px;
+	text-align: center;
+	border-top: 1px solid rgba(255,255,255,.3);
+}
+/* finish deigning footer */

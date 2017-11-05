@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>技能树</title>
+
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- 自己的样式文件 -->
+	<link href="task08-homepage.css" rel="stylesheet">
+</head>
+<body>
+	
+
+<header>
+	<div class="connection container">
+		<span class="telephone">热线电话：010-594-78634</span>
+		<a class="share"><img src="images/homepage/share-wechat.png"></a>
+		<a class="share"><img src="images/homepage/share-qq.png"></a>
+		<a class="share"><img src="images/homepage/share-weibo.png"></a>
+	</div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="#">首页</a></li>
+				<li><a href="task08-career.html">职业</a></li>
+				<li><a href="#">推荐</a></li>
+				<li><a href="task08-company.html">关于</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+
+<main>
+
+	<div id="myCarousel" class="carousel slide">
+		<!-- 轮播指针 -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<!-- 轮播项目 -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<a href="#"><img src="images/homepage/carousel-bg.png" alt="你要学什么？"></a>
+			</div>
+			<div class="item">
+				<a href="#"><img src="images/homepage/carousel-bg.png" alt="你要学什么？"></a>
+			</div>
+			<div class="item">
+				<a href="#"><img src="images/homepage/carousel-bg.png" alt="你要学什么？"></a>
+			</div>
+		</div>
+		<!-- 轮播导航 -->
+		<a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+		<a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+	</div>
+	
+	<div class="introduction container">
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img src="images/homepage/icon-1-rocket.png" alt="">
+				<h3>高效</h3>
+				<p class="intro-info">将五到七年的成长时间，缩短到一年到三年。</p>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img src="images/homepage/icon-2-archive.png" alt="">
+				<h3>规范</h3>
+				<p class="intro-info">标准的实战教程，不会走弯路</p>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img src="images/homepage/icon-3-people.png" alt="">
+				<h3>人脉</h3>
+				<p class="intro-info">同班好友，同院学长，技术大师，入学就混入职脉圈，为以后铺平道路。</p>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<span class="icon-user"></span>
+				<span class="user-number">12400</span>
+				<p class="intro-info">累计在线学习人数</p>
+				<span class="icon-user"></span>
+				<span class="user-number">12400</span>
+				<p class="intro-info">学员已找到满意工作</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="study-method container">
+		<h3>如何学习</h3>
+		<!-- 失败的布局
+		<div class="row">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<span class="study-step">1</span>
+				<p class="study-content">匹配你现在的个人情况寻找适合自己的岗位</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<span class="study-step">2</span>
+				<p class="study-content">了解职业前景薪金待遇、竞争压力等</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<span class="study-step">3</span>
+				<p class="study-content">掌握行业内顶级技能</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<span class="study-step">4</span>
+				<p class="study-content">查看职业目标任务</p>
+			</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="study-step">
+				<span class="number">1</span>
+				<p class="content">匹配你现在的个人情况寻找适合自己的岗位</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="study-step">
+				<span class="number">2</span>
+				<p class="content">了解职业前景薪金待遇、竞争压力等</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="study-step">
+				<span class="number">3</span>
+				<p class="content">掌握行业内顶级技能</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="study-step">
+				<span class="number">4</span>
+				<p class="content">查看职业目标任务</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="study-step">
+				<span class="number">5</span>
+				<p class="content">参考学习资源，掌握技能点，逐个完成任务</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="study-step">
+				<span class="number">6</span>
+				<p class="content">加入班级，和小伙伴们互帮互助，一块学习</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="study-step">
+				<span class="number">7</span>
+				<p class="content">选择导师，一路引导，加速自己成长</p>
+			</div>
+			<img class="arrow" src="images/homepage/arrowhead.png">
+			<div class="study-step">
+				<span class="number">8</span>
+				<p class="content">完成职业技能，升级业界大牛</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="excellent-student container">
+		<h3>优秀学员展示</h3>
+		<div id="myCarousel2" class="carousel slide">
+			<!-- 轮播指针 -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel2" data-slide-to="1"></li>
+				<li data-target="#myCarousel2" data-slide-to="2"></li>
+				<li data-target="#myCarousel2" data-slide-to="3"></li>
+			</ol>
+			<!-- 轮播项目 -->
+			<div class="carousel-inner">
+				<div class="item active row">
+					
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<div class="student">
+								<img class="person" src="images/homepage/person1.png">
+								<h3 class="title">技术顾问：罗大佑</h3>
+								<p>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+							</div>
+						</div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<div class="student">
+								<img class="person" src="images/homepage/person2.png">
+								<h3 class="title">技术顾问：罗大佑</h3>
+								<p>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+							</div>
+						</div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<div class="student">
+								<img class="person" src="images/homepage/person3.png">
+								<h3 class="title">技术顾问：罗大佑</h3>
+								<p>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+							</div>
+						</div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<div class="student">
+								<img class="person" src="images/homepage/person4.png">
+								<h3 class="title">技术顾问：罗大佑</h3>
+								<p>百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+							</div>
+						</div>
+					
+				</div>
+				<div class="item row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height: 331px;">2</div>
+				</div>
+				<div class="item row">
+					<div class="row1" style="height: 331px;">3</div>
+				</div>
+				<div class="item row">
+					<div class="row1" style="height: 331px;">4</div>
+				</div>
+				<!-- 轮播导航 -->
+				<a class="carousel-control left" href="#myCarousel2" data-slide="prev"></a>
+				<a class="carousel-control right" href="#myCarousel2" data-slide="next"></a>
+			</div>	<!-- 结束轮播项目 -->
+		</div>	<!-- 结束轮播 -->
+	</div>
+
+	<div class="business-partner container">
+		<h3>战略合作企业</h3><div class="row">
+		<div class="company">
+			<img src="images/homepage/company-1-alibaba.png">
+		</div>
+		<div class="company">
+			<img src="images/homepage/company-2-jinshan.png">
+		</div>
+		<div class="company">
+			<img src="images/homepage/company-3-huanxin.png">
+		</div>
+		<div class="company">
+			<img src="images/homepage/company-4-ronglian.png">
+		</div>
+		<div class="company">
+			<img src="images/homepage/company-5-qiniu.png">
+		</div></div>
+	</div>
+
+	<div class="friendly-link">
+		<div class="container">
+			<h3>友情链接</h3>
+			<ul class="links">
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">教师招聘</a></li>
+				<li><a href="#">找工作</a></li>
+				<li><a href="#">教师招聘</a></li>
+				<li><a href="#">找工作</a></li>
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">教师招聘</a></li>
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">找工作</a></li>
+			</ul>
+			<ul class="links">
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">教师招聘</a></li>
+				<li><a href="#">找工作</a></li>
+				<li><a href="#">教师招聘</a></li>
+				<li><a href="#">找工作</a></li>
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">教师招聘</a></li>
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">手机软件</a></li>
+				<li><a href="#">找工作</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</main>
+
+
+<footer>
+	<div class="other-info container">
+		<div class="other-info-left">
+			<p>技能树——改变你我</p>
+			<a href="#">关于我们</a>
+			<a href="#">联系我们</a>
+			<a href="#">合作企业</a>
+		</div>
+		<div class="other-info-right">
+			<p>旗下网站</p>
+			<a href="#">草船云孵化器</a>
+			<a href="#">最强IT特训营</a><br>
+			<a href="#">葡萄藤轻游戏</a>
+			<a href="#">桌游精灵</a><br>
+			<span>微信公众平台</span><br>
+			<img src="images/homepage/company-wechat-QR-code.png">
+		</div>
+	</div>
+	<p>Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号</p>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>公司列表</title>
+
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- 自己的样式文件 -->
+	<link href="task08-company.css" rel="stylesheet">
+</head>
+<body>
+
+
+<header>
+	<div class="connection container">
+		<span class="telephone">热线电话：010-594-78634</span>
+		<a class="share"><img src="images/homepage/share-wechat.png"></a>
+		<a class="share"><img src="images/homepage/share-qq.png"></a>
+		<a class="share"><img src="images/homepage/share-weibo.png"></a>
+	</div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<a class="nav navbar-nav navbar-left" href="task08-homepage.html">
+				<img src="images/career/logo.png" alt="技能树">
+			</a>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="task08-homepage.html">首页</a></li>
+				<li><a href="task08-career.html">职业</a></li>
+				<li><a href="#">推荐</a></li>
+				<li class="active"><a href="#">关于</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+
+<main>
+
+	<div class="nav-img">
+		<a href="#"><img src="images/company/nav-bg.png"></a>
+	</div>
+
+	<div class="bread container">
+		<ol class="breadcrumb">
+			<li><a href="task08-homepage.html">首页</a></li>
+			<li class="active">合作企业</li>
+		</ol>
+	</div>
+
+	<div class="companys container">
+		<div class="row">
+
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<section class="company-list">
+					<h4>合作企业</h4>
+					<ul id="myTab" class="company-nav nav nav-tabs">
+						<li><a href="#alibaba" data-toggle="tab">阿里巴巴</a></li>
+						<li><a href="#tencentVideo" data-toggle="tab">腾讯视频</a></li>
+						<li class="active"><a href="#tudou" data-toggle="tab">土豆网</a></li>
+						<li><a href="#putaoteng" data-toggle="tab">北京葡萄藤</a></li>
+						<li><a href="#alibaba" data-toggle="tab">阿里巴巴</a></li>
+						<li><a href="#alibaba" data-toggle="tab">阿里巴巴</a></li>
+						<li><a href="#tencentVideo" data-toggle="tab">腾讯视频</a></li>
+						<li><a href="#tudou" data-toggle="tab">土豆网</a></li>
+						<li><a href="#putaoteng" data-toggle="tab">北京葡萄藤</a></li>
+						<li><a href="#alibaba" data-toggle="tab">阿里巴巴</a></li>
+						<li><a href="#putaoteng" data-toggle="tab">北京葡萄藤</a></li>
+						<li><a href="#alibaba" data-toggle="tab">阿里巴巴</a></li>
+					</ul>
+				</section>
+			</div>
+
+			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+				<article class="company-info tab-content" id="myTabContent">
+
+					<section class="tab-pane fade in active" id="tudou">
+					<div class="company-pro">
+						<img src="images/company/tudou.png" alt="土豆网">
+						<p>土豆网公司成立于1998年11月，是目前中国最大的互联网综合服务提供商之一，也是中国服务用户最多的互联网企业之一。成立10多年以来，腾讯一直秉承一切以用户价值为依归的经营理念，始终处于稳健、高速发展的状态。2004年6月16日，腾讯公司在香港联交所主板公开上市（股票代号700）。</p>
+					</div>
+					<div class="company-detail">
+
+						<p>&emsp;&emsp;土豆是中国最早和最具影响力的网络视频平台，是中国网络视频行业的领军品牌。其前身土豆网于2005年4月15日正式上线，是全球最早上线的视频网站之一。2014年1月，“土豆网”正式更名为“土豆”，标志着土豆进入品牌发展的新阶段。</p>
+
+						<p>&emsp;&emsp;“每个人都是生活的导演”是土豆从创立第一天始的价值观。土豆相信年轻人的想象力、创造力，相信土豆的平台能帮助年轻人创造出更多，更好的影像作品，来表达对自己、生活和这个时代的看法。同时，土豆提倡尊重“每个人”的个性，尊重每个人自主地选择自己的生活，成为自己成长的导演。</p>
+
+						<p>&emsp;&emsp;2012年3月12日，优酷股份有限公司(NYSE: YOKU) (“优酷”) 和土豆股份有限公司 (NASDAQ: TUDO) (“土豆”)共同宣布，优酷和土豆将以100%换股的方式合并。2012年8月20日，优酷土豆合并方案获双方股东大会高票批准通过，优酷土豆集团公司正式诞生。2013年4月，优酷土豆集团宣布进入“集团BU化”运营阶段，提出“优酷更优酷，土豆更土豆”的发展战略。</p>
+
+						<p>&emsp;&emsp;2013年2月，杨伟东成为土豆总裁，宣布打造土豆“成为中国年轻人最喜爱的视频网站”，并明确土豆“成为中国最具影响力的青年文化品牌”的愿景，确立了土豆“青春、个性、自主、有趣”的品牌定位，土豆全面进入2.0阶段。通过年轻化的内容、年轻化的产品技术和年轻化的UGC/PGC生态三个方面来全面推动土豆2.0战略。</p>
+
+						<p>&emsp;&emsp;2014年3月土豆推出“4+1”战略。其中“4”代表的是土豆在内容方面更专注动漫、音乐、韩国娱乐、时尚四个垂直文化领域。而“1”则代表土豆推出的“一个频道”战略，基于“频道主”和“订阅者”两个视角全方位架构跨屏和线上线下体验系统，并结合用户体验、商业模式、运营机制等环节，提出了5个“一”规划。</p>
+
+						<p>&emsp;&emsp;根据第三方调研公司艾瑞的数据，优酷土豆集团在PC端和移动端全平台各项数据持续占据视频行业绝对领先优势，截止2014年3月，土豆每月独立访问用户数量增长到2.43亿。 2013年土豆在移动端的增长也非常迅猛，2013年三季度，土豆移动端获得了高速增长，月均覆盖用户较当年3月增长11倍，平均增长率超过40%；月均视频播放量增长23倍，月平均增幅达60%。</p>
+
+					</div>
+					</section>
+
+					<section class="tab-pane fade" id="alibaba">
+					<div class="company-pro">
+						<img src="images/homepage/company-1-alibaba.png" alt="阿里巴巴">
+						<p>阿里巴巴网络技术有限公司（简称：阿里巴巴集团）是以曾担任英语教师的马云为首的18人于1999年在浙江杭州创立，他们相信互联网能够创造公平的竞争环境，让小企业通过创新与科技扩展业务，并在参与国内或全球市场竞争时处于更有利的位置。</p>
+					</div>
+					<div class="company-detail">
+
+						<p>&emsp;&emsp;阿里巴巴集团经营多项业务，另外也从关联公司的业务和服务中取得经营商业生态系统上的支援。业务和关联公司的业务包括：淘宝网、天猫、聚划算、全球速卖通、阿里巴巴国际交易市场、1688、阿里妈妈、阿里云、蚂蚁金服、菜鸟网络等。</p>
+
+						<p>&emsp;&emsp;主要股东：软银集团、雅虎、马云、蔡崇信、陆兆禧等高管（截止2014年9月19日）</p>
+
+					</div>
+					</section>
+
+					<section class="tab-pane fade" id="tencentVideo">
+					<div class="company-pro">
+						<img src="images/company/TencentVideo.png" alt="腾讯视频">
+						<p>腾讯视频是中国领先的在线视频平台，拥有丰富的优质流行内容和专业的媒体运营能力，是聚合热播影视、综艺娱乐、体育赛事、新闻资讯等为一体的综合视频内容平台，并通过PC、移动及客厅产品等多种形态为用户提供高清流畅的视频娱乐体验，满足用户不同的体验需求。</p>
+					</div>
+					<div class="company-detail">
+						<p>&emsp;&emsp;腾讯视频是腾讯旗下的视频播放产品，定位于中国最大在线视频媒体平台，于2011年4月正式上线运营独立域名的视频网站，支持丰富内容的在线点播及电视台直播，提供列表管理、视频音量放大、色彩画质调整等强大的功能服务。</p>
+					</div>
+					</section>
+
+					<section class="tab-pane fade" id="putaoteng">
+					<div class="company-pro">
+						<img src="images/company/putaoteng.png" alt="北京葡萄藤">
+						<p>葡萄藤技术孵化器致力于帮创业团队解决技术问题，创业团队会有一流互联网公司高级架构师的系统设计。通过代码生成，组件复用，服务复用等多种方式减少开发成本，工程师在这里做的是原代码——即代码的代码，这里更注重架构设计，更注重性能和复用性，更注重流程和时间点。地图，支付，天气，登录，分享，电商，O2O，IM，消息队列，抓取，搜索，NLP等多个领域都有专业技术团队。遵循敏捷开发，完善版本控制和发布体系。</p>
+					</div>
+					<div class="company-detail">
+						<p>&emsp;&emsp;在“互联网+”兴起的时代，无数人怀揣梦想开始创业，但软件开发成本居高不下；技术合伙人千金难求；做出来的产品用户体验极差；完全无法快速响应用户需求变化，从而错失市场良机。那么，是否有办法能帮助创业者快速实现项目，降低开发成本，组建专业开发团队？</p>
+					</div>
+					</section>
+
+				</article>
+			</div>
+
+		</div>  <!-- end of .row -->
+	</div>  <!-- end of .container -->
+
+</main>
+
+
+<footer>
+	<div class="other-info container">
+		<div class="other-info-left">
+			<p>技能树——改变你我</p>
+			<a href="#">关于我们</a>
+			<a href="#">联系我们</a>
+			<a href="#">合作企业</a>
+		</div>
+		<div class="other-info-right">
+			<p>旗下网站</p>
+			<a href="#">草船云孵化器</a>
+			<a href="#">最强IT特训营</a><br>
+			<a href="#">葡萄藤轻游戏</a>
+			<a href="#">桌游精灵</a><br>
+			<span>微信公众平台</span><br>
+			<img src="images/homepage/company-wechat-QR-code.png">
+		</div>
+	</div>
+	<p>Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号</p>
+</footer>
+
+
+</body>
+</html>

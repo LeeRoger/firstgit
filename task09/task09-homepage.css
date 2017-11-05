@@ -95,6 +95,14 @@ span.user-number {
 	vertical-align: top;
 	color: #29b078;
 }
+
+@media (max-width: 992px) {  /* col-sm-6 */
+	p.intro-info,
+	div.introduction div.row > div:last-child {
+		padding-left: 15px;
+		text-align: center;
+	}
+}
 /* 结束布局div.introduction部分 */
 
 /* 开始布局div.study-method，即如何学习部分 */
@@ -132,7 +140,31 @@ p.content {
 
 img.arrow {
 	float: left;
-	margin: 9px calc((20% / 3 - 32px) / 2);
+	margin: 9px calc((20% / 3 - 32px) / 2);   /* 图片的尺寸宽度为32px */
+}
+
+img.arrow-diff { display: none; }
+
+@media (max-width: 768px) {
+	div.study-method div.row:last-child { margin-top: 20px; }
+	div.study-step { width: 35%; }
+	p.content { margin-bottom: 10px }
+	img.arrow { margin: 9px calc((30% / 2 - 32px) / 2); }
+	img.arrow-diff { display: inline-block; }
+}
+
+@media (max-width: 600px) {
+	div.study-step {
+		width: 80%;
+		float: left;
+	}
+	img.arrow {
+		display: block;
+		float: left;
+		width: 20%;
+		padding: 9px calc((20% - 32px) / 2);  /* 主要考虑到一般小宽度为320px，所以固定尺寸也还好 */
+		margin: 0;  /* 为了覆盖上面的样式 */
+	}
 }
 /* 结束布局div.study-method，即如何学习部分 */
 
@@ -151,6 +183,8 @@ div.student {
 img.person {
 	width: 50%;
 	height: 50%;
+	max-width: 108px;
+	max-height: 108px;  /* 为了自适应时图片不会变模糊 */
 	margin-top: 15px;
 }
 
@@ -160,9 +194,9 @@ div.student p {
 	color: #999;
 }
 
-/*div.row1 { position: relative; }
+/*div.row1 { position: relative; } */
 
-div.excellent-student div.carousel-inner { overflow: visible; } */
+div.excellent-student div.carousel-inner { overflow: visible; }
 div.excellent-student ol.carousel-indicators { bottom: -40px; }
 div.excellent-student ol.carousel-indicators li { border-color: #29b078; }
 div.excellent-student ol.carousel-indicators li.active { background-color: #29b078; }

@@ -24,12 +24,26 @@
 	</div>
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="#">首页</a></li>
-				<li><a href="task08-career.html">职业</a></li>
-				<li><a href="#">推荐</a></li>
-				<li><a href="task08-company.html">关于</a></li>
-			</ul>
+
+			<div class="nav-ul">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="task09-career.html">职业</a></li>
+					<li><a href="#">推荐</a></li>
+					<li><a href="task09-company.html">关于</a></li>
+				</ul>
+			</div>
+
+			<div class="nav-btn">
+				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">≡</button>
+				<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu">
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="task09-career.html">职业</a></li>
+					<li><a href="#">推荐</a></li>
+					<li><a href="task09-company.html">关于</a></li>
+				</ul>
+			</div>
+			
 		</div>
 	</nav>
 </header>
@@ -221,22 +235,26 @@
 	</div>
 
 	<div class="business-partner container">
-		<h3>战略合作企业</h3><div class="row">
-		<div class="company">
-			<img src="images/homepage/company-1-alibaba.png">
+		<h3>战略合作企业</h3>
+		<div class="row">
+		<div class="companys-all">
+			<div class="company">
+				<img src="images/homepage/company-1-alibaba.png">
+			</div>
+			<div class="company">
+				<img src="images/homepage/company-2-jinshan.png">
+			</div>
+			<div class="company">
+				<img src="images/homepage/company-3-huanxin.png">
+			</div>
+			<div class="company company-break">
+				<img src="images/homepage/company-4-ronglian.png">
+			</div>
+			<div class="company">
+				<img src="images/homepage/company-5-qiniu.png">
+			</div>
 		</div>
-		<div class="company">
-			<img src="images/homepage/company-2-jinshan.png">
 		</div>
-		<div class="company">
-			<img src="images/homepage/company-3-huanxin.png">
-		</div>
-		<div class="company">
-			<img src="images/homepage/company-4-ronglian.png">
-		</div>
-		<div class="company">
-			<img src="images/homepage/company-5-qiniu.png">
-		</div></div>
 	</div>
 
 	<div class="friendly-link">
@@ -274,20 +292,30 @@
 
 <footer>
 	<div class="other-info container">
-		<div class="other-info-left">
-			<p>技能树——改变你我</p>
-			<a href="#">关于我们</a>
-			<a href="#">联系我们</a>
-			<a href="#">合作企业</a>
-		</div>
-		<div class="other-info-right">
-			<p>旗下网站</p>
-			<a href="#">草船云孵化器</a>
-			<a href="#">最强IT特训营</a><br>
-			<a href="#">葡萄藤轻游戏</a>
-			<a href="#">桌游精灵</a><br>
-			<span>微信公众平台</span><br>
-			<img src="images/homepage/company-wechat-QR-code.png">
+		<div class="row">
+			<div class="other-info-about col-xs-12 col-sm-5 col-md-5 col-lg-5">
+				<p>技能树——改变你我</p>
+				<ul>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">合作企业</a></li>
+				</ul>
+			</div>
+			<div class="other-info-link col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<p>旗下网站</p>
+				<ul>
+					<li><a href="#">草船云孵化器</a></li>
+					<li><a href="#">最强IT特训营</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">葡萄藤轻游戏</a></li>
+					<li><a href="#">桌游精灵</a><br></li>
+				</ul>
+			</div>
+			<div class="other-info-wechat col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<p>微信公众平台</p>
+				<img src="images/homepage/company-wechat-QR-code.png">
+			</div>
 		</div>
 	</div>
 	<p>Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号</p>

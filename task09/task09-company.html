@@ -10,30 +10,52 @@
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- 自己的样式文件 -->
-	<link href="task08-company.css" rel="stylesheet">
+	<link href="task09-company.css" rel="stylesheet">
 </head>
 <body>
 
 
 <header>
+
 	<div class="connection container">
 		<span class="telephone">热线电话：010-594-78634</span>
 		<a class="share"><img src="images/homepage/share-wechat.png"></a>
 		<a class="share"><img src="images/homepage/share-qq.png"></a>
 		<a class="share"><img src="images/homepage/share-weibo.png"></a>
 	</div>
+
+	<div class="log-in container">
+		<ul>
+			<li><a href="#">登录</a></li>
+			<li><a href="#">注册</a></li>
+		</ul>
+	</div>
+	
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
-			<a class="nav navbar-nav navbar-left" href="task08-homepage.html">
-				<img src="images/career/logo.png" alt="技能树">
+
+		<div class="navbar-header">
+			<button class="nav-btn navbar-toggle" data-toggle="collapse" data-target="#jnshu-nav" type="button">
+				<span class="sr-only">玉玲珑-切换导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="jns-nav-brand navbar-brand" href="task08-homepage.html">
+				<img src="images/company/home-logo.png" alt="技能树">
 			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="jnshu-nav">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="task08-homepage.html">首页</a></li>
-				<li><a href="task08-career.html">职业</a></li>
+				<li><a href="task09-homepage.html">首页</a></li>
+				<li><a href="task09-career.html">职业</a></li>
 				<li><a href="#">推荐</a></li>
 				<li class="active"><a href="#">关于</a></li>
 			</ul>
 		</div>
+
+		</div>  <!-- end of .container -->
 	</nav>
 </header>
 
@@ -54,7 +76,7 @@
 	<div class="companys container">
 		<div class="row">
 
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 				<section class="company-list">
 					<h4>合作企业</h4>
 					<ul id="myTab" class="company-nav nav nav-tabs">
@@ -74,7 +96,7 @@
 				</section>
 			</div>
 
-			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 				<article class="company-info tab-content" id="myTabContent">
 
 					<section class="tab-pane fade in active" id="tudou">
@@ -144,20 +166,30 @@
 
 <footer>
 	<div class="other-info container">
-		<div class="other-info-left">
-			<p>技能树——改变你我</p>
-			<a href="#">关于我们</a>
-			<a href="#">联系我们</a>
-			<a href="#">合作企业</a>
-		</div>
-		<div class="other-info-right">
-			<p>旗下网站</p>
-			<a href="#">草船云孵化器</a>
-			<a href="#">最强IT特训营</a><br>
-			<a href="#">葡萄藤轻游戏</a>
-			<a href="#">桌游精灵</a><br>
-			<span>微信公众平台</span><br>
-			<img src="images/homepage/company-wechat-QR-code.png">
+		<div class="row">
+			<div class="other-info-about col-xs-12 col-sm-5 col-md-5 col-lg-5">
+				<p>技能树——改变你我</p>
+				<ul>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">合作企业</a></li>
+				</ul>
+			</div>
+			<div class="other-info-link col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<p>旗下网站</p>
+				<ul>
+					<li><a href="#">草船云孵化器</a></li>
+					<li><a href="#">最强IT特训营</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">葡萄藤轻游戏</a></li>
+					<li><a href="#">桌游精灵</a><br></li>
+				</ul>
+			</div>
+			<div class="other-info-wechat col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<p>微信公众平台</p>
+				<img src="images/homepage/company-wechat-QR-code.png">
+			</div>
 		</div>
 	</div>
 	<p>Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号</p>

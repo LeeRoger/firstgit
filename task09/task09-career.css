@@ -16,6 +16,33 @@ a.share {
 	padding-left: 8px;
 }
 
+div.log-in ul {
+	display: flex;
+	margin-bottom: 0;
+	padding: 10px 0;
+	justify-content: flex-end;
+	list-style-type: none;
+}
+
+div.log-in ul li a {
+	margin: 10px 3px;
+	color: #333;
+	text-decoration: none;
+}
+
+div.log-in ul li:last-child a {
+	margin-right: 0;
+	padding-left: 6px;
+	border-left: 2px solid #29b078;
+}
+
+div.log-in { display: none; }
+
+@media (max-width: 767px) {
+	div.connection { display: none; }
+	div.log-in { display: block; }
+}
+
 nav.navbar-default {
 	margin-bottom: 0;
 	border: none;
@@ -156,7 +183,9 @@ ul.web-nav-ul {
 	display: flex;
 	min-height: 50px;
 	margin-bottom: 0;
+
 	align-items: center;
+	flex-wrap: wrap;
 	list-style-type: none;
 	background-color: #fafafa;
 }
@@ -168,6 +197,7 @@ li.web-nav-name { color: #999; }
 div.web-nav ul.web-nav-ul a {    /* 写div.web-nav是为了增加优先级，覆盖bootstrap的样式 */
 	display: block;
  	padding: 3px;
+ 	margin: 3px 0;
 	color: #000;
 	border-radius: 3px;
 }

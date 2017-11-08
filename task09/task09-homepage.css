@@ -78,7 +78,7 @@ div.nav-btn { display: none; }
 		color: rgba(50,50,50,.5);
 
 		background-color: #29b078;
-		border: none;
+		border: 1px solid rgba(50,50,50,.5);
 	}
 
 	div.nav-btn button:hover {
@@ -97,7 +97,13 @@ div.nav-btn { display: none; }
 		background-color: #29b078;
 	}
 
-	div.nav-btn .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+	.open>.dropdown-toggle.btn-default:focus,
+	.open>.dropdown-toggle.btn-default:hover {  /* 这样才算覆盖了bootstrap的样式，但又不知道.open是干啥的 */
+		color: #29b078;
+		background-color: rgba(250,250,250,.7)
+	}
+
+	.open>.dropdown-toggle.btn-default {
     	color: #333;
     	background-color: #fff;
     	border-color: #adadad;

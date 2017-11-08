@@ -23,7 +23,9 @@ nav.navbar-default {
 	background-color: #29b078;
 }
 
-nav.navbar img {
+a.jns-nav-brand { padding: 0 15px; }
+
+a.jns-nav-brand img {
 	height: 33px;
 	margin-top: 10px;   /* 因为被设置了float，为了居中只能这样了，（53px-43px)/2 = 10px */
 }
@@ -31,12 +33,46 @@ nav.navbar img {
 nav.navbar-default ul.navbar-nav > li > a {  /* 为了覆盖bootstrap的样式 */
 	font-size: 14px;
 	color: #fff;
+	border-bottom: 3px solid #29b078;
+}
+
+nav.navbar-default ul.navbar-nav > li > a:hover {
+	color: #fff;
+	border-bottom: 3px solid #fff;
 }
 
 nav.navbar-default ul.navbar-nav > li.active > a {  /* 为了覆盖bootstrap的样式 */
 	border-bottom: 3px solid #fff;
 	color: #fff;
 	background-color: #29b078;
+}
+
+nav.navbar-default ul.navbar-nav > li.active > a:hover {
+	background-color: rgba(100,100,100,.2)
+}
+
+/* 屏幕宽度 < 768px */
+div.navbar-header button.nav-btn { /* 加div.navbar-header是为了增加优先级，覆盖bootstrap样式 */
+	padding-left: 5px;
+	padding-right: 5px;
+	border-color: rgba(220,220,220,.9);
+}
+
+div.navbar-header button.nav-btn:hover { background-color: #fafafa; }
+
+/* nav.nav-default div.navbar-header button.nav-btn.navbar-toggle .icon-bar {
+	background-color: #fafafa；
+}  为什么这个优先级更高，却不能覆盖下方bootstrap的样式？ */
+
+.navbar-default .navbar-toggle .icon-bar { background-color: #fafafa; }
+
+button.nav-btn:hover .icon-bar { background-color: #29b078; }
+button.nav-btn:focus .icon-bar { background-color: #29b078; }
+
+@media (max-width: 767px) {
+	nav.navbar-default ul.navbar-nav > li > a,
+	nav.navbar-default ul.navbar-nav > li > a:hover,
+	nav.navbar-default ul.navbar-nav > li.active > a { border-bottom-width: 1px; }
 }
 /* finish designing header */
 
@@ -116,33 +152,48 @@ div.web-nav div.web-nav-justify {
 	border-bottom: 1px solid #ddd;
 }
 
-div.web-nav span {
-	display: inline-block;
-	float: left;
-	line-height: 50px;
-	color: #999;
-}
-
 ul.web-nav-ul {
+	display: flex;
+	min-height: 50px;
+	margin-bottom: 0;
+	align-items: center;
+	list-style-type: none;
 	background-color: #fafafa;
 }
 
- div.web-nav ul.web-nav-ul a {    /* 写div.web-nav是为了增加优先级，覆盖bootstrap的样式 */
+ul.web-nav-ul li:not(.web-nav-name) { margin-left: 15px; }
+
+li.web-nav-name { color: #999; }
+
+div.web-nav ul.web-nav-ul a {    /* 写div.web-nav是为了增加优先级，覆盖bootstrap的样式 */
+	display: block;
  	padding: 3px;
- 	margin: 12px;
 	color: #000;
 	border-radius: 3px;
 }
 
-ul.web-nav-ul li a:hover {
+/* ul.web-nav-ul li a:hover {
 	color: #29b078;
 	background-color: #fafafa;
+} */
+
+ul.web-nav-ul li a:hover {
+	color: #fff;
+	background-color: #29b078;
+}
+
+ul.web-nav-ul li a:active {
+	color: #fff;
+	background-color: #29b078;
 }
 
 ul.web-nav-ul li.active a {
 	color: #fff;
+	text-decoration: none;
 	background-color: #29b078;
 }
+
+ul.web-nav-ul li.active a:hover { color: #333; }
 /* 结束布局div.web-nav，未能完成任务 */
 
 /* 整体布局 */
@@ -155,9 +206,13 @@ div.ops-develop {
 }
 
 div.ops-develop { margin-bottom: 200px; }
+@media (max-width: 767px) {
+	div.ops-develop { margin-bottom: 50px; }
+}
 
 div.container h3 {
 	margin: 0 auto;
+	padding-top: 10px;
 	padding-bottom: 30px;
 	font-size: 16px;
 	font-weight: bold;
@@ -179,13 +234,16 @@ section {
 img.favicon {
 	float: left;
 	width: 40%;
+	max-width: 150px;
 	margin: 20px 0;
 }
 
 div.jd {
 	display: flex;
+	float: left;
 	width: 60%;
-	margin-left: 40%;
+	min-width: calc(100% - 150px);
+	/*margin-left: 40%;*/
 	padding-left: 15px;
 	flex-direction: column;
 	justify-content: center;
@@ -204,6 +262,7 @@ div.jd p {
 }
 
 table {
+	clear: both;
 	width: calc(100% + 30px);  /* 为了抵消因负margin产生的不能填满父元素的影响 */
 	margin-top: -1px;    /* 为了消除两个表格之间重叠的边框 */
 	margin-left: -15px;  /* 为了让边框填满整个父元素 */
@@ -317,18 +376,7 @@ footer {
 	background-color: #29b078;
 }
 
-div.other-info-left {
-	float: left;
-	width: 30%;
-	letter-spacing: -6px;
-}
-
-div.other-info-right {
-	position: relative;
-	height: 140px;
-	margin-left: 30%;
-
-}
+div.other-info > div { padding-bottom: 15px; }
 
 div.other-info div p {
 	margin-top: 20px;
@@ -336,8 +384,26 @@ div.other-info div p {
 	letter-spacing: 0;
 }
 
-div.other-info div a {
+div.other-info ul { letter-spacing: -6px; }
+
+div.other-info ul li {
 	display: inline-block;
+	padding: 0 8px;
+	list-style-type: none;
+	letter-spacing: 0;
+}
+
+div.other-info ul li:first-child { padding-left: 0; }
+
+div.other-info-about ul { margin-top: 60px; }
+div.other-info-link ul { margin-top: 20px; }
+
+div.other-info-about ul li:nth-child(2) {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+div.other-info div a {
 	padding-bottom: 2px;
 	color: #fff;
 	border-bottom: 1px solid #29b078;   /* 为了hover时页面其他部分不变动 */
@@ -348,39 +414,11 @@ div.other-info div a:hover {
 	border-bottom: 1px solid #fff;
 }
 
-div.other-info-left a {
-	box-sizing: content-box;
-	margin-top: 60px;
-	padding-left: 8px;
-	padding-right: 8px;
-	letter-spacing: 0;
-}
+div.other-info-wechat { text-align: right; }
 
-div.other-info-left a:nth-of-type(1) { padding-left: 0; }
-
-div.other-info-left a:nth-of-type(2) {
-	border-left: 2px solid #fff;
-	border-right: 2px solid #fff;
-}
-
-div.other-info-right span {
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 16px;
-}
-
-div.other-info-right img {
-	position: absolute;
-	top: 25px;
-	right: 0;
-	width: 96px;
-}
-
-div.other-info-right a {
-	margin-top: 20px;
-	margin-right: 20px;
-
+div.other-info-wechat p {
+	margin-bottom: 3px;
+	text-align: right;
 }
 
 footer > p {
@@ -390,4 +428,25 @@ footer > p {
 	text-align: center;
 	border-top: 1px solid rgba(255,255,255,.3);
 }
+
+@media (max-width: 767px) {
+	div.other-info > div { position: relative; }
+
+	div.other-info ul { margin-top: 10px; }
+
+	div.other-info-wechat {
+		position: absolute;
+		width: 40%;  /* 为了不让左边的链接被覆盖掉不能点击 */
+		top: 0;
+		right: 0;
+	}
+}
+
+@media (max-width: 450px) {
+	div.other-info-wechat,
+	div.other-info-wechat p { text-align: left; }
+
+	div.other-info-wechat { position: relative; }
+}
+
 /* finish deigning footer */

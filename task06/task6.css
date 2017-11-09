@@ -19,7 +19,7 @@ header.container {
 	background-color: #55ABB9;
 }
 
-.btn-primary {
+.btn-default {
 	color: #fff;
 	background-color: #55ABB9;
 	border: 1px solid #55ABB9;
@@ -38,9 +38,15 @@ header.container {
 }
 /* 结束覆盖框架原有样式 */
 
-.btn-primary:link,
-.btn-primary:hover,
-.btn-primary:active { 
+.btn-active,
+.btn-default:link,
+.btn-default:hover { 
+	color: #55ABB9;
+	background-color: #fff; 
+	border-color: #fff;
+}
+
+.btn-default:focus { 
 	color: #55ABB9;
 	background-color: #fff; 
 	border-color: #fff;

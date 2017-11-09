@@ -209,9 +209,7 @@ div.row>div:last-child   {
 	text-align: left;
 }
 
-div.row>div>p:last-child {
-	padding: 0 2px;
-}
+div.row>div>p:last-child { padding: 0 2px; }
 
 div.row img {
 	height: 2em;

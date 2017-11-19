@@ -1,2 +1,110 @@
 * { margin: 0; padding: 0; }
-ul.customized-step-nav li.active span { color: red; }
+
+
+/* start to design header */
+header {
+	padding-top: 10px;
+	color: #fff;
+	background-color: #1376DC;
+}
+
+.log-in {
+	display: inline-block;
+	float: right;
+}
+
+.log-in li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+.log-in li a {
+	padding-left: 6px;
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+/* finish designing footer */
+
+
+/* start to design main */
+/* 开始设计导航部分，即nav部分 */
+a.baoz-nav-brand.navbar-brand {
+	height: 90px;    /* 为了覆盖bootstrap的样式 */
+	color: #1376DC;
+}
+
+.baoz-nav-brand p:first-child {
+	margin-bottom: 0;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 40px;
+}
+
+.baoz-nav-brand p:last-child {
+	margin-bottom: 0;
+	font-size: 10px;
+	line-height: 20px;
+}
+
+button.nav-btn.navbar-toggle {
+	margin-top: calc((90px - 34px) / 2);    /* 为了覆盖bootstrap的样式 */
+}
+
+.baoz-nav > ul {    /* 为了覆盖bootstrap的样式 */
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+
+.baoz-nav > ul > li { margin-left: 20px; }
+
+@media (max-width: 767px) {
+	.baoz-nav > ul { margin-top: 0; }
+	.baoz-nav > ul > li { margin-left: 0; }
+}
+
+.baoz-nav ul li a {
+	padding: 0 10px;
+	font-size: 16px;
+	line-height: 30px;
+	background-color: #fff;
+}
+
+#baoz-nav.baoz-nav ul li.active a {
+	color: #fff;
+	background-color: #1376DC;
+}
+
+.baoz-nav li.dropdown ul.dropdown-menu {
+	min-width: 78px;    /* 为了覆盖bootstrap的样式 */
+}
+/* 结束设计导航部分，即nav部分 */
+
+/* 开始设计页面导航部分，即div.customized-step-nav部分 */
+.customized-step-nav ul li a {
+	padding: 0;
+	margin-right: 0;
+}
+
+.customized-step-nav li a img {
+	width: calc(50% - 10px);
+	height: 3px;
+	vertical-align: middle;
+	background-color: #FF8104;
+}
+
+.customized-step-nav li a span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #FF8104;
+}
+
+.customized-step-nav li a p {
+	min-width: 100px;
+	text-align: center;
+}

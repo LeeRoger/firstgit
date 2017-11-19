@@ -44,11 +44,18 @@
 				</a>
 			</div>
 
-			<div class="collapse navbar-collapse" id="baoz-nav">
+			<div class="baoz-nav collapse navbar-collapse" id="baoz-nav">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">首页</a></li>
 					<li class="active"><a href="#">在线定制</a></li>
-					<li><a href="#">标准箱</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">标准箱<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">对口箱</a></li>
+							<li><a href="#">飞机盒</a></li>
+							<li><a href="#">天地盖</a></li>
+						</ul>
+					</li>
 					<li><a href="#">关于我们</a></li>
 				</ul>
 			</div>
@@ -59,27 +66,25 @@
 	<div class="customized-step-nav container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<nav class="navbar navbar-default navbar-static" id="myScrollspy" role="navigation">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#step-one">
-						<span>1</span><p>1.定制纸箱</p>
+				<ul class="nav nav-tabs" id="myTab">
+					<li class="active"><a data-toggle="tab" href="#step-one">
+						<img><span>1</span><img><p>1.定制纸箱</p>
 					</a></li>
-					<li><a href="#step-two">
-						<span>2</span><p>2.选择数量</p>
+					<li><a data-toggle="tab" href="#step-two">
+						<img><span>2</span><img><p>2.选择数量</p>
 					</a></li>
-					<li><a href="#step-three">
-						<span>3</span><p>3.上传文件</p>
+					<li><a data-toggle="tab" href="#step-three">
+						<img><span>3</span><img><p>3.上传文件</p>
 					</a></li>
-					<li><a href="#step-four">
-						<span>4</span><p>4.确认下单</p>
+					<li><a data-toggle="tab" href="#step-four">
+						<img><span>4</span><img><p>4.确认下单</p>
 					</a></li>
 				</ul>
-				</nav>
 			</div>
 		</div>  <!-- end of .row -->
 	</div>  <!-- end of .container -->
 	
-	<div class="customized-step container" data-spy="scroll" data-target="#myScrollspy">
+	<div class="customized-step container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<article class="customized-step-all tab-content" id="myTabContent">
@@ -181,11 +186,10 @@
 								</div>
 							</fieldset>
 
-							<ul class="customized-step-nav nav nav-tabs" id="myTab">
+							<ul class="customized-step-btn nav nav-tabs" id="myTab">
 								<li><a class="btn btn-default" data-toggle="tab" href="#step-two">下一步</a></li>
 							</ul>
 
-							<a class="btn btn-default" href="#step-two">下一步</a>
 						</form>
 					</section>
 
@@ -196,10 +200,9 @@
 								<h3>选择数量</h3>
 								<label for="box-num">定制箱子数量</label>
 								<input type="number" id="box-num" name="box_num">
-								<ul class="customized-step-nav nav nav-tabs" id="myTab">
+								<ul class="customized-step-btn nav nav-tabs" id="myTab">
 									<li><a class="btn btn-default" data-toggle="tab" href="#step-three">下一步</a></li>
 								</ul>
-								<a class="btn btn-default" href="#step-three">下一步</a>
 							</fieldset>
 						</form>
 					</section>
@@ -211,10 +214,9 @@
 								<h3>上传文件</h3>
 								<label for="box-img">上传文件</label>
 								<input type="file" id="box-img" name="box_img">
-								<ul class="customized-step-nav nav nav-tabs" id="myTab">
+								<ul class="customized-step-btn nav nav-tabs" id="myTab">
 									<li><a class="btn btn-default" data-toggle="tab" href="#step-four">下一步</a></li>
 								</ul>
-								<a class="btn btn-default" href="#step-four">下一步</a>
 							</fieldset>
 						</form>
 					</section>

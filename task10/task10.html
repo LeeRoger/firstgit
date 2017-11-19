@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>51包装</title>
+
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- 自己的样式文件 -->
+	<link href="task10.css" rel="stylesheet">
+</head>
+<body>
+
+
+<header>
+	<div class="connection container">
+		<span class="telephone">客服热线：400-010-9151</span>
+		<ul class="log-in">
+			<li><a href="#">登录</a></li>
+			<li><a href="#">注册</a></li>
+		</ul>
+	</div>
+</header>
+
+
+<main>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button class="nav-btn navbar-toggle" data-toggle="collapse" data-target="#baoz-nav" type="button">
+					<span class="sr-only">玉玲珑-切换导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="baoz-nav-brand navbar-brand" href="#">
+					<p>51包装</p>
+					<p>www.51baozhuang.com</p>
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="baoz-nav">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">首页</a></li>
+					<li class="active"><a href="#">在线定制</a></li>
+					<li><a href="#">标准箱</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+			</div>
+
+		</div>  <!-- end of .container -->
+	</nav>
+
+	<div class="customized-step-nav container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<nav class="navbar navbar-default navbar-static" id="myScrollspy" role="navigation">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#step-one">
+						<span>1</span><p>1.定制纸箱</p>
+					</a></li>
+					<li><a href="#step-two">
+						<span>2</span><p>2.选择数量</p>
+					</a></li>
+					<li><a href="#step-three">
+						<span>3</span><p>3.上传文件</p>
+					</a></li>
+					<li><a href="#step-four">
+						<span>4</span><p>4.确认下单</p>
+					</a></li>
+				</ul>
+				</nav>
+			</div>
+		</div>  <!-- end of .row -->
+	</div>  <!-- end of .container -->
+	
+	<div class="customized-step container" data-spy="scroll" data-target="#myScrollspy">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<article class="customized-step-all tab-content" id="myTabContent">
+
+					<section class="tab-pane fade in active" id="step-one">
+						<p>请您按照以下步骤来定制您的纸箱</p>
+						<form method="post">
+
+							<fieldset required="required">
+								<h3>选择箱型</h3>
+								<input type="radio" id="duikou" name="box_type" value="duikou">
+								<label for="duikou">对口箱</label>
+								<input type="radio" id="feiji" name="box_type" value="feiji">
+								<label for="feiji">飞机盒</label>
+								<input type="radio" id="tiandi" name="box_type" value="tiandi">
+								<label for="tiandi">天地盖</label>
+
+								<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">查看详情<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">对口箱</a></li>
+										<li><a href="#">飞机盒</a></li>
+										<li><a href="#">天地盖</a></li>
+									</ul>
+								</div>
+							</fieldset>
+
+							<fieldset required="required">
+								<h3>确定尺寸</h3>
+
+								<input type="radio" id="outside-diameter" name="diameter" value="outside-diameter">
+								<label for="outside-diameter">外径</label>
+								<div class="box-size">
+									<label for="box-length-outside">长</label>
+									<input type="text" id="box-length-outside" name="box_length_outside">
+									<span>mm</span>
+									<label for="box-width-outside">宽</label>
+									<input type="text" id="box-width-outside" name="box_width_outside">
+									<span>mm</span>
+									<label for="box-height-outside">高</label>
+									<input type="text" id="box-height-outside" name="box_height_outside">
+									<span>mm</span>
+								</div>
+
+								<input type="radio" id="inside-diameter" name="diameter" value="inside-diameter">
+								<label for="inside-diameter">内径</label>
+								<div class="box-size">
+									<label for="box-length-inside">长</label>
+									<input type="text" id="box-length-inside" name="box_length_inside">
+									<span>mm</span>
+									<label for="box-width-inside">宽</label>
+									<input type="text" id="box-width-inside" name="box_width_inside">
+									<span>mm</span>
+									<label for="box-height-inside">高</label>
+									<input type="text" id="box-height-inside" name="box_height_inside">
+									<span>mm</span>
+								</div>
+
+
+								<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">查看详情<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">内径</a></li>
+										<li><a href="#">外径</a></li>
+									</ul>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<h3>选择材质</h3>
+
+								<input type="radio" id="A-wa" name="box_material" value="A">
+								<label for="A-wa">A瓦优质</label>
+
+								<input type="radio" id="B-wa" name="box_material" value="B">
+								<label for="B-wa">B瓦优质</label>
+
+								<input type="radio" id="E-wa" name="box_material" value="E">
+								<label for="E-wa">E瓦优质</label>
+
+								<input type="radio" id="AB-wa" name="box_material" value="AB">
+								<label for="AB-wa">AB瓦优质</label>
+
+								<input type="radio" id="BE-wa" name="box_material" value="BE">
+								<label for="BE-wa">BE瓦优质</label>
+
+								<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">查看详情<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">A瓦优质</a></li>
+										<li><a href="#">B瓦优质</a></li>
+										<li><a href="#">E瓦优质</a></li>
+										<li><a href="#">AB瓦优质</a></li>
+										<li><a href="#">BE瓦优质</a></li>
+									</ul>
+								</div>
+							</fieldset>
+
+							<ul class="customized-step-nav nav nav-tabs" id="myTab">
+								<li><a class="btn btn-default" data-toggle="tab" href="#step-two">下一步</a></li>
+							</ul>
+
+							<a class="btn btn-default" href="#step-two">下一步</a>
+						</form>
+					</section>
+
+					<section class="tab-pane fade" id="step-two">
+						<p>请您按照以下步骤来定制您的纸箱</p>
+						<form method="post">
+							<fieldset>
+								<h3>选择数量</h3>
+								<label for="box-num">定制箱子数量</label>
+								<input type="number" id="box-num" name="box_num">
+								<ul class="customized-step-nav nav nav-tabs" id="myTab">
+									<li><a class="btn btn-default" data-toggle="tab" href="#step-three">下一步</a></li>
+								</ul>
+								<a class="btn btn-default" href="#step-three">下一步</a>
+							</fieldset>
+						</form>
+					</section>
+
+					<section class="tab-pane fade" id="step-three">
+						<p>请您按照以下步骤来定制您的纸箱</p>
+						<form method="post">
+							<fieldset>
+								<h3>上传文件</h3>
+								<label for="box-img">上传文件</label>
+								<input type="file" id="box-img" name="box_img">
+								<ul class="customized-step-nav nav nav-tabs" id="myTab">
+									<li><a class="btn btn-default" data-toggle="tab" href="#step-four">下一步</a></li>
+								</ul>
+								<a class="btn btn-default" href="#step-four">下一步</a>
+							</fieldset>
+						</form>
+					</section>
+
+					<section class="tab-pane fade" id="step-four">
+						<p>请您按照以下步骤来定制您的纸箱</p>
+						<form method="post">
+							<fieldset>
+								<h3>确认信息</h3>
+								<p>您提交的订单信息如下：</p>
+								<button class="btn btn-default" type="sumbit">确认订单</button>
+							</fieldset>
+						</form>
+					</section>
+
+				</article>
+			</div>
+		</div>  <!-- end of .row -->
+
+	</div>  <!-- end of .container.customized-step -->
+
+
+
+</main>
+	
+</body>
+</html>

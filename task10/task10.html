@@ -88,36 +88,45 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<article class="customized-step-all tab-content" id="myTabContent">
+					<p>请您按照以下步骤来定制您的纸箱</p>
 
-					<section class="tab-pane fade in active" id="step-one">
-						<p>请您按照以下步骤来定制您的纸箱</p>
+					<section class="tab-pane fade in active" id="step-one">						
 						<form method="post">
 
+							<h3>选择箱型</h3>
 							<fieldset required="required">
-								<h3>选择箱型</h3>
-								<input type="radio" id="duikou" name="box_type" value="duikou">
-								<label for="duikou">对口箱</label>
-								<input type="radio" id="feiji" name="box_type" value="feiji">
-								<label for="feiji">飞机盒</label>
-								<input type="radio" id="tiandi" name="box_type" value="tiandi">
-								<label for="tiandi">天地盖</label>
+								
+								<label class="radio-label">
+									<input type="radio" id="duikou" name="box_type" value="duikou">
+									<span class="radio-icon"></span>对口箱
+								</label>
+								<label class="radio-label">
+									<input type="radio" id="feiji" name="box_type" value="feiji">
+									<span class="radio-icon"></span>飞机盒
+								</label>
+								<label class="radio-label">
+									<input type="radio" id="tiandi" name="box_type" value="tiandi">
+									<span class="radio-icon"></span>天地盖
+								</label>
 
-								<div class="dropdown">
-									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">查看详情<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">对口箱</a></li>
-										<li><a href="#">飞机盒</a></li>
-										<li><a href="#">天地盖</a></li>
-									</ul>
+								<div class="box-info">
+									<label for="box-shape"></label>
+									<select id="box-shape" name="box_shape">
+										<option value="detail_type">查看详情</option>
+										<option value="duikou_type">对口箱</option>
+										<option value="feiji_type">飞机盒</option>
+										<option value="taindigai_type">天地盖</option>
+									</select>
 								</div>
 							</fieldset>
 
+							<h3>确定尺寸</h3>
 							<fieldset required="required">
-								<h3>确定尺寸</h3>
 
-								<input type="radio" id="outside-diameter" name="diameter" value="outside-diameter">
-								<label for="outside-diameter">外径</label>
+								<label class="radio-label">
+									<input type="radio" id="outside-diameter" name="diameter" value="outside-diameter">
+									<span class="radio-icon"></span>外径
+								</label>
 								<div class="box-size">
 									<label for="box-length-outside">长</label>
 									<input type="text" id="box-length-outside" name="box_length_outside">
@@ -129,9 +138,11 @@
 									<input type="text" id="box-height-outside" name="box_height_outside">
 									<span>mm</span>
 								</div>
-
-								<input type="radio" id="inside-diameter" name="diameter" value="inside-diameter">
-								<label for="inside-diameter">内径</label>
+								
+								<label class="radio-label">
+									<input type="radio" id="inside-diameter" name="diameter" value="inside-diameter">
+									<span class="radio-icon"></span>内径
+								</label>
 								<div class="box-size">
 									<label for="box-length-inside">长</label>
 									<input type="text" id="box-length-inside" name="box_length_inside">
@@ -155,9 +166,10 @@
 								</div>
 							</fieldset>
 
+							
+							<h3>选择材质</h3>
 							<fieldset>
-								<h3>选择材质</h3>
-
+								
 								<input type="radio" id="A-wa" name="box_material" value="A">
 								<label for="A-wa">A瓦优质</label>
 
@@ -194,10 +206,9 @@
 					</section>
 
 					<section class="tab-pane fade" id="step-two">
-						<p>请您按照以下步骤来定制您的纸箱</p>
 						<form method="post">
+							<h3>选择数量</h3>
 							<fieldset>
-								<h3>选择数量</h3>
 								<label for="box-num">定制箱子数量</label>
 								<input type="number" id="box-num" name="box_num">
 								<ul class="customized-step-btn nav nav-tabs" id="myTab">
@@ -208,10 +219,9 @@
 					</section>
 
 					<section class="tab-pane fade" id="step-three">
-						<p>请您按照以下步骤来定制您的纸箱</p>
 						<form method="post">
+							<h3>上传文件</h3>
 							<fieldset>
-								<h3>上传文件</h3>
 								<label for="box-img">上传文件</label>
 								<input type="file" id="box-img" name="box_img">
 								<ul class="customized-step-btn nav nav-tabs" id="myTab">
@@ -222,10 +232,9 @@
 					</section>
 
 					<section class="tab-pane fade" id="step-four">
-						<p>请您按照以下步骤来定制您的纸箱</p>
 						<form method="post">
+							<h3>确认信息</h3>
 							<fieldset>
-								<h3>确认信息</h3>
 								<p>您提交的订单信息如下：</p>
 								<button class="btn btn-default" type="sumbit">确认订单</button>
 							</fieldset>

@@ -81,16 +81,29 @@ button.nav-btn.navbar-toggle {
 /* 结束设计导航部分，即nav部分 */
 
 /* 开始设计页面导航部分，即div.customized-step-nav部分 */
-.customized-step-nav ul li a {
+.customized-step-nav ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	border-bottom: none;
+}
+
+.customized-step-nav li { margin-bottom: 0; }
+
+.customized-step-nav li a {
 	padding: 0;
+	padding-top: 10px;
 	margin-right: 0;
+	border-color: transparent;
 }
 
 .customized-step-nav li a img {
-	width: calc(50% - 10px);
+	width: calc(50% - 10px + 2px);
 	height: 3px;
+	margin: 0 -1px;
 	vertical-align: middle;
-	background-color: #FF8104;
+	background-color: #CDCDCD;
 }
 
 .customized-step-nav li a span {
@@ -101,10 +114,130 @@ button.nav-btn.navbar-toggle {
 	text-align: center;
 	border-radius: 50%;
 	color: #fff;
-	background-color: #FF8104;
+	background-color: #CDCDCD;
 }
 
 .customized-step-nav li a p {
 	min-width: 100px;
+	margin-top: 10px;
+	color: #CDCDCD;
+	font-weight: 600;
 	text-align: center;
+}
+
+.customized-step-nav li.active a { border-color: transparent; }
+.customized-step-nav li.active a img,
+.customized-step-nav li.active a span { background-color: #FF8104; }
+.customized-step-nav li.active a p { color: #FF8104; }
+
+.customized-step-nav li.active a:link,
+.customized-step-nav li.active a:visited,
+.customized-step-nav li.active a:hover,
+.customized-step-nav li.active a:active { border-color: transparent; }
+/* 结束设计页面导航部分，即div.customized-step-nav部分 */
+
+/* 开始设计填写表单区域，即div.customized-step部分 */
+.customized-step-all > p {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding-left: 5px;
+	border-left: 3px solid #1376DC;
+}
+
+.customized-step-all section {
+	border: 1px solid #DCDCDC;
+	
+}
+
+.customized-step-all section h3 {
+	margin-top: -1px;
+	margin-bottom: 0;
+	padding: 5px;
+	padding-left: 30px;
+
+	font-size: 16px;
+	font-weight: 600;
+	color: #1376DC;
+
+	border-top: 1px solid #DCDCDC;
+	border-bottom: 1px solid #DCDCDC;
+	background:
+		url(images/box.png) 10px center no-repeat,
+		-webkit-linear-gradient(#f6f6f6 0%, #f1f1f1 100%);  /* 为了让背景图片与线性渐变同时存在 */
+	background-size: 15px auto;
+}
+
+/* 开始设计单选按钮的样式 */
+.customized-step-all .radio-label {
+	display: inline-block;
+	margin: 15px 30px;
+	
+}
+
+.customized-step-all input[type="radio"] { display: none; }
+
+.customized-step-all .radio-icon {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+
+	border: 1px solid #999;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.customized-step-all input[type="radio"]:checked + span.radio-icon {
+	border: 3px solid #1376DC;
+}
+/* 结束设计单选按钮的样式 */
+
+/* 看来bootstrap的下拉菜单并不简单 */
+.customized-step-all .dropdown {
+	float: right;
+}
+
+.customized-step-all .dropdown button {
+	padding: 3px;
+	border-radius: 0;
+}
+
+.customized-step-all .dropdown button span.caret {
+	display: inline-block;
+	padding: 5px;
+	height: 20px;
+	margin-left: 3px;
+	color: #fff;
+	background-color: #1376DC;
+}
+
+/* 开始设计选择框样式 */
+.customized-step-all fieldset { position: relative; }
+
+.box-info {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	min-width: 100px;
+
+	border: 1px solid #999;
+	background: url(images/pulldown.png) right center no-repeat;
+	background-size: auto 100%;
+}
+
+.box-info select {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 3px;
+
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+
+	color: #666;
+	background: transparent;
+	border: none;
 }

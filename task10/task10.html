@@ -84,18 +84,17 @@
 		</div>  <!-- end of .row -->
 	</div>  <!-- end of .container -->
 	
-	<div class="customized-step container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<article class="customized-step-all tab-content" id="myTabContent">
-					<p>请您按照以下步骤来定制您的纸箱</p>
+	<div class="customized-step container">		
+		<article class="customized-step-all tab-content" id="myTabContent">
+			<p>请您按照以下步骤来定制您的纸箱</p>
 
-					<section class="tab-pane fade in active" id="step-one">						
-						<form method="post">
+				<section class="tab-pane fade in active" id="step-one">						
+					<form method="post">
 
-							<h3>选择箱型</h3>
-							<fieldset required="required">
-								
+						<h3>选择箱型</h3>
+						<fieldset class="row">
+
+							<div class="col-xs-8 col-sm-12 col-md-12 col-lg-12">
 								<label class="radio-label">
 									<input type="radio" id="duikou" name="box_type" value="duikou">
 									<span class="radio-icon"></span>对口箱
@@ -108,98 +107,129 @@
 									<input type="radio" id="tiandi" name="box_type" value="tiandi">
 									<span class="radio-icon"></span>天地盖
 								</label>
+							</div>
+
+							<div class="box-info">
+								<label for="box-shape-info"></label>
+								<select id="box-shape-info" name="box_shape_info">
+									<option value="detail_type">查看详情</option>
+									<option value="duikou_type">对口箱</option>
+									<option value="feiji_type">飞机盒</option>
+									<option value="taindigai_type">天地盖</option>
+								</select>
+							</div>
+						</fieldset>
+
+						<h3>确定尺寸</h3>
+						<fieldset class="row">
+							
+							<div class="box-size-outside">
+								<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+									<label class="radio-label">
+										<input type="radio" id="outside-diameter" name="diameter" value="outside-diameter">
+										<span class="radio-icon"></span>外径
+									</label>
+								</div>
+
+								<div class="box-size col-xs-12 col-sm-9 col-md-10 col-lg-10">
+									<label>长
+										<input type="text" id="box-length-outside" name="box_length_outside">
+										<span>mm</span>
+									</label>
+									
+									<label>宽
+										<input type="text" id="box-width-outside" name="box_width_outside">
+										<span>mm</span>
+									</label>
+									
+									<label>高
+										<input type="text" id="box-height-outside" name="box_height_outside">
+										<span>mm</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="box-size-inside">
+								<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">	
+									<label class="radio-label">
+										<input type="radio" id="inside-diameter" name="diameter" value="inside-diameter">
+										<span class="radio-icon"></span>内径
+									</label>
+								</div>
+
+								<div class="box-size col-xs-12 col-sm-9 col-md-10 col-lg-10">
+									<label>长
+										<input type="text" id="box-length-inside" name="box_length_inside">
+										<span>mm</span>
+									</label>
+									
+									<label>宽
+										<input type="text" id="box-width-inside" name="box_width_inside">
+										<span>mm</span>
+									</label>
+									
+									<label>高
+										<input type="text" id="box-height-inside" name="box_height_inside">
+										<span>mm</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="box-info">
+								<label for="box-size-info"></label>
+								<select id="box-size-info" name="box_size_info">
+									<option value="detail_size">查看详情</option>
+									<option value="inside_size">内径</option>
+									<option value="outside_size">外径</option>
+								</select>
+							</div>
+						</fieldset>
+
+						<h3>选择材质</h3>
+						<fieldset class="row">
+								
+							<div class="col-xs-8 col-sm-8 col-md-10 col-lg-12">
+								<label class="radio-label">
+									<input type="radio" id="A-wa" name="box_material" value="A">
+									<span class="radio-icon"></span>A瓦优质
+								</label>
+
+								<label class="radio-label">
+									<input type="radio" id="B-wa" name="box_material" value="B">
+									<span class="radio-icon"></span>B瓦优质
+								</label>
+
+								<label class="radio-label">
+									<input type="radio" id="E-wa" name="box_material" value="E">
+									<span class="radio-icon"></span>E瓦优质
+								</label>
+
+								<label class="radio-label">
+									<input type="radio" id="AB-wa" name="box_material" value="AB">
+									<span class="radio-icon"></span>AB瓦优质
+								</label>
+
+								<label class="radio-label">
+									<input type="radio" id="BE-wa" name="box_material" value="BE">
+									<span class="radio-icon"></span>BE瓦优质
+								</label>
+							</div>
 
 								<div class="box-info">
-									<label for="box-shape"></label>
-									<select id="box-shape" name="box_shape">
-										<option value="detail_type">查看详情</option>
-										<option value="duikou_type">对口箱</option>
-										<option value="feiji_type">飞机盒</option>
-										<option value="taindigai_type">天地盖</option>
+									<label for="box-material-info"></label>
+									<select id="box-material-info" name="box_material_info">
+										<option value="detail_material">查看详情</option>
+										<option value="A_material">A瓦</option>
+										<option value="B_material">B瓦</option>
+										<option value="E_material">E瓦</option>
+										<option value="AB_material">AB瓦</option>
+										<option value="BE_material">BE瓦</option>
 									</select>
 								</div>
 							</fieldset>
 
-							<h3>确定尺寸</h3>
-							<fieldset required="required">
-
-								<label class="radio-label">
-									<input type="radio" id="outside-diameter" name="diameter" value="outside-diameter">
-									<span class="radio-icon"></span>外径
-								</label>
-								<div class="box-size">
-									<label for="box-length-outside">长</label>
-									<input type="text" id="box-length-outside" name="box_length_outside">
-									<span>mm</span>
-									<label for="box-width-outside">宽</label>
-									<input type="text" id="box-width-outside" name="box_width_outside">
-									<span>mm</span>
-									<label for="box-height-outside">高</label>
-									<input type="text" id="box-height-outside" name="box_height_outside">
-									<span>mm</span>
-								</div>
-								
-								<label class="radio-label">
-									<input type="radio" id="inside-diameter" name="diameter" value="inside-diameter">
-									<span class="radio-icon"></span>内径
-								</label>
-								<div class="box-size">
-									<label for="box-length-inside">长</label>
-									<input type="text" id="box-length-inside" name="box_length_inside">
-									<span>mm</span>
-									<label for="box-width-inside">宽</label>
-									<input type="text" id="box-width-inside" name="box_width_inside">
-									<span>mm</span>
-									<label for="box-height-inside">高</label>
-									<input type="text" id="box-height-inside" name="box_height_inside">
-									<span>mm</span>
-								</div>
-
-
-								<div class="dropdown">
-									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">查看详情<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">内径</a></li>
-										<li><a href="#">外径</a></li>
-									</ul>
-								</div>
-							</fieldset>
-
-							
-							<h3>选择材质</h3>
-							<fieldset>
-								
-								<input type="radio" id="A-wa" name="box_material" value="A">
-								<label for="A-wa">A瓦优质</label>
-
-								<input type="radio" id="B-wa" name="box_material" value="B">
-								<label for="B-wa">B瓦优质</label>
-
-								<input type="radio" id="E-wa" name="box_material" value="E">
-								<label for="E-wa">E瓦优质</label>
-
-								<input type="radio" id="AB-wa" name="box_material" value="AB">
-								<label for="AB-wa">AB瓦优质</label>
-
-								<input type="radio" id="BE-wa" name="box_material" value="BE">
-								<label for="BE-wa">BE瓦优质</label>
-
-								<div class="dropdown">
-									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">查看详情<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">A瓦优质</a></li>
-										<li><a href="#">B瓦优质</a></li>
-										<li><a href="#">E瓦优质</a></li>
-										<li><a href="#">AB瓦优质</a></li>
-										<li><a href="#">BE瓦优质</a></li>
-									</ul>
-								</div>
-							</fieldset>
-
 							<ul class="customized-step-btn nav nav-tabs" id="myTab">
-								<li><a class="btn btn-default" data-toggle="tab" href="#step-two">下一步</a></li>
+								<li><a class="btn-baoz-next btn btn-default" data-toggle="tab" href="#step-two">下一步</a></li>
 							</ul>
 
 						</form>
@@ -212,7 +242,7 @@
 								<label for="box-num">定制箱子数量</label>
 								<input type="number" id="box-num" name="box_num">
 								<ul class="customized-step-btn nav nav-tabs" id="myTab">
-									<li><a class="btn btn-default" data-toggle="tab" href="#step-three">下一步</a></li>
+									<li><a class="btn-baoz-next btn btn-default" data-toggle="tab" href="#step-three">下一步</a></li>
 								</ul>
 							</fieldset>
 						</form>
@@ -225,7 +255,7 @@
 								<label for="box-img">上传文件</label>
 								<input type="file" id="box-img" name="box_img">
 								<ul class="customized-step-btn nav nav-tabs" id="myTab">
-									<li><a class="btn btn-default" data-toggle="tab" href="#step-four">下一步</a></li>
+									<li><a class="btn-baoz-next btn btn-default" data-toggle="tab" href="#step-four">下一步</a></li>
 								</ul>
 							</fieldset>
 						</form>
@@ -236,7 +266,9 @@
 							<h3>确认信息</h3>
 							<fieldset>
 								<p>您提交的订单信息如下：</p>
-								<button class="btn btn-default" type="sumbit">确认订单</button>
+								<ul class="customized-step-btn">
+									<li><button class="btn-baoz-next btn btn-default" type="sumbit">确认订单</button></li>
+								</ul>
 							</fieldset>
 						</form>
 					</section>
@@ -247,9 +279,41 @@
 
 	</div>  <!-- end of .container.customized-step -->
 
-
-
 </main>
-	
+
+
+<footer>
+	<div class="company-info container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+				<p>51包装网--纸箱包装首选服务平台</p>
+			</div>
+
+			<div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
+				<ul>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">配送流程</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">下单指南</a></li>
+					<li><a href="#">媒体介绍</a><br></li>
+				</ul>
+			</div>
+
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<div class="company-connect">
+					<p>TEL: 400-000-000</p>
+					<p>企业QQ: 12345678</p>
+					<p>微信号: XXXXXXX</p>
+				</div>
+				<img src="images/wechat.png">
+			</div>
+		</div>
+	</div>
+	<p>北京五一包装科技有限公司Copyright © 2015 51baozhuang.com015  All Rights Reserved | 京ICP备99999999-1</p>
+</footer>
+
+
 </body>
 </html>

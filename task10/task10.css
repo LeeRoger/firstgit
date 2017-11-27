@@ -24,10 +24,13 @@ header {
 	font-weight: 600;
 	text-decoration: none;
 }
+
+.log-in li a:hover { color: #FF8104; }
 /* finish designing footer */
 
 
 /* start to design main */
+label { font-weight: normal; }
 /* 开始设计导航部分，即nav部分 */
 a.baoz-nav-brand.navbar-brand {
 	height: 90px;    /* 为了覆盖bootstrap的样式 */
@@ -193,7 +196,7 @@ button.nav-btn.navbar-toggle {
 }
 /* 结束设计单选按钮的样式 */
 
-/* 看来bootstrap的下拉菜单并不简单 */
+/* 看来bootstrap的下拉菜单并不简单 */ /* 并没有用到
 .customized-step-all .dropdown {
 	float: right;
 }
@@ -210,14 +213,14 @@ button.nav-btn.navbar-toggle {
 	margin-left: 3px;
 	color: #fff;
 	background-color: #1376DC;
-}
+} */
 
 /* 开始设计选择框样式 */
 .customized-step-all fieldset { position: relative; }
 
 .box-info {
 	position: absolute;
-	right: 15px;
+	right: 25px;
 	top: 50%;
 	transform: translateY(-50%);
 	min-width: 100px;
@@ -241,3 +244,123 @@ button.nav-btn.navbar-toggle {
 	background: transparent;
 	border: none;
 }
+/* 结束设计选择框样式 */
+
+.box-size {
+	display: flex;
+	min-height: 50px;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.box-size input {
+	max-width: 40px;
+	height: 18px;
+}
+
+.box-size label {
+	display: inline-block;
+	min-width: 20%;
+	margin-right: 20px;
+}
+
+.customized-step-btn {
+	margin-top: 100px;
+	margin-bottom: 30px;
+	border: none;
+	text-align: center;
+}
+
+@media (max-width: 767px) {
+	.customized-step-btn { margin-top: 30px; }
+}
+
+.customized-step-btn li {
+	float: none;
+	margin-bottom: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.customized-step-btn .btn-baoz-next {
+	display: inline-block;
+	min-width: 80px;
+	padding: 3px 30px;
+	margin-right: 0;
+	
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	background-color: #CD494C;
+}
+
+.customized-step-btn .btn-baoz-next:hover {
+	color: #FF8104;
+	background-color: #CD494C;
+}
+/* finish designing main */
+
+
+/* start to design footer */
+footer {
+	padding-top: 50px;
+	margin-top: 40px;
+	color: #9f9f9f;
+	background-color: #f5f5f5;
+}
+
+@media (max-width: 767px) {
+	footer { padding-top: 15px; margin-top: 20px; }
+}
+
+.company-info > div > div > p {
+	font-size: 16px;
+	color: #9f9f9f;
+}
+
+.company-info ul li {
+	display: inline-block;
+	margin-right: 20px;
+	list-style-type: none;
+}
+
+.company-info ul li a {
+	color: #9f9f9f;
+	text-decoration: none;
+}
+
+.company-info ul li a:hover {
+	color: #1376DC;
+}
+
+.company-info > div > div:last-child {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+	.company-info > div > div:last-child { justify-content: flex-start; }
+}
+
+.company-connect {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.company-info + p {
+	padding: 3px 0;
+	margin-top: 40px;
+	margin-bottom: 0;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+	background-color: #1376DC;
+}
+
+@media (max-width: 767px) {
+	.company-info + p { margin-top: 20px; }
+}
+/* finish designing footer */

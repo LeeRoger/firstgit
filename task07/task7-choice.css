@@ -11,6 +11,14 @@ header h1 {
 	color: #fff;
 }
 
+header h1 a,
+header h1 a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+header h1 a:hover { color: #f8be5d; }
+
 
 /* start设计整体的样式 */
 html, body {
@@ -31,6 +39,8 @@ main {
 
 /* start设计上次游戏部分 */
 a.last-game {
+	position: relative;
+	display: block;
 	margin: 0;
 	padding: 0;
 	height: 58px;
@@ -42,8 +52,8 @@ a.last-game {
 }
 
 a.last-game span {
-	float: right;
-	padding-right: 5px;
+	position: absolute;
+	right: 5px;
 	font-size: 1.8em;
 	font-weight: 500;
 }
@@ -62,8 +72,11 @@ a.last-game span {
 	background-color: #fff;
 }
 
-#myCarousel { background-color: #fff; }  /* 使小窗口浏览器下，轮播区域溢出内容背景为白色，解决bug */
+#myCarousel {
+	padding-bottom: 30px;
+	background-color: #fff;    /* 使小窗口浏览器下，轮播区域溢出内容背景为白色，解决bug */
 
+}
 div.item h2 {
 	margin: 0;
 	padding: 14px 0;
@@ -118,5 +131,5 @@ a.carousel-control.right {
 	background-size: 18px auto;
 }
 
-div.reach { height: 447px; }  /* 填补轮播2、3、4的游戏具体版本部分 */
+div.reach { height: 432px; }  /* 填补轮播2、3、4的游戏具体版本部分 */  /* 原来是457px，该怎么解释减少了25px呢？ */
 /* end设计轮播区域 */

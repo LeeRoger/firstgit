@@ -1,0 +1,77 @@
+@pageBgColor: #EEF0F4;
+@headerBgColor: #5AC0CE;
+@floatWidth: 32.4%;
+
+* { margin: 0; padding: 0; }
+
+
+.sign {
+	background-color: @headerBgColor;
+
+	p {
+		display: inline-block;
+		line-height: 3em;
+		color: #fff;
+		vertical-align: center;
+	}
+
+	.first { float: left; width: @floatWidth; margin-left: 1.2%; }
+	.second { width: @floatWidth; text-align: center; font-weight: 600; }
+	.third { float: right; width: @floatWidth; margin-right: 1.2%; text-align: right; }
+
+}
+
+
+.info {
+	background-color: @pageBgColor;
+
+	fieldset {
+		border: none;
+
+		.row {
+			height: 2em;
+			background-color: #fff;
+			padding: .5em 0;
+			margin: .8em 0;
+
+			img {
+				height: 2em;
+				width: 2em;
+				padding: .8em 0;
+				border-right: 2px solid @pageBgColor;
+			}
+
+			input {
+				width: calc(100% - 4em - 1.6em - 2px);
+				margin-left: .5em;
+				line-height: 32px;
+				vertical-align: top;
+			}
+		}
+	}
+
+	input[type="submit"] {
+		width: 100%;
+		line-height: 3em;
+		color: #fff;
+		font-size: 1em;
+		text-align: center;
+		letter-spacing: 1em;
+		background-color: @headerBgColor;
+		border: none;	
+	}
+
+	a {
+		display: inline-block;
+		width: 98.8%;
+		margin-top: 1em;
+		margin-right: 1.2%;
+		text-align: right;
+		font-size: .8em;
+		color: @headerBgColor;
+		text-decoration: underline;
+	}
+}
+
+
+html, body, .page { margin: 0; height: 100%; background-color: @pageBgColor; }

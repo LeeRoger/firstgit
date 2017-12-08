@@ -1,6 +1,7 @@
 @pageBgColor: #EEF0F4;
 @headerBgColor: #5AC0CE;
 @floatWidth: 32.4%;
+@marginEdge: 1.2%;
 
 * { margin: 0; padding: 0; }
 
@@ -15,9 +16,9 @@
 		vertical-align: center;
 	}
 
-	.first { float: left; width: @floatWidth; margin-left: 1.2%; }
+	.first { float: left; width: @floatWidth; margin-left: @marginEdge; }
 	.second { width: @floatWidth; text-align: center; font-weight: 600; }
-	.third { float: right; width: @floatWidth; margin-right: 1.2%; text-align: right; }
+	.third { float: right; width: @floatWidth; margin-right: @marginEdge; text-align: right; }
 
 }
 
@@ -35,23 +36,31 @@
 			margin: .8em 0;
 
 			img {
+				float: left;
 				height: 2em;
 				width: 2em;
-				padding: .8em 0;
 				border-right: 2px solid @pageBgColor;
 			}
 
 			input {
-				width: calc(100% - 4em - 1.6em - 2px);
+				width: 80%;
+				min-width: 50px;
+				/*max-width: calc(100% - 4em - 1.6em - 2px);*/
+				min-height: 32px;
 				margin-left: .5em;
-				line-height: 32px;
-				vertical-align: top;
+				/*line-height: 2em;
+				vertical-align: middle;*/
+				border: none;
+				outline: none;
 			}
 		}
 	}
 
 	input[type="submit"] {
+		display: block;
+		box-sizing: border-box;
 		width: 100%;
+		padding-left: 1em;  /* 为了让文字看起来更像是居中的 */
 		line-height: 3em;
 		color: #fff;
 		font-size: 1em;

@@ -1,0 +1,169 @@
+@mainColor: #5FC0CD;
+
+* { margin: 0; padding: 0; }
+
+
+header {
+	background-color: @mainColor;
+	height: 2.4em;
+	display: fixed;
+	left: 0; right: 0; top: 0;
+
+	a {
+		color: #fff;
+		font-size: 1.2em;
+		text-decoration: none;
+		float: left;
+		margin-left: 16px;
+		line-height: 2em;
+		/*text-align: left center;*/
+	}
+
+	h2 {
+		color: #fff;
+		font-size: 1.2em;
+		font-weight: 500;
+		margin-left: 20%;
+		margin-right: 20%;
+		line-height: 2em;
+		width: 60%;
+		text-align: center;
+	}
+}
+
+
+footer {
+	position: fixed;
+	bottom: 0; left: 0; right: 0;
+	height: 3em;
+	background-color: #fff;
+	letter-spacing: -6px;
+
+	button {
+		display: inline-block;
+		width: 48%;
+		margin: 7px 1%;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+
+		font-size: 1em;
+		line-height: 2em;
+		letter-spacing: 0;
+
+		outline: none;
+		border: 2px solid @mainColor;
+		border-radius: 5px;
+		background-color: #fff;
+	}
+
+	.footer-btn-msg { color: @mainColor; }
+
+	.footer-btn-contact {
+		color: #fff;
+		background-color: @mainColor;
+	}
+}
+
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+main {
+	position: absolute;
+	top: 2.4em;
+	bottom: 3em;
+	left: 0;
+	right: 0;
+	overflow: auto;
+
+
+	.content {
+		position: relative;
+		height: 10em;
+		background-image: url(images/background.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	
+		.head-portrait {
+			position: absolute;
+			left: 2em;
+			top: 42.5px;
+
+			width: 75px;
+			height: 75px;
+
+			border-radius: 50%;
+			background-color: #fff;
+			overflow: hidden;
+		}
+
+		img {
+			width: 75px;
+			height: auto;  /* 可有可无 */
+			margin-bottom: -30px;  /* 可有可无 */
+		}
+
+		.user-info {
+			position: relative;
+			top: 55px;
+			margin-left: 10em;
+			color: #fff;
+		
+			.user-position {
+				margin-top: .5em;
+				padding-left: 1em;
+				/*.bgImgLC(position);*/
+				background: url(images/position.png) no-repeat left center;
+				background-size: 12px;
+			}
+		}
+	}
+
+
+	.user-info-list {
+		.instructions, li {
+			position: relative;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			border-bottom: solid 1px #ccc;
+		}
+
+		.user-info-tag {
+			display: inline-block;
+			margin-left: 1em;
+			padding-left: 1em;
+			width: 3em;
+			/*.bgImgLC(list);*/
+			background: url(images/list.png) no-repeat left center;
+			background-size: 14px auto;
+		}
+
+		.instructions span {
+			margin-left: 1em;
+			padding-left: .5em;
+			border-left: solid 3px #5FC0CD;
+		}
+
+		.user-info-label {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			display: inline;
+			margin-left: 1em;
+			padding-right: 1em;
+			/*width: 5em;*/
+			border-right: 1px solid #ccc;
+		}
+
+		.user-info-item {
+			margin-left: 6.5em;
+			padding-left: .5em;
+			padding-right: .5em;
+		}
+	}
+}

@@ -645,6 +645,7 @@ img.arrow-diff { display: none; }
 	top: 50%;
 	transform: translateY(-50%);
 	width: 20%;
+	max-width: 150px;
 }
 
 .cooperation div.company-pro p {
@@ -895,7 +896,7 @@ img.arrow-diff { display: none; }
 /* 开始设计hover状态下显示职位介绍，即div.info-hover */
 .career div.info-hover {
 	position: absolute;
-	top: 0;
+	top: 100%;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -909,7 +910,9 @@ img.arrow-diff { display: none; }
 
 	font-size: 16px;
 	text-align: justify;
-	background-color: rgba(0,0,0,.8)
+	background-color: rgba(0,0,0,.8);
+
+	transition: top .2s ease-in-out 0s;
 }
 
 .career div.info-hover h4 {
@@ -924,7 +927,10 @@ img.arrow-diff { display: none; }
 	padding: 0 50px;
 }
 
-.career section:hover div.info-hover { z-index: 100; }
+.career section:hover div.info-hover {
+	z-index: 100;
+	top: 0;
+}
 /* 结束设计hover状态下显示职位介绍，即div.info-hover */
 /* finish designing main */
 /* 结束职业推荐部分 */

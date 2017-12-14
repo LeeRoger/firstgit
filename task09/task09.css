@@ -61,6 +61,7 @@ nav.navbar-default ul.navbar-nav > li > a {  /* 为了覆盖bootstrap的样式 *
 	font-size: 14px;
 	color: #fff;
 	border-bottom: 3px solid #29b078;
+	text-align: center;  /* 自己添加的样式，非覆盖 */
 }
 
 nav.navbar-default ul.navbar-nav > li > a:hover {
@@ -248,13 +249,21 @@ footer > p {
 }
 
 @media (max-width: 767px) {
+	div.other-info-about ul { margin-top: 20px; }
+
+	div.other-info-wechat,
+	div.other-info-wechat p { text-align: left; }
+}
+
+/* 没必要像我这样精心布局，即使在一定宽度内右边看着有点宽 
+@media (max-width: 767px) {
 	div.other-info > div { position: relative; }
 
 	div.other-info ul { margin-top: 10px; }
 
 	div.other-info-wechat {
 		position: absolute;
-		width: 40%;  /* 为了不让左边的链接被覆盖掉不能点击 */
+		width: 40%;  */ /* 为了不让左边的链接被覆盖掉不能点击 */ /*
 		top: 0;
 		right: 0;
 	}
@@ -265,7 +274,7 @@ footer > p {
 	div.other-info-wechat p { text-align: left; }
 
 	div.other-info-wechat { position: relative; }
-}
+} */
 /* finish deigning footer */
 
 
@@ -377,16 +386,15 @@ p.content {
 
 img.arrow {
 	float: left;
-	margin: 9px calc((20% / 3 - 32px) / 2);   /* 图片的尺寸宽度为32px */
+	padding: 9px calc((20% / 3 - 32px) / 2);   /* 图片的尺寸宽度为32px */
 }
 
 img.arrow-diff { display: none; }
 
 @media (max-width: 767px) {
 	div.study-method div.row:last-child { margin-top: 20px; }
-	div.study-step { width: 35%; }
-	p.content { margin-bottom: 10px }
-	img.arrow { margin: 9px calc((30% / 2 - 32px) / 2); }
+	div.study-step { width: 35%; margin-bottom: 20px; padding-left: 15px; }
+	img.arrow { padding: 9px calc((30% / 2 - 32px) / 2 - 15px) 9px calc((30% / 2 - 32px) / 2); margin-bottom: 30px; }
 	img.arrow-diff { display: inline-block; }
 }
 
@@ -396,12 +404,18 @@ img.arrow-diff { display: none; }
 		float: left;
 	}
 
+	p.content {
+		padding-left: calc((20% - 32px) / 2);
+		justify-content: space-around;
+		text-align: center;
+	}
+
 	img.arrow {
 		display: block;
 		float: left;
 		width: 20%;
 		padding: 9px calc((20% - 32px) / 2);  /* 主要考虑到一般小宽度为320px，所以固定尺寸也还好 */
-		margin: 0;  /* 为了覆盖上面的样式 */
+		margin-bottom: 20px;  /* 为了覆盖上面的样式 */
 	}
 }
 /* 结束布局div.study-method，即如何学习部分 */

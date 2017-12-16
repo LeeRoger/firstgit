@@ -19,13 +19,14 @@ ul.nav-tabs {
 }
 
 .btn-group {
-	margin-top: calc(2em - 16px);
+	margin-top: calc(2em - 13px);
 	margin-left: calc(50% - 62px);
 	border-radius: 4px;
 	background-color: #55ABB9;
 }
 
 .btn-default {
+	line-height: 1.857143em;  /* 26/14 */
 	color: #fff;
 	padding: 0;
 	background-color: #55ABB9;
@@ -211,7 +212,7 @@ div.row>div:last-child   {
 	text-align: left;
 }
 
-div.row>div>p:last-child { padding: 0 2px; }
+/*div.row>div>p:last-child { padding: 0 2px; } */
 
 div.row img {
 	height: 2em;
@@ -227,6 +228,7 @@ p.shape img {
 .shape {
 	display: inline-block;
 	width: 4em;
+	height: 4em;
 	background-color: #5EC0CE;
 	border-radius: 50%;
 }

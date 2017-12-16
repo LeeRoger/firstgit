@@ -12,13 +12,13 @@
 </head>
 <body>
 
-<header role="banner">
+<header class="drop-else" role="banner" onclick="dropElseFunc()">
 	<div class="container">
 		<ul class="btn-group nav nav-tabs" id="myTab">
-			<li class="btn btn-default" role="button">
+			<li class="btn btn-default" role="button" onclick="tabFuncBoss()">
 				<a data-toggle="tab" href="#boss">找雇主</a>
 			</li>
-			<li class="active btn btn-default" role="button">
+			<li class="active btn btn-default" role="button" onclick="tabFuncStaff()">
 				<a data-toggle="tab" href="#staff">找护工</a>
 			</li>
 		</ul>
@@ -32,7 +32,7 @@
 	<section class="container choice-info">
 		<ul class="row">
 			
-			<li class="dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<li id="dropLocation" class="dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="dropFunc()">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">所在地<b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="#">北京</a></li>
@@ -43,7 +43,7 @@
 				</ul>
 			</li>
 
-			<li class="dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<li id="dropFood" class="dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="dropFunc()">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">食宿<b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="#">公司</a></li>
@@ -51,7 +51,7 @@
 				</ul>
 			</li>
 			
-			<li class="dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<li id="dropSick" class="dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="dropFunc()">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">病人情况<b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="#">病危</a></li>
@@ -64,7 +64,7 @@
 		</ul>
 	</section>
 
-	<div class="tab-content container" id="myTabContent">
+	<div class="tab-content drop-else container" id="myTabContent" onclick="dropElseFunc()">
 		<section class="main-info tab-pane fade in active" id="staff">
 
 			<div class="row detail">
@@ -146,7 +146,7 @@
 
 
 <footer>
-	<div class="container">
+	<div class="container drop-else" onclick="dropElseFunc()">
 		<div class="row">
 
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -169,4 +169,5 @@
 
 	
 </body>
+	<script type="text/javascript" src="task12_2.js"></script>
 </html>

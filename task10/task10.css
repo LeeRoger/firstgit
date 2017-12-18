@@ -234,6 +234,7 @@ button.nav-btn.navbar-toggle {
 	display: block;
 	float: left;
 	width: 100%;
+	max-width: 100px;
 	padding: 3px;
 
 	-webkit-appearance: none;
@@ -252,6 +253,13 @@ button.nav-btn.navbar-toggle {
 	flex-direction: row;
 	align-items: center;
 	flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+	.box-size {
+		padding-left: 45px;
+		padding-right: 115px;
+	}
 }
 
 .box-size input {

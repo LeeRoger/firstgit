@@ -33,6 +33,8 @@ ul.nav-tabs {
 	border: none;
 }
 
+.btn-default a { text-decoration: none; }
+
 .container .nav-tabs .btn-default a {  /* 覆盖bootstrap样式 */
 	margin-right: 0;
 	padding: 5px 10px;
@@ -56,7 +58,7 @@ ul.nav-tabs {
 	border: 4px;
 }
 
-开始覆盖框架原有样式，以获得按钮组中间部分的圆角 */ 
+/* 开始覆盖框架原有样式，以获得按钮组中间部分的圆角 */ 
 .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
@@ -127,12 +129,19 @@ li.dropdown b {
 	float: right;
 	margin-top: calc(1em - 2px);
 }
+
+ul.dropdown-menu {  /* 覆盖bootstrap样式 */
+	width: 100%;
+	min-width: 30px;
+	text-align: center;
+}
 /* 完成选择框样式设计 */
 
 section.main-info {
 	margin-top: calc(8em + 10px);
 	margin-bottom: 4.5em;
 }
+section#boss { display: none; }
 
 /* 设计每条信息的样式，从整体到局部，从左到右 */
 div.detail {

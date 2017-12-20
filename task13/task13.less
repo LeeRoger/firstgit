@@ -1,0 +1,42 @@
+@mainColor: #69d1e9;  /* 主色调 */
+@mainBgColor: #EFF0F1; /* 主背景色调 */
+
+
+/* 待重写样式 */
+.homepage main { height: calc(100% - 50px); }
+/* 结束待重写样式 */
+
+* { margin: 0; padding: 0; }
+html, body {
+	height: 100%;
+	background-color: @mainBgColor;
+}
+
+.homepage header {
+	background-color: @mainColor;
+
+	h1 {
+		margin: 0;
+		padding: 5px;
+		color: #fff;
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			&:hover { color: #f8be5d; }
+		}
+	}
+}
+
+.homepage main {
+	background-color: @mainBgColor;
+	
+	.container {
+		height: 100%;
+
+		.row { text-align: center; }
+		
+	}
+	
+
+}

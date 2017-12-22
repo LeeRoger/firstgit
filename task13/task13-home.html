@@ -6,13 +6,19 @@
 	<title>选择游戏</title>
 
 	<!-- 
-	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">   -->
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- 自己的样式文件 -->
 	<link href="myBootstrap.css" rel="stylesheet">
 	<link href="task13.css" rel="stylesheet">
+	<script src="carousel.js"></script>
+	<style>
+		.homepage main { height: calc(100% - 50px); }
+		.homepage .last-game { padding-top: calc((58px - 1.2em) / 2 ); }
+		.homepage .container>div:nth-child(2) { height: calc(100% - 90px); } /* 使轮播区域占满剩余的屏幕 */
+	</style>
 </head>
 <body class="homepage">
 
@@ -24,10 +30,10 @@
 	<div class="container">
 
 		<div class="row">
-			<a class="last-game btn btn-block btn-sm" href="task7-vote.html">上次游戏：捉鬼拆词版<span>&rsaquo;</span></a>
+			<a class="last-game btn btn-block btn-sm" href="task13-vote.html">上次游戏：捉鬼拆词版<span>&rsaquo;</span></a>
 		</div>
 
-		<div class="row">
+		<div class="row game-choice">
 			<!-- start writing carousel part -->
 			<div id="myCarousel" class="carousel slide">
 

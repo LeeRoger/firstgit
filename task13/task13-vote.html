@@ -5,12 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>投票</title>
 
-	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<!--
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  -->
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- 自己的样式文件 -->
-	<link href="task7-vote.css" rel="stylesheet">
+	<link href="myBootstrap.css" rel="stylesheet">
+	<link href="task13.css" rel="stylesheet">
 	<script>
 		$(function(){
 			var audio = $('#audioTag').get(0);
@@ -32,7 +34,7 @@
 <body class="votepage">
 
 <header>
-	<a class="catalog" href="task7.html"><img src="images/catalog.png"></a>
+	<a class="catalog" href="task13-home.html"><img src="images/catalog.png"></a>
 	<h2 class="vote">投票</h2>
 	<a class="close" href="#"><img src="images/close.png"></a>
 </header>
@@ -243,7 +245,7 @@
 </main>
 
 <footer>
-	<button class="btn btn-lg"><a href="task7-result.html">投死</a></button>
+	<button class="btn btn-lg" onclick="self.location='task13-result.html'"><a href="task13-result.html">投死</a></button>
 </footer>
 	
 </body>

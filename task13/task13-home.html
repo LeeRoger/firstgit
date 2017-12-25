@@ -14,16 +14,33 @@
 	<link href="myBootstrap.css" rel="stylesheet">
 	<link href="task13.css" rel="stylesheet">
 	<script src="carousel.js"></script>
+	<script>
+		function helloLeft() {
+			var rightContent = document.getElementById("rightContent");
+			var leftContent = document.getElementById("leftContent");
+
+			if (rightContent.classList.contains("right-content")==true) {
+				rightContent.classList.remove("right-content");
+				leftContent.style.right = "100%";
+			}
+			else {
+			 	rightContent.classList.add("right-content");
+				leftContent.style.right = "25%";
+			}
+		}
+	</script>
 	<style>
 		.homepage main { height: calc(100% - 50px); }
 		.homepage .last-game { padding-top: calc((58px - 1.2em) / 2 ); }
 		.homepage .container>div:nth-child(2) { height: calc(100% - 90px); } /* 使轮播区域占满剩余的屏幕 */
 	</style>
 </head>
-<body class="homepage">
+<body class="homepage" id="homePage">
+
+<div id="rightContent">
 
 <header>
-	<h1 class="catalogue"><a href="#">≡</a></h1>
+	<h1 class="catalogue"><a onclick="helloLeft()">≡</a></h1>
 </header>
 
 <main>
@@ -80,6 +97,22 @@
 
 	</div>
 </main>
-	
+
+</div>
+<div id="leftContent" class="left-content">
+	<p>
+		<span class="glyphicon glyphicon-volume-down"></span>公告<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+	<p>
+		<span class="glyphicon glyphicon-asterisk"></span>设置<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+	<p>
+		<span class="myfont-icon">?</span>帮助<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+	<p>
+		<span class="myfont-icon">i</span>关于<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+</div>
+
 </body>
 </html>

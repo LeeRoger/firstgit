@@ -18,6 +18,7 @@ html, body {
 	background-color: @mainBgColor;
 }
 
+.homepage { background-color: @mainBgColor; }
 .votepage { background-color: @voteBgColor; }
 .resultpage { background-color: #fff; }
 
@@ -32,6 +33,7 @@ html, body {
 		a {
 			color: #fff;
 			text-decoration: none;
+			cursor: pointer;
 			&:hover { color: #f8be5d; }
 		}
 	}
@@ -76,7 +78,7 @@ html, body {
 
 		.game-choice {
 			.carousel {
-				padding-bottom: 30px;
+				padding-bottom: 20px; /* 之前是30，改了之后就没有溢出了，因为轮播指针高度是20px，后面变为25，高度上可能有计算偏差 */
 				background-color: #fff;    /* 使小窗口浏览器下，轮播区域溢出内容背景为白色，解决bug */
 				
 				.carousel-inner .item {
@@ -115,9 +117,9 @@ html, body {
 				}
 
 				.carousel-indicators {
-					position: fixed;
+					/*position: fixed;*/ /* 加上这个有bug，移动端会有很大一片空白，然后点击事件之后，并不会变动 */
 					bottom: 0;
-					margin-bottom: 5px;
+					margin-top: 5px; /* 之前是bottom */
 					background: transparent;
 
 					li {
@@ -138,6 +140,79 @@ html, body {
 					background-size: 18px auto;
 				}
 			}
+		}
+	}
+}
+.homepage {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.homepage .right-content {
+	@radius: 5px;
+	position: absolute;
+	top: 0; right: -75%; bottom: 0; left: 75%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: @mainColor;
+
+	main .container {
+		background-color: @mainColor;
+		&>div:first-child {
+			border-radius: @radius;
+			background-color: #55ABB9;
+			a { color: #fff; }
+		}
+		.game-choice {
+			background-color: rgba(255,255,255,.55);
+			border-radius: @radius;
+			.carousel {
+				background-color: rgba(255,255,255,.55);
+				border-radius: @radius;
+			}
+			.game-name {
+				background-color: #fff;
+				border-radius: @radius @radius 0 0;
+			}
+			.carousel-inner .item .row a { border-radius: @radius; }
+		}
+	}
+}
+.homepage .left-content {
+	position: absolute;
+	top: 0; right: 100%; bottom: 0; left: 0;
+	overflow-x: hidden;
+	z-index: 10000;
+	background-color: #fff;
+	p {
+		padding: 15px;
+		line-height: 25px;
+		font-size: 18px;
+		margin-bottom: 0;
+		color: @mainColor;
+		border-bottom: 1px solid #ddd;
+
+		span {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			line-height: 20px;
+			font-size: 12px;
+			color: @mainColor;
+			vertical-align: top;
+			text-align: center;
+
+			&:first-child {
+				margin-right: 15px;
+				border: 2px solid @mainColor;
+				border-radius: 50%;
+			}
+			&:last-child {
+				float: right;
+				font-size: 18px;
+			}
+
+			&.myfont-icon { font-weight: 800; }
 		}
 	}
 }

@@ -1,0 +1,19 @@
+/* 面包屑 */
+.breadcrumb {
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	list-style: none;
+	background-color: #f5f5f5;
+	border-radius: 4px;  /* 为什么明明都没有设置border，确要设置一个border-radius */
+}
+
+.breadcrumb > li { display: inline-block; }
+
+.breadcrumb > li + li:before {
+	padding: 0 5px;
+	color: #ccc;
+	content: "/\00a0";
+}
+
+.breadcrumb > .active { color: #777; }
+/* 结束面包屑 */

@@ -1,0 +1,256 @@
+/* 职业推荐部分 */
+/* start to design main */
+/* 开始设计面包屑部分 */
+.career div.bread ol.breadcrumb {
+	padding: 20px 0;
+	margin-bottom: 0;
+	font-weight: 600;
+	border-bottom: 1px solid #ccc;
+	background-color: #fafafa;
+}
+
+.career ol.breadcrumb > li + li:before {
+	color: #000;
+	content: ">";
+	font-weight: normal;
+}
+
+.career ol.breadcrumb li.active {
+	color: #29b078;
+}
+
+.career ol.breadcrumb li a { color: #000; }
+/* 结束布局面包屑部分 */
+
+/* 开始设计方向选择区域，即div.web-nav */
+.career div.web-nav div.web-nav-justify {
+	margin: 0;   /* 因为后续没有div[class^="col-"]，只能将margin: 0 -15px;覆盖，要不然就超出了边界，然后不写div.row的话，
+	                因内部元素都设为了float: left; 只设置div的话，高度就为0了 */
+	border-bottom: 1px solid #ddd;
+}
+
+.career ul.web-nav-ul {
+	display: flex;
+	min-height: 50px;
+	margin-bottom: 0;
+
+	align-items: center;
+	flex-wrap: wrap;
+	list-style-type: none;
+	background-color: #fafafa;
+}
+
+.career ul.web-nav-ul li:not(.web-nav-name) { margin-left: 15px; }
+
+.career li.web-nav-name { color: #999; }
+
+.career div.web-nav ul.web-nav-ul a {    /* 写div.web-nav是为了增加优先级，覆盖bootstrap的样式 */
+	display: block;
+ 	padding: 3px;
+ 	margin: 3px 0;
+	color: #000;
+	border-radius: 3px;
+}
+
+/* ul.web-nav-ul li a:hover {
+	color: #29b078;
+	background-color: #fafafa;
+} */
+
+.career ul.web-nav-ul li a:hover {
+	color: #fff;
+	background-color: #29b078;
+}
+
+.career ul.web-nav-ul li a:active {
+	color: #fff;
+	background-color: #29b078;
+}
+
+.career ul.web-nav-ul li.active a {
+	color: #fff;
+	text-decoration: none;
+	background-color: #29b078;
+}
+
+.career ul.web-nav-ul li.active a:hover { color: #333; }
+/* 结束布局div.web-nav，未能完成任务 */
+
+/* 整体布局 */
+.career div.front-end,
+.career div.back-end,
+.career div.mobile-develop,
+.career div.ops-develop {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.career div.ops-develop { margin-bottom: 200px; }
+@media (max-width: 767px) {
+	div.ops-develop { margin-bottom: 50px; }
+}
+
+.career div.container h3 {
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+
+
+/* 开始设计非hover状态下显示职位介绍，即section */
+.career section {
+	position: relative;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 50px;
+	background-color: #fff;
+	box-shadow: 1px 1px 5px #ccc;
+}
+
+.career img.favicon {
+	float: left;
+	width: 40%;
+	max-width: 150px;
+	margin: 20px 0;
+}
+
+.career div.jd {
+	display: flex;
+	float: left;
+	width: 60%;
+	/*min-width: calc(100% - 150px);*/
+	/*margin-left: 40%;*/
+	padding-left: 15px;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.career div.jd h4 {
+	padding-top: 5px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.career div.jd p {
+	font-size: 16px;
+	text-align: justify;
+	word-break: break-all;
+}
+
+.career table {
+	clear: both;
+	/*width: calc(100% + 30px);*/  /* 为了抵消因负margin产生的不能填满父元素的影响 */
+	margin-top: -1px;    /* 为了消除两个表格之间重叠的边框 */
+	margin-left: -15px;  /* 为了让边框填满整个父元素 */
+	margin-right: -15px;
+	font-size: 12px;
+	color: #999;
+}
+
+.career table td {
+	height: 30px;
+	padding: 0 15px;     /* 为了抵消table产生的负margin值 */
+	vertical-align: middle;
+}
+
+.career table.market-need td { width: 50%; }
+
+.career table.market-need span { color: #000; }
+
+.career table.market-need span.year,    /* 为了覆盖上一句的color属性，需要在前面添加table.market-need提升优先级 */
+.career table.market-need span.need {
+	padding-left: 15px;
+	color: red;
+	font-weight: 600;
+}
+
+.career span.star {
+	margin-left: 15px;
+	/* width: 20px; */  /* 就算设置display: inline-block; width属性也不起作用，可能是因为是表格的关系 */
+	letter-spacing: 4px;    /* 可以与背景图片进行配合，如果需要星星有间隔的话，增加背景图片的空白区域即可 */
+	background: url(images/career/star.png) left center repeat-x;
+}
+
+.career table.salary td.salary-detail {
+	width: 40%;
+	text-align: center;
+}
+
+.career table.salary td:not(.salary-detail) {
+	padding-left: 25px;
+	color: #000;
+}
+
+.career table.salary td:not(.salary-detail) span:last-child { float: right; }
+
+/* 开始设计两个表格的边框 */
+.career table td { border: 1px solid #ccc; }
+/* table.market-need tr td:first-child,
+   table.salary td.salary-detail { border-left: none; } */  /* 可以合并为下面的一个语句 */
+.career table td:first-child { border-left: none; }
+.career table td:last-child { border-right: none; }
+/* 结束设计两个表格的边框 */
+
+.career table + p {
+	/*width: calc(100% + 30px);*/
+	margin: 0 -15px;
+	padding: 10px 15px;
+	font-weight: 600;
+	border-bottom: 1px solid #ccc;
+}
+
+.career span.student-num { color: red; }
+
+.career table + p + p {
+	margin-bottom: 0;
+	padding: 10px 0;
+	font-size: 12px;
+	color: #999;
+}
+/* 结束设计非hover状态下显示职位介绍，即section */
+
+/* 开始设计hover状态下显示职位介绍，即div.info-hover */
+.career div.info-hover {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -100;
+	color: #fff;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: auto;
+
+	font-size: 16px;
+	text-align: justify;
+	background-color: rgba(0,0,0,.8);
+
+	transition: top .2s ease-in-out 0s;
+}
+
+.career div.info-hover h4 {
+	margin-top: 0;
+	margin-bottom: 40px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.career div.info-hover p {
+	margin-bottom: 0;
+	padding: 0 50px;
+}
+
+.career section:hover div.info-hover {
+	z-index: 100;
+	top: 0;
+}
+/* 结束设计hover状态下显示职位介绍，即div.info-hover */
+/* finish designing main */
+/* 结束职业推荐部分 */

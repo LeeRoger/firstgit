@@ -1,0 +1,81 @@
+footer {
+	color: #fff;
+	background-color: #29b078;
+
+	.other-info {
+		& > div { padding-bottom: 15px; }
+
+		div {
+			p {
+				margin-top: 20px;
+				font-size: 16px;
+				letter-spacing: 0;
+			}
+			
+			a {
+				padding-bottom: 2px;
+				color: #fff;
+				border-bottom: 1px solid #29b078;
+
+				&:hover {
+					text-decoration: none;
+					border-bottom: 1px solid #fff;
+				}
+			}
+		}
+
+		ul {
+			letter-spacing: -6px;
+
+			li {
+				display: inline-block;
+				padding: 0 8px;
+				list-style-type: none;
+				letter-spacing: 0;
+
+				&:first-child { padding-left: 0; }
+			}
+		}
+
+		.other-info-about ul {
+			margin-top: 60px;
+
+			li:nth-child(2) {
+				border-left: 2px solid #fff;
+				border-right: 2px solid #fff;
+			}
+		}
+
+		.other-info-link ul {
+			margin-top: 20px;
+		}
+
+		.other-info-wechat {
+			text-align: right;
+
+			p {
+				margin-bottom: 3px;
+				text-align: right;
+			}
+		}
+	}
+
+	> p {
+		margin-bottom: 0;
+		padding: 3px;
+		font-size: 12px;
+		text-align: center;
+		border-top: 1px solid rgba(255,255,255,.3);
+	}
+
+	@media (max-width: 767px) {
+		div.other-info {
+			.other-info-about ul { margin-top: 10px; }
+		
+			.other-info-wechat,
+			.other-info-wechat p { text-align: left; }
+		}
+	}
+}
+
+/* finish deigning footer */

@@ -1,0 +1,559 @@
+* { margin: 0; padding: 0; }
+
+body { background-color: #fafafa; }
+
+h3 {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+div.introduction,
+div.study-method,
+div.excellent-student,
+div.business-partner,
+div.friendly-link { margin-top: 80px; }
+
+/* start to design header */
+span.telephone {
+	font-size: 16px;
+	line-height: 40px;
+	color: #29b078;
+}
+
+a.share {
+	float: right;
+	padding-top: 8px;  /* (40-24)/2=8px */
+	padding-left: 8px;
+}
+
+nav.navbar-default {
+	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
+	background-color: #29b078;
+}
+
+nav.navbar-default ul.navbar-nav > li > a {  /* 为了覆盖bootstrap的样式 */
+	font-size: 14px;
+	color: #fff;
+}
+
+nav.navbar-default ul.navbar-nav > li > a:hover {
+	color: #fff;
+	border-bottom: 3px solid #fff;
+}
+
+nav.navbar-default ul.navbar-nav > li.active > a {  /* 为了覆盖bootstrap的样式 */
+	border-bottom: 3px solid #fff;
+	color: #fff;
+	background-color: #29b078;
+}
+
+nav.navbar-default ul.navbar-nav > li.active > a:hover {
+	background-color: rgba(100,100,100,.2)
+}
+
+div.nav-btn { display: none; }
+
+@media (max-width: 767px) {
+
+	div.nav-ul { display: none; }
+
+	div.nav-btn {
+		display: block;
+		height: 53px;
+		text-align: right;
+		background: url(images/company/logo.png) left center no-repeat;
+		background-size: auto 30px;
+	}
+
+	div.nav-btn button {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 0 5px;
+
+		line-height: 33px;
+		font-size: 40px;
+		color: rgba(50,50,50,.5);
+
+		background-color: #29b078;
+		border: 1px solid rgba(50,50,50,.5);
+	}
+
+	div.nav-btn button:hover {
+		color: #fafafa;
+		background-color: #29b078;
+	}
+
+	/* 从这里开始感觉没有作用，但又不知道怎么改 */
+	div.nav-btn button:focus {
+		color: #eee;
+		background-color: #29b078;
+	}
+
+	div.nav-btn button:active {
+		color: #eee;
+		background-color: #29b078;
+	}
+
+	.open>.dropdown-toggle.btn-default:focus,
+	.open>.dropdown-toggle.btn-default:hover {  /* 这样才算覆盖了bootstrap的样式，但又不知道.open是干啥的 */
+		color: #29b078;
+		background-color: rgba(250,250,250,.7)
+	}
+
+	.open>.dropdown-toggle.btn-default {
+    	color: #333;
+    	background-color: #fff;
+    	border-color: #adadad;
+    }
+    /* 到这里结束 */
+
+	div.nav-btn ul {
+		width: 100%;
+		margin: 0;
+		background-color: #29b078;
+		border: none;
+		border-top: 1px solid #999;
+		border-radius: 0;
+	}
+
+	nav.navbar-default ul.navbar-nav > li > a {  /* 为了覆盖bootstrap的样式 */
+	border-bottom: 1px solid #29b078;
+	}
+
+	nav.navbar-default ul.navbar-nav > li > a:hover {
+	border-bottom: 1px solid #fff;
+	}
+
+	nav.navbar-default ul.navbar-nav > li.active > a {  /* 为了覆盖bootstrap的样式 */
+	border-bottom: 1px solid #fff;
+	}
+
+}
+/* finish designing header */
+
+
+/* start to design main */
+/* 开始设计轮播 */
+div.carousel a.left {
+	background: url(images/homepage/carousel-left.png) right center no-repeat;
+}
+
+div.carousel a.right {
+	background: url(images/homepage/carousel-right.png) left center no-repeat;
+}
+/* 结束设计轮播 */
+
+/* 开始布局div.introduction部分 */
+div.introduction div.row {
+	text-align: center;
+}
+
+div.introduction div.row img {
+	height: 48px;
+}
+
+p.intro-info {
+	font-size: 16px;
+	text-align: left;
+	color: #999;
+}
+
+div.introduction div.row > div:last-child {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	padding-left: 30px; 
+	border-left: 1px dashed #ccc;
+	text-align: left;
+	font-size: 18px;
+}
+
+span.icon-user {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background: url(images/homepage/icon-user.png) center no-repeat;
+}
+
+span.user-number {
+	display: inline-block;
+	line-height: 30px;
+	vertical-align: top;
+	color: #29b078;
+}
+
+@media (max-width: 991px) {  /* col-sm-6以下 */
+	p.intro-info,
+	div.introduction div.row > div:last-child {
+		padding-left: 15px;
+		text-align: center;
+	}
+}
+/* 结束布局div.introduction部分 */
+
+/* 开始布局div.study-method，即如何学习部分 */
+div.study-method div.row:not(last-child) { margin-top: 30px; }
+div.study-method div.row:last-child { margin-top: 60px; }
+
+div.study-step {
+	float: left;
+	width: 20%;
+}
+
+span.number {
+	display: inline-block;
+	float: left;
+	width: 50px;
+
+	line-height: 50px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #29b078;
+	text-align: center;
+
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 1px 1px #ccc;
+}
+
+p.content {
+	display: flex;
+	min-height: 50px;
+	margin-left: 60px;
+	margin-bottom: 0;
+	align-items: center;
+}
+
+img.arrow {
+	float: left;
+	margin: 9px calc((20% / 3 - 32px) / 2);   /* 图片的尺寸宽度为32px */
+}
+
+img.arrow-diff { display: none; }
+
+@media (max-width: 767px) {
+	div.study-method div.row:last-child { margin-top: 20px; }
+	div.study-step { width: 35%; }
+	p.content { margin-bottom: 10px }
+	img.arrow { margin: 9px calc((30% / 2 - 32px) / 2); }
+	img.arrow-diff { display: inline-block; }
+}
+
+@media (max-width: 600px) {
+	div.study-step {
+		width: 80%;
+		float: left;
+	}
+
+	img.arrow {
+		display: block;
+		float: left;
+		width: 20%;
+		padding: 9px calc((20% - 32px) / 2);  /* 主要考虑到一般小宽度为320px，所以固定尺寸也还好 */
+		margin: 0;  /* 为了覆盖上面的样式 */
+	}
+}
+/* 结束布局div.study-method，即如何学习部分 */
+
+/* 开始布局div.excellent-student，即优秀学员部分 */
+div.excellent-student div.row > div {
+	margin-top: 30px;
+	text-align: center;
+}
+
+div.student {
+	padding-bottom: 5px;
+	background-color: #fff;
+	box-shadow: 2px 2px 5px #ddd;
+}
+
+img.person {
+	width: 50%;
+	height: 50%;
+	max-width: 108px;
+	max-height: 108px;  /* 为了自适应时图片不会变模糊 */
+	margin-top: 15px;
+}
+
+div.student p {
+	text-align: left;
+	margin: 15px 20px;
+	color: #999;
+}
+
+/*div.row1 { position: relative; } */
+
+div.excellent-student div.carousel-inner { overflow: visible; }
+div.excellent-student ol.carousel-indicators { bottom: -40px; }
+div.excellent-student ol.carousel-indicators li { border-color: #29b078; }
+div.excellent-student ol.carousel-indicators li.active { background-color: #29b078; }
+/* 结束布局div.excellent-student，即优秀学员部分 */
+
+/* 开始布局div.business-partner，即合作企业部分 */
+/* div.business-partner div.row { box-shadow: 1px 1px 5px #ddd; } */
+
+div.business-partner div.companys-all {
+	float: left;	/* 如果没有这个，因为它的子元素都是float的。它的高度就会变为0 */
+	width: calc(100% - 30px);
+	margin: 0 15px;
+	box-shadow: 0px 0px 5px #ddd;
+}
+
+div.business-partner h3 { margin-bottom: 30px; }
+
+div.company {
+	display: flex;
+	width: 20%;
+	height: 150px;
+	float: left;
+
+	justify-content: center;
+	align-items: center;
+
+	background-color: #fff;
+}
+
+div.company img { max-width: 80%; }
+/*    之前是用表格方式进行的布局，现在更改方式之后，这些就不用了
+div.company img {
+	display: block;
+	width: 100%;
+}
+
+div.company img[src$="alibaba.png"] { padding: 0 calc((100% - 146px) / 2); }
+div.company img[src$="jinshan.png"] { padding: 0 calc((100% - 57px) / 2); }
+div.company img[src$="huanxin.png"] { padding: 0 calc((100% - 140px) / 2); }
+div.company img[src$="ronglian.png"] { padding: 0 calc((100% - 171px) / 2); }
+div.company img[src$="qiniu.png"] { padding: 0 calc((100% - 130px) / 2); }  */
+
+div.company:hover {
+	position: relative;   /* 为了让中间的图片hover时右边有阴影 */
+	z-index: 100;
+	box-shadow: 0px 0px 10px #ddd;
+}
+
+@media (max-width: 767px) {
+	div.company {
+		width: 33.333333%;
+		height: 100px;
+		box-shadow: 0px 0px 2px #ddd;
+	}
+
+	div.company-break { margin-left: 16.666666%; }
+
+	div.company img { max-height: 50px; }
+}
+/* 结束布局div.business-partner，即合作企业部分 */
+
+/* 开始布局div.friendly-link，即友情链接部分 */
+div.friendly-link {
+	padding-bottom: 3px;
+	background-color: #fff;
+}
+
+ul.links {
+	display: flex;
+	margin-bottom: 5px;
+	justify-content: space-between;
+}
+
+ul.links li {
+	padding: 3px 0;
+	list-style-position: inside;
+}
+
+ul.links li a {
+	color: #999;
+	border-bottom: 2px solid #fff;    /* 为了hover时页面不会产生变动，可能是设置了flex的原因 */
+}
+
+ul.links li a:hover {
+	text-decoration: none;
+	border-bottom: 2px solid #29b078;
+}
+
+@media (max-width: 991px) {
+	ul.links {
+		display: block;
+		width: 100%;
+	}
+
+	ul.links li {
+		width: 20%;
+		float: left;
+	}
+}
+
+@media (max-width: 500px) {
+	ul.links li {
+		width: 50%;
+		padding-left: 10%;
+	}
+}
+/* 结束布局div.friendly-link，即友情链接部分 */
+/* finish design main */
+
+
+/* start to design footer */ /*
+footer {
+	color: #fff;
+	background-color: #29b078;
+}
+
+div.other-info-left {
+	float: left;
+	width: 30%;
+	letter-spacing: -6px;
+}
+
+div.other-info-right {
+	position: relative;
+	height: 140px;
+	margin-left: 30%;
+
+}
+
+div.other-info div p {
+	margin-top: 20px;
+	font-size: 16px;
+	letter-spacing: 0;
+}
+
+div.other-info div a {
+	display: inline-block;
+	padding-bottom: 2px;
+	color: #fff;
+	border-bottom: 1px solid #29b078;   /* 为了hover时页面其他部分不变动 */ /*
+}
+
+div.other-info div a:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+}
+
+div.other-info-left a {
+	box-sizing: content-box;
+	margin-top: 60px;
+	padding-left: 8px;
+	padding-right: 8px;
+	letter-spacing: 0;
+}
+
+div.other-info-left a:nth-of-type(1) { padding-left: 0; }
+
+div.other-info-left a:nth-of-type(2) {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+div.other-info-right span {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 16px;
+}
+
+div.other-info-right img {
+	position: absolute;
+	top: 25px;
+	right: 0;
+	width: 96px;
+}
+
+div.other-info-right a {
+	margin-top: 20px;
+	margin-right: 20px;
+
+}
+
+footer > p {
+	margin-bottom: 0;
+	padding: 3px;
+	font-size: 12px;
+	text-align: center;
+	border-top: 1px solid rgba(255,255,255,.3);
+}
+/* finish deigning footer */ 
+
+/* start to design footer */
+footer {
+	color: #fff;
+	background-color: #29b078;
+}
+
+div.other-info > div { padding-bottom: 15px; }
+
+div.other-info div p {
+	margin-top: 20px;
+	font-size: 16px;
+	letter-spacing: 0;
+}
+
+div.other-info ul { letter-spacing: -6px; }
+
+div.other-info ul li {
+	display: inline-block;
+	padding: 0 8px;
+	list-style-type: none;
+	letter-spacing: 0;
+}
+
+div.other-info ul li:first-child { padding-left: 0; }
+
+div.other-info-about ul { margin-top: 60px; }
+div.other-info-link ul { margin-top: 20px; }
+
+div.other-info-about ul li:nth-child(2) {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+div.other-info div a {
+	padding-bottom: 2px;
+	color: #fff;
+	border-bottom: 1px solid #29b078;   /* 为了hover时页面其他部分不变动 */
+}
+
+div.other-info div a:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+}
+
+div.other-info-wechat { text-align: right; }
+
+div.other-info-wechat p {
+	margin-bottom: 3px;
+	text-align: right;
+}
+
+footer > p {
+	margin-bottom: 0;
+	padding: 3px;
+	font-size: 12px;
+	text-align: center;
+	border-top: 1px solid rgba(255,255,255,.3);
+}
+
+@media (max-width: 767px) {
+	div.other-info > div { position: relative; }
+
+	div.other-info ul { margin-top: 10px; }
+
+	div.other-info-wechat {
+		position: absolute;
+		width: 40%;  /* 为了不让左边的链接被覆盖掉不能点击 */
+		top: 0;
+		right: 0;
+	}
+}
+
+@media (max-width: 450px) {
+	div.other-info-wechat,
+	div.other-info-wechat p { text-align: left; }
+
+	div.other-info-wechat { position: relative; }
+}
+
+/* finish deigning footer */

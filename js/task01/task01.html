@@ -28,9 +28,13 @@
 		margin-left: 1%;
 		margin-top: 10px;
 		clear: both;
+
 		color: orange;
 		text-align: center;
 		cursor: pointer;
+
+		outline: none;
+		background-color: #fff;
 		border: 1px solid orange;
 		border-radius: 6px;
 	}
@@ -53,8 +57,11 @@
 		<div class="bling"></div>
 		<div class="bling"></div>
 	</div>
-	<div class="btn" id="startBling" onclick="startBling()">开始闪</div>
-	<div class="btn" id="stopBling" onclick="stopBling()">结束闪</div>
+	<!-- 这样写会有bug，如果多次点击“开始闪”，setInterval()会执行多次，就变得不可控了
+	<div class="btn" id="startBling" onclick="startBling()">开始闪
+	<div class="btn" id="stopBling" onclick="stopBling()">结束闪</div> -->
+	<input class="btn" id="startBling" type="button" value="开始闪">
+	<input class="btn" id="stopBling" type="button" value="结束闪">
 
 <script src="task01.js" type="text/javascript"></script>
 </body>

@@ -41,23 +41,27 @@ function bling() {
 	idClear = window.setTimeout(reset, 1500);
 }
 
+/*
 function startBling() {
+	bling();  // setInterval()并不会在一开始就执行，是在等待间隔时间之后执行
 	idBling = window.setInterval(bling, 2000);
-
 }
 
 function stopBling() {
 	window.clearInterval(idBling);
 }
+*/
 
-/* 为了js与html更好的分离，下面这样写可能更好
+/* 为了js与html更好的分离，下面这样写可能更好 */
 var startBling = document.getElementById("startBling");
 var stopBling = document.getElementById("stopBling");
 
 startBling.onclick = function() {
+	bling();  // setInterval()并不会在一开始就执行，是在等待间隔时间之后执行
+	startBling.disabled = true;
 	idBling = window.setInterval(bling, 2000);
 }
 stopBling.onclick = function() {
 	window.clearInterval(idBling);
+	startBling.disabled = false;
 }
-*/

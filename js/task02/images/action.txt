@@ -1,0 +1,5 @@
+.action{background:url(../images/action.png)  no-repeat;}
+.hidden3{height:30px;width:30px;background-position:0 -60px;}
+.hidden4{height:30px;width:30px;background-position:-60px -60px;}
+.hidden1{height:30px;width:30px;background-position:0 0;}
+.hidden2{height:30px;width:30px;background-position:-60px 0;}

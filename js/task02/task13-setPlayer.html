@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>设置人数</title>
+
+	<!-- 恢复使用bootstrap -->
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">   
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- 自己的样式文件 
+	<link href="myBootstrap.css" rel="stylesheet"> -->
+	<link href="task13.css" rel="stylesheet">
+	<style>
+
+	</style>
+</head>
+<body class="set-player" id="setPlayer">
+
+<div class="pop-err is-fixed" id="popErr">
+	<div class="pop-err-num">
+		<p>请输入正确的玩家数量</p>
+		<div class="pop-err-num-choice">
+			<span class="pop-err-num-choice-cancel">取消</span>
+			<span class="pop-err-num-choice-confirm" id="popErrNumChoiceConfirm">确认</span>
+		</div>
+	</div>
+</div>
+
+<div class="pop-off">
+
+<header>
+	<h1 class="back">
+		<a href="task13-home.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	</h1>
+</header>
+
+<main style="height: calc(100% - 150px);">
+	<div class="container">
+
+		<div class="player-detail row">
+			<h3>玩家配比</h3>
+			<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<i></i>杀手<span class="player-detail-role-num"></span>
+			</div>
+			<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<i></i>警察<span class="player-detail-role-num"></span>
+			</div>
+			<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<i></i>平民<span class="player-detail-role-num"></span>
+			</div>
+			<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<i></i>法官<span class="player-detail-role-num"></span>
+			</div>
+		</div>
+
+		<div class="fill-page row"></div>
+
+		<div class="player-num row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<form name="player-num-set">
+				<label class="player-num-label">
+					<span>请输入玩家数量</span>
+					<input type="text" name="player-num-input">
+					<span>游戏玩家数量为4-18</span>
+				</label>
+			</form>
+			</div>
+		</div>
+
+	</div>
+</main>
+
+<footer>
+	<button class="game-start btn btn-default btn-block" id=>去发牌</button>
+</footer>
+
+</div>
+
+</body>
+</html>

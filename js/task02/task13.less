@@ -1,0 +1,774 @@
+@mainColor: #69d1e9;  /* 主色调 */
+@mainBgColor: #EFF0F1; /* 主背景色调 */
+@voteBgColor: #34BEDE; /* 投票页背景主色调 */
+@resultBgColor: #34BEDE; /* 结果页背景主色调 */
+
+
+/* 待重写样式 */ /*
+.homepage main { height: calc(100% - 50px); }
+.homepage .last-game { padding-top: calc((58px - 1.2em) / 2 ); }
+.homepage .container>div:nth-child(2) { height: calc(100% - 90px); }
+.resultpage .game-time-point { width: calc(50% - 6px); }
+.resultpage footer .btn { margin: 10px calc(2.5% - 1.5px); }*/
+/* 结束待重写样式 */
+
+* { margin: 0; padding: 0; }
+html, body {
+	min-height: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: @mainBgColor;
+}
+
+.homepage { background-color: @mainBgColor; }
+.votepage { background-color: @voteBgColor; }
+.resultpage { background-color: #fff; }
+
+.homepage header {
+	background-color: @mainColor;
+
+	h1 {
+		margin: 0;
+		padding: 5px;
+		color: #fff;
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			cursor: pointer;
+			&:hover { color: #f8be5d; }
+		}
+	}
+}
+
+.homepage main {
+	background-color: @mainBgColor;
+	
+	.container {
+		height: 100%;
+		.row { text-align: center; }
+		.last-game {
+			position: relative;
+			display: block;
+			margin: 0;
+			/*padding: 0;*/
+			height: 58px;
+			/*padding-top: calc((58px - 1.2em) / 2 ); */ /* 使文字居中 */
+			font-size: 1.4em;
+			line-height: 1.2em;
+			color: #A5A6A7;
+			text-decoration: none;
+			&:hover { color: #333; }
+
+			span {
+				position: absolute;
+				right: 5px;
+				font-size: 1.8em;
+				font-weight: 500;
+			}
+		}
+
+		& > div:nth-child(1) {
+			margin: 1em 0;
+			background-color: #fff;
+		}
+		& > div:nth-child(2) {
+			/*height: calc(100% - 90px); */ /* 使轮播区域占满剩余的屏幕 */
+			margin: auto 0;
+			background-color: #fff;
+		}
+
+		.game-choice {
+			.carousel {
+				padding-bottom: 20px; /* 之前是30，改了之后就没有溢出了，因为轮播指针高度是20px，后面变为25，高度上可能有计算偏差 */
+				background-color: #fff;    /* 使小窗口浏览器下，轮播区域溢出内容背景为白色，解决bug */
+				
+				.carousel-inner .item {
+					h2 {
+						@h2Color: #F8BE5D;
+						margin: 0;
+						padding: 14px 0;
+						border-bottom: 1px solid @h2Color;
+						font-size: 1.4em;
+						font-weight: normal;
+						color: @h2Color;
+					}
+
+					.row {
+						margin-top: 14px;
+						a {
+							width: 75%;
+							height: 6em;
+							padding-top: 2em;
+							line-height: 2em;
+							border: none;
+							border-radius: 0;
+							text-decoration: none;
+							font-size: 1.2em;
+							color: #fff;
+							background-color: @mainColor;
+						}
+
+						p {
+							margin-top: 14px;
+							margin-bottom: 0;
+						}
+					}
+
+					.row.reach { height: 432px; }
+				}
+
+				.carousel-indicators {
+					/*position: fixed;*/ /* 加上这个有bug，移动端会有很大一片空白，然后点击事件之后，并不会变动 */
+					bottom: 0;
+					margin-top: 5px; /* 之前是bottom */
+					background: transparent;
+
+					li {
+						background-color: @mainBgColor;
+						border-color: @mainBgColor;
+						&.active {
+							background-color: @mainColor;
+							border-color: @mainColor;
+						}
+					}
+				}
+
+				.carousel-control.right {
+					width: 30px;
+					background-image: url(images/next.png);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: 18px auto;
+				}
+			}
+		}
+	}
+}
+.homepage {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.homepage .right-content {
+	@radius: 5px;
+	position: absolute;
+	top: 0; right: -75%; bottom: 0; left: 75%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: @mainColor;
+
+	main { background-color: @mainColor; }
+
+	main .container {
+		background-color: @mainColor;
+		&>div:first-child {
+			border-radius: @radius;
+			background-color: #55ABB9;
+			a { color: #fff; }
+		}
+		.game-choice {
+			background-color: transparent;
+			border-radius: @radius;
+			.carousel {
+				background-color: rgba(255,255,255,.55);
+				border-radius: @radius;
+			}
+			.game-name {
+				background-color: #fff;
+				border-radius: @radius @radius 0 0;
+			}
+			.carousel-inner .item .row a { border-radius: @radius; }
+		}
+	}
+}
+.homepage .left-content {
+	position: absolute;
+	top: 0; right: 100%; bottom: 0; left: 0;
+	overflow-x: hidden;
+	z-index: 10000;
+	background-color: #fff;
+	p {
+		padding: 15px;
+		line-height: 25px;
+		font-size: 18px;
+		margin-bottom: 0;
+		color: @mainColor;
+		border-bottom: 1px solid #ddd;
+
+		span {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			line-height: 20px;
+			font-size: 12px;
+			color: @mainColor;
+			vertical-align: top;
+			text-align: center;
+
+			&:first-child {
+				margin-right: 15px;
+				border: 2px solid @mainColor;
+				border-radius: 50%;
+			}
+			&:last-child {
+				float: right;
+				font-size: 18px;
+			}
+
+			&.myfont-icon { font-weight: 800; }
+		}
+	}
+}
+
+
+
+
+.votepage header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+
+	height: 40px;
+	background-color: @voteBgColor;
+	text-align: center;
+
+	a {
+		float: left;
+		&.close { float: right; }
+
+		img {
+			height: 20px;
+			width: auto;
+			margin: 10px;
+		}
+	}
+
+	h2 {
+		display: inline-block;
+		margin: 0 auto;
+		line-height: 40px;
+		font-size: 18px;
+		color: #fff;
+		font-weight: normal;
+	}
+}
+
+
+.votepage main {
+	margin-bottom: 74px;
+	background-color: @voteBgColor;
+
+	.vote-hint {
+		position: fixed;
+		top: 40px;
+		right: 0;
+		left: 0;
+		z-index: 999;
+		background-color: @voteBgColor;
+
+		& > p:nth-of-type(1) {
+			margin-right: 40px;
+			margin-bottom: 0;
+			padding-left: 30px;
+			line-height: 40px;
+			font-size: 16px;
+			background-color: #BAE9F4;
+		}
+
+		.Audio {
+			@size: 40px;
+			float: right;
+			width: @size;
+			height: @size;
+			background-color: #BAE9F4;
+
+			.controls {
+				width: @size;
+				height: @size;
+
+				.play-pause {
+					border: 0;
+					outline: 0;
+					padding: 0;
+					background: none;
+
+					span {
+						display: block;
+						width: @size;
+						height: @size;
+						background-size: @size*0.75 @size*0.75;
+						/*&.icon-paly { background: url(images/play.png) no-repeat center; }
+						&.icon-pause { background: url(images/pause.png) no-repeat center; }*/
+					}
+				}
+			}
+		}
+
+		.hint {
+			position: relative;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 30px;
+				height: 8px;
+				width: auto;
+			}
+
+			& > p {
+				padding-top: 10px;
+				padding-left: 30px;
+				color: #fff;
+			}
+		}
+	}
+
+	.container {
+		margin-top: 120px;
+
+		.person {
+			width: 60%;
+			min-width: 80px;
+			max-width: 100px;
+			margin: 5px auto;
+			text-align: center;
+
+			.vote {
+				border: 3px solid #fff;
+				background-color: #F3C881;
+				
+				.identity {
+					padding: 17px 0;
+					margin: 0;
+				}
+
+				.number {
+					margin-bottom: 0;
+					background-color: #82AF9B;
+				}
+			}
+
+			&:hover .usual-hidden { visibility: visible; }
+			.usual-hidden {
+				visibility: hidden;
+
+				.action {
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					padding: 0;
+					margin-top: 10px;
+					border: none;
+					background: url(images/action.png) no-repeat;
+
+					&:nth-child(1) { background-position: 0 0; }
+					&:nth-child(2) { background-position: -30px 0; }
+					&:nth-child(3) { background-position: 0 -30px; }
+					&:nth-child(4) { background-position: -30px -30px; }
+				}
+			}
+		}
+	}
+}
+/* 不知道为什么写在上面就不行 */
+span.icon-play  { background: url(images/play.png) no-repeat center; }
+span.icon-pause { background: url(images/pause.png) no-repeat center; }
+
+
+.votepage footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 10px;
+	text-align: center;
+	background-color: @voteBgColor;
+	border-top: 1px solid rgba(255,255,255,.5);
+
+	.btn {
+		width: 80%;
+		margin-top: 20px;
+		vertical-align: middle;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		color: #fff;
+		background-color: #F8B445;
+		&:active { background-color: #F8B445; }
+
+		a { color: #fff; text-decoration: none; }
+	}
+}
+
+
+
+
+.resultpage header {
+	@size: 40px;
+	height: @size;
+	text-align: center;
+	background-color: @resultBgColor;
+
+	a {
+		width: @size;
+		height: @size;
+		&.home { float: left; }
+		&.info { float: right; }
+
+		img {
+			height: @size*0.5;
+			margin-top: @size*0.25;
+		}
+	}
+
+	h2 {
+		display: inline-block;
+		margin: 0 auto;
+		font-size: 18px;
+		font-weight: normal;
+		line-height: @size;
+		color: #fff;
+	}
+}
+
+
+.resultpage main { 
+	margin-bottom: 60px;
+	background-color: @resultBgColor;
+
+	.who-win {
+		height: 130px;
+		background: url(images/win.png) center no-repeat;
+		background-size: auto 100px;
+		background-color: @resultBgColor;
+		
+		h3 {
+			margin: 0 auto;
+			padding-top: 81px;
+			font-size: 22px;
+			font-weight: 600;
+			color: #fff;
+			text-align: center;
+		}
+	}
+
+	.result-detail-msg,
+	.result-detail-info,
+	.result-detail-day {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.result-detail-msg {
+		margin-bottom: 0;
+		padding-bottom: 20px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #F7C86F;
+		background-color: @resultBgColor;
+	}
+
+	.result-detail-info {
+		padding-bottom: 10px;
+		color: #fff;
+		background-color: @resultBgColor;
+
+		p { margin-bottom: 0; }
+
+		& > .row > div {
+			min-width: 96.6px;
+			height: 20px;
+			letter-spacing: -6px;
+
+			span {
+				display: inline-block;
+				height: 20px;			/* @justify */
+				vertical-align: top;	/* @justify 这里主要是为了对齐，不写会错行 */
+				letter-spacing: 0;
+				&.identity {
+					min-width: 42px;
+					overflow: hidden;		/* @justify */
+					text-align: justify;
+				}
+
+				/* @justify 标注了@justify的地方都是为了实现两端对齐，
+				i元素是让浏览器知道文字不是最后一行，或者说让文字超过一行 */
+				i {
+					display: inline-block;
+					width: 100%;
+					height: 0;
+				}
+			}
+		}
+
+		span.result-word { padding-left: 5px; }
+	}
+
+	.result-detail-day {
+		padding: 0;					/* 为了让下划线延伸满屏幕 */
+		background-color: #fff;		/* 为了让游戏结果部分在大分辨率下背景色正常 */
+		
+		.day {
+			padding: 0 30px;
+			border-bottom: 1px solid #E1E2E3;
+
+			.day-number {
+				display: inline-block;
+				width: 50%;
+				margin-top: 5px;
+				font-size: 16px;
+				font-weight: normal;
+			}
+
+			.game-time-point {
+				display: inline-block;
+				/*width: calc(50% - 6px);*/  /* 避开行内元素的间隙 */
+				text-align: right;
+				color: #D8DADA;
+			}
+
+			p {
+				color: #B2B3B5;
+				&.night { margin-bottom: 0; }
+			}
+		}
+	}
+}
+
+
+.resultpage footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 60px;
+	background-color: rgba(52,190,222,.5);
+
+	.btn {
+		width: 45%;
+		height: 40px;
+		/*margin: 10px calc(2.5% - 1.5px);*/ /* (10%-6px)/4 */
+		border: none;
+		outline: none;
+		box-shadow: none;
+		color: #fff;
+		&:hover {
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
+
+		&:nth-child(1) { background-color: #F37072; }
+		&:nth-child(1):hover { background-color: @resultBgColor; }
+
+		&:nth-child(2) { background-color: #F8B445; }
+		&:nth-child(2):hover { background-color: @resultBgColor; }
+	}
+}
+
+
+
+/* 开始设计弹出层 */
+.pop-err {
+	display: none;
+}
+
+.pop-err.is-fixed {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+
+	/*display: block;*/
+	background-color: rgba(0,0,0,.2);
+}
+
+.pop-err-num {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 300px;
+
+	background-color: #fff;
+	border-radius: 5px;
+
+	> p {
+		padding: 20px 15px;
+		margin-bottom: 0;
+		font-size: 18px;
+		font-weight: bold;
+		color: #265378;
+		text-align: justify;
+	}
+}
+
+.pop-err-num-choice {
+	span {
+		float: left;
+		width: 50%;
+		padding: 10px;
+		font-size: 16px;
+		color: #899EAE;
+		border-top: 1px solid #E6F0FA;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	&-cancel {
+		border-right: 1px solid #E6F0FA;
+	}
+
+	&-confirm:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+/* 结束设计弹出层 */
+
+
+/* 开始设计header */
+.set-player header {
+	background-color: @mainColor;
+
+	h1 {
+		margin: 0;
+		padding: 5px;
+		color: #fff;
+		font-size: 16px;
+
+		a {
+			font-weight: normal;
+			color: #fff;
+			text-decoration: none;
+			cursor: pointer;
+			&:hover { color: #f8be5d; }
+
+			span {
+				display: inline-block;
+				line-height: 40px;
+
+			}
+		}
+	}
+}
+/* 结束设计header */
+
+/* 开始设计main */
+.set-player main > .container {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+}
+
+.pop-off {
+	height: 100%;
+}
+
+.player-detail {
+	padding-bottom: 20%;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+
+	h3 {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 15px;
+		font-size: 18px;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+	}
+
+	&>div:nth-child(2) i { background-color: orange; }
+	&>div:nth-child(3) i { background-color: green; }
+	&>div:nth-child(4) i { background-color: gray; }
+	&>div:nth-child(5) i { background-color: red; }
+}
+
+.player-detail-role {
+	margin: 6px 0;
+	text-align: center;
+
+	i {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		margin-right: 6px;
+		vertical-align: middle;
+		border-radius: 50%;
+	}
+	
+}
+
+.player-detail-role-num {
+	margin-left: 6px;
+}
+
+.fill-page {
+	flex: 1;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #fff;
+}
+
+.player-num {
+	padding-top: 10%;
+	padding-bottom: 10%;
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+.player-num-label {
+	display: block;
+	text-align: center;
+
+	> span:first-child {
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	> span:last-child {
+		font-weight: normal;
+		color: #FBB435;
+	}
+
+	> input {
+		width: 30px;
+		padding: 0 5px;
+		color: #FBB435;
+		text-align: center;
+		border: none;
+		border-radius: 5px;
+		background-color: @mainBgColor;
+	}
+}
+/* 结束设计main */
+
+/* 开始设计footer */
+.set-player footer {
+	padding: 15px 15px 0 15px;
+}
+
+.game-start {
+	padding: 10px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #FBB435;
+	
+	&.btn-default,
+	&:hover,
+	&:active {
+		border: none;
+		outline: none;
+		box-shadow: none;
+		background-color: #FBB435;
+	}
+}

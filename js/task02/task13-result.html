@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>游戏结果</title>
+
+	<!--
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+	<!-- 自己的样式文件 -->
+	<link href="myBootstrap.css" rel="stylesheet">
+	<link href="task13.css" rel="stylesheet">
+	<style>
+		.resultpage .game-time-point { width: calc(50% - 6px); }
+		.resultpage footer .btn { margin: 10px calc(2.5% - 1.5px); }
+	</style>
+</head>
+<body class="resultpage">
+
+<header>
+	<a class="home" href="task13-home.html"><img src="images/home.png"></a>
+	<h2>游戏结果</h2>
+	<a class="info" href="#"><img src="images/info.png"></a>
+</header>
+
+<main>
+	<div class="who-win">
+		<h3>警察胜利</h3>
+	</div>
+	<p class="result-detail-msg">
+		本轮游戏共抓出杀手3人，共经历了5个白天，在杀人游戏中击败了67%的玩家
+	</p>
+	<div class="result-detail-info container">
+		<p class="game-time">
+			本次游戏共计用时0小时25分钟
+		</p>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="identity">杀手<i></i></span>
+				<span class="how-many">0人</span>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="identity">警察<i></i></span>
+				<span class="how-many">1人</span>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="identity">平民<i></i></span>
+				<span class="how-many">0人</span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="identity">狙击手<i></i></span>
+				<span class="how-many">0人</span>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="identity">医生<i></i></span>
+				<span class="how-many">0人</span>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="identity"><i></i></span>
+				<span class="how-many"></span>
+			</div>
+		</div>
+
+		<div class="result-words">
+			<p class="result-word-hint">卧底词汇：<span class="result-word">爱新觉罗</span></p>
+			<p class="result-word-hint">水民词汇：<span class="result-word">努尔哈赤</span></p>
+		</div>
+	</div>
+	<div class="result-detail-day">
+		<div class="day"><div class="day-detail">
+			<h4 class="day-number">第一天</h4>
+			<span class="game-time-point">0小时07分</span></div>
+			<p class="night">晚上：5号被杀手杀手，5号是水民</p>
+			<p class="daylight">白天：8号被全民投死，8号是杀手</p>
+		</div>
+		<div class="day">
+			<h4 class="day-number">第二天</h4>
+			<span class="game-time-point">0小时07分</span>
+			<p class="night">晚上：5号被杀手杀手，5号是水民</p>
+			<p class="daylight">白天：8号被全民投死，8号是杀手</p>
+		</div>
+		<div class="day">
+			<h4 class="day-number">第三天</h4>
+			<span class="game-time-point">0小时07分</span>
+			<p class="night">晚上：5号被杀手杀手，5号是水民</p>
+			<p class="daylight">白天：8号被全民投死，8号是杀手</p>
+		</div>
+	</div>
+</main>
+
+<footer>
+	<button class="btn btn-default" onclick="self.location='task13-vote.html'">再来一局</button>
+	<button class="btn btn-default">上传并分享</button>
+</footer>
+	
+</body>
+</html>

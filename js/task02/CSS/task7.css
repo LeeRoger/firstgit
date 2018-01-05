@@ -1,0 +1,537 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header { background-color: #69d1e9; }
+
+header h1 {
+	margin: 0;
+	padding: 5px;
+	color: #fff;
+}
+
+header h1 a,
+header h1 a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+header h1 a:hover { color: #f8be5d; }
+
+
+/* start设计整体的样式 */
+html, body {
+	height: 100%;
+	background-color: #EFF0F1;
+}
+
+main {
+	height: calc(100% - 50px);
+	background-color: #EFF0F1;
+}
+
+.container { height: 100%; }
+
+.row { text-align: center; }
+/* end设计整体的样式 */
+
+
+/* start设计上次游戏部分 */
+a.last-game {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 58px;
+	padding-top: calc((58px - 1.2em) / 2 );  /* 使文字居中 */
+	font-size: 1.4em;
+	line-height: 1.2em;
+	color: #A5A6A7;
+	text-decoration: none;
+}
+
+a.last-game span {
+	position: absolute;
+	right: 5px;
+	font-size: 1.8em;
+	font-weight: 500;
+}
+
+.container>div:nth-child(1) {
+	margin: 1em 0;
+	background-color: #fff;
+}
+/* end设计上次游戏部分 */
+
+
+/* start设计轮播区域 */
+.container>div:nth-child(2) {
+	height: calc(100% - 90px);  /* 使轮播区域占满剩余的屏幕 */
+	margin: auto 0;
+	background-color: #fff;
+}
+
+#myCarousel {
+	padding-bottom: 30px;
+	background-color: #fff;    /* 使小窗口浏览器下，轮播区域溢出内容背景为白色，解决bug */
+
+}
+div.item h2 {
+	margin: 0;
+	padding: 14px 0;
+	border-bottom: 1px solid #F8BE5D;
+	font-size: 1.4em;
+	color: #F8BE5D;
+}
+
+div.item div.row {
+	margin-top: 14px;
+}
+
+div.item div.row a {
+	width: 75%;
+	height: 6em;
+	padding-top: 2em;
+	line-height: 2em;
+	border: none;
+	border-radius: 0;
+	font-size: 1.2em;
+	color: #fff;
+	background-color: #6DD2E9;
+}
+
+div.item div.row p {
+	margin-top: 14px;
+	margin-bottom: 0;
+}
+
+ol.carousel-indicators {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 5px;
+	background: transparent;
+}
+
+.carousel-indicators li {
+	background-color: #EFF0F1;
+	border-color: #EFF0F1;
+}
+
+.carousel-indicators li.active {
+	background-color: #6DD2E9;
+	border-color: #6DD2E9;
+}
+
+a.carousel-control.right {
+	width: 30px;
+	background-image: url(images/next.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 18px auto;
+}
+
+div.reach { height: 432px; }  /* 填补轮播2、3、4的游戏具体版本部分 */  /* 原来是457px，该怎么解释减少了25px呢？ */
+/* end设计轮播区域 */
+
+* { margin: 0; padding: 0; }
+
+/* 为了防止高度不够 */
+html,
+body {
+	min-height: 100%;
+	background-color: #34BEDE;
+}
+
+
+/* start to design header */
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	height: 40px;
+	background-color: #34BEDE;
+	text-align: center;
+}
+
+header img {
+	height: 20px;
+	width: auto;
+	margin: 10px;
+}
+
+header a.catalog {
+	float: left;
+}
+
+header a.close {
+	float: right;
+}
+
+header h2 {
+	display: inline-block;
+	margin: 0 auto;
+	line-height: 40px;
+	font-size: 18px;
+	color: #fff;
+}
+/* finish designing header */
+
+
+/* start to design main */
+main { 
+	margin-bottom: 74px;
+	background-color: #34BEDE;
+}
+
+div.vote-hint {
+	position: fixed;
+	top: 40px;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	background-color: #34BEDE;
+}
+
+div.container { margin-top: 120px; }
+
+div.vote-hint>p:nth-of-type(1) {
+	margin-right: 40px;
+	margin-bottom: 0;
+	padding-left: 30px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #BAE9F4;
+}
+
+/* 改变音频样式 */
+div.vote-hint div.Audio {
+	float: right;
+	width: 40px;
+	height: 40px;
+	background-color: #BAE9F4;
+}
+
+div.controls {
+	width: 40px;
+	height: 40px;  /* 如果不加这个，为什么会溢出呢？ */
+}
+button.play-pause{
+	border: 0;
+	outline: 0;
+	padding: 0;
+	background: none;
+}
+span.icon-play{
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(images/play.png) no-repeat center;
+	background-size: 30px 30px;
+}
+span.icon-pause{
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(images/pause.png) no-repeat center;
+	background-size: 30px 30px;
+}
+/* 结束更改音频样式 */
+
+div.hint {
+	position: relative;
+}
+
+div.hint img {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	height: 8px;
+	width: auto;
+}
+
+div.hint>p {
+	padding-top: 10px;
+	padding-left: 30px;
+	color: #fff;
+}
+
+/* 开始设计投票点选区域，div.container部分 */
+div.person {
+	width: 60%;
+	min-width: 80px;
+	max-width: 100px;
+	margin: 5px auto;
+	text-align: center;
+}
+
+div.vote {
+	border: 3px solid #fff;
+	background-color: #F3C881;
+}
+
+p.identity {
+	padding: 17px 0;
+	margin: 0;
+}
+
+p.number {
+	margin-bottom: 0;
+	background-color: #82AF9B;
+}
+
+span.action {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	padding: 0;
+	margin-top: 10px;
+	border: none;
+	background: url(images/action.png) no-repeat;
+}
+
+span.action:nth-child(1) { background-position: 0 0; }
+span.action:nth-child(2) { background-position: -30px 0; }
+span.action:nth-child(3) { background-position: 0 -30px; }
+span.action:nth-child(4) { background-position: -30px -30px; }
+
+/* 常态下隐藏下方按钮 */
+div.usual-hidden { visibility: hidden; }
+div.person:hover div.usual-hidden { visibility: visible;}
+
+/* 结束设计投票点选区域 */
+/* finish designing main */
+
+
+/* start to design footer */
+footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 10px;
+	text-align: center;
+	background-color: #34BEDE;
+}
+
+footer button.btn {
+	width: 80%;
+	margin-top: 20px;
+	vertical-align: middle;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background-color: #F8B445;
+}
+
+footer button.btn:active {
+	background-color: #F8B445;
+}
+
+footer button.btn a { color: #fff; text-decoration: none; }
+/* finish designing footer */
+
+* { margin: 0; padding: 0; }
+
+
+/* start to design header */
+header {
+	height: 40px;
+	text-align: center;
+	background-color: #34BEDE;
+}
+
+header img {
+	height: 20px;
+	margin-top: 10px;
+}
+
+header a {
+	width: 40px;
+	height: 40px;
+}
+
+a.home { float: left; }
+a.info { float: right; }
+
+header h2 {
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 18px;
+	line-height: 40px;
+	color: #fff;
+}
+/* finish designing header */
+
+
+/* start to design main */
+main { 
+	margin-bottom: 60px;
+	background-color: #34BEDE;
+}
+
+p.result-detail-msg,
+div.result-detail-info,
+div.result-detail-day {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+div.who-win {
+	height: 130px;
+	background: url(images/win.png) center no-repeat;
+	background-size: auto 100px;
+	background-color: #34BEDE;
+}
+
+div.who-win h3 {
+	margin: 0 auto;
+	padding-top: 83px;
+	font-size: 22px;
+	color: #fff;
+	text-align: center;
+}
+
+p.result-detail-msg {
+	margin-bottom: 0;
+	padding-bottom: 20px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #F7C86F;
+	background-color: #34BEDE;
+}
+
+div.result-detail-info {
+	padding-bottom: 10px;
+	color: #fff;
+	background-color: #34BEDE;
+}
+
+div.result-detail-info p { margin-bottom: 0; }
+
+div.result-detail-info > div.row > div {
+	min-width: 96.6px;
+	height: 20px;
+	letter-spacing: -6px;
+}
+
+div.result-detail-info > div.row > div span {
+	display: inline-block;
+	height: 20px;			/* @justify */
+	vertical-align: top;	/* @justify 这里主要是为了对齐，不写会错行 */
+	letter-spacing: 0;
+}
+
+div.result-detail-info span.identity {
+	min-width: 42px;
+	overflow: hidden;		/* @justify */
+	text-align: justify;	/* @justify */
+}
+
+/* @justify 标注了@justify的地方都是为了实现两端对齐，
+i元素是让浏览器知道文字不是最后一行，或者说让文字超过一行 */
+i {
+	display: inline-block;
+	width: 100%;
+	height: 0;
+}
+
+div.result-detail-info span.result-word { padding-left: 5px; }
+
+/* 开始布局div.result-detail-day部分，这样可以减少一些导航性的选择器 */
+
+/* 第几天和游戏用时的布局方式之一，但好像不太能保证底端对齐，有点偏差
+还需要添加xuzhenzhen
+div.day-detail {
+	position: relative;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+h4.day-number {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: inline-block;
+	margin: 0;
+	font-size: 16px;
+}
+
+span.game-time-point {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: inline-block;
+	font-size: 12px;
+	color: #D8DADA;
+}
+*/
+
+/* 布局天数和游戏时间的另一种方式，会有2-3px不能靠右，影响不大 */
+h4.day-number {
+	display: inline-block;
+	width: 50%;
+	margin-top: 5px;
+	font-size: 16px;
+}
+
+span.game-time-point {
+	display: inline-block;
+	width: calc(50% - 6px);  /* 避开行内元素的间隙 */
+	text-align: right;
+	color: #D8DADA;
+}
+
+div.result-detail-day {
+	padding: 0;					/* 为了让下划线延伸满屏幕 */
+	background-color: #fff;		/* 为了让游戏结果部分在大分辨率下背景色正常 */
+} 
+
+div.day { 
+	padding: 0 30px;
+	border-bottom: 1px solid #E1E2E3;
+}
+
+div.day p { color: #B2B3B5; }
+
+p.night { margin-bottom: 0; }
+/* 结束布局div.result-detail-day的布局 */
+/* finish designing main */
+
+
+/* start to design footer */
+footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 60px;
+	background-color: rgba(52,190,222,.5);
+}
+
+footer button.btn {
+	width: 45%;
+	height: 40px;
+	margin: 10px calc(2.5% - 1.5px); /* (10%-6px)/4 */
+	border: none;
+	outline: none;
+	box-shadow: none;
+	color: #fff;
+}
+
+footer button.btn:hover { 
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+footer button.btn:nth-child(1) { background-color: #F37072; }
+footer button.btn:nth-child(1):hover { background-color: #34BEDE; }
+
+footer button.btn:nth-child(2) { background-color: #F8B445; }
+footer button.btn:nth-child(2):hover { background-color: #34BEDE; }
+/* finish designing footer */

@@ -1,0 +1,199 @@
+* { margin: 0; padding: 0; }
+
+/* 为了防止高度不够 */
+html,
+body {
+	min-height: 100%;
+	background-color: #34BEDE;
+}
+
+
+/* start to design header */
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	height: 40px;
+	background-color: #34BEDE;
+	text-align: center;
+}
+
+header img {
+	height: 20px;
+	width: auto;
+	margin: 10px;
+}
+
+header a.catalog {
+	float: left;
+}
+
+header a.close {
+	float: right;
+}
+
+header h2 {
+	display: inline-block;
+	margin: 0 auto;
+	line-height: 40px;
+	font-size: 18px;
+	color: #fff;
+}
+/* finish designing header */
+
+
+/* start to design main */
+main { 
+	margin-bottom: 74px;
+	background-color: #34BEDE;
+}
+
+div.vote-hint {
+	position: fixed;
+	top: 40px;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	background-color: #34BEDE;
+}
+
+div.container { margin-top: 120px; }
+
+div.vote-hint>p:nth-of-type(1) {
+	margin-right: 40px;
+	margin-bottom: 0;
+	padding-left: 30px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #BAE9F4;
+}
+
+/* 改变音频样式 */
+div.vote-hint div.Audio {
+	float: right;
+	width: 40px;
+	height: 40px;
+	background-color: #BAE9F4;
+}
+
+div.controls {
+	width: 40px;
+	height: 40px;  /* 如果不加这个，为什么会溢出呢？ */
+}
+button.play-pause{
+	border: 0;
+	outline: 0;
+	padding: 0;
+	background: none;
+}
+span.icon-play{
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(images/play.png) no-repeat center;
+	background-size: 30px 30px;
+}
+span.icon-pause{
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(images/pause.png) no-repeat center;
+	background-size: 30px 30px;
+}
+/* 结束更改音频样式 */
+
+div.hint {
+	position: relative;
+}
+
+div.hint img {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	height: 8px;
+	width: auto;
+}
+
+div.hint>p {
+	padding-top: 10px;
+	padding-left: 30px;
+	color: #fff;
+}
+
+/* 开始设计投票点选区域，div.container部分 */
+div.person {
+	width: 60%;
+	min-width: 80px;
+	max-width: 100px;
+	margin: 5px auto;
+	text-align: center;
+}
+
+div.vote {
+	border: 3px solid #fff;
+	background-color: #F3C881;
+}
+
+p.identity {
+	padding: 17px 0;
+	margin: 0;
+}
+
+p.number {
+	margin-bottom: 0;
+	background-color: #82AF9B;
+}
+
+span.action {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	padding: 0;
+	margin-top: 10px;
+	border: none;
+	background: url(images/action.png) no-repeat;
+}
+
+span.action:nth-child(1) { background-position: 0 0; }
+span.action:nth-child(2) { background-position: -30px 0; }
+span.action:nth-child(3) { background-position: 0 -30px; }
+span.action:nth-child(4) { background-position: -30px -30px; }
+
+/* 常态下隐藏下方按钮 */
+div.usual-hidden { visibility: hidden; }
+div.person:hover div.usual-hidden { visibility: visible;}
+
+/* 结束设计投票点选区域 */
+/* finish designing main */
+
+
+/* start to design footer */
+footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 10px;
+	text-align: center;
+	background-color: #34BEDE;
+}
+
+footer button.btn {
+	width: 80%;
+	margin-top: 20px;
+	vertical-align: middle;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background-color: #F8B445;
+}
+
+footer button.btn:active {
+	background-color: #F8B445;
+}
+
+footer button.btn a { color: #fff; text-decoration: none; }
+/* finish designing footer */

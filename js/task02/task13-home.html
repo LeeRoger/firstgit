@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>选择游戏</title>
+
+	<!-- 
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">   -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- 自己的样式文件 -->
+	<link href="myBootstrap.css" rel="stylesheet">
+	<link href="task13.css" rel="stylesheet">
+	<script src="carousel.js"></script>
+	<script>
+		function helloLeft() {
+			var rightContent = document.getElementById("rightContent");
+			var leftContent = document.getElementById("leftContent");
+
+			if (rightContent.classList.contains("right-content")==true) {
+				rightContent.classList.remove("right-content");
+				leftContent.style.right = "100%";
+			}
+			else {
+			 	rightContent.classList.add("right-content");
+				leftContent.style.right = "25%";
+			}
+		}
+	</script>
+	<style>
+		.homepage main { height: calc(100% - 50px); }
+		.homepage .last-game { padding-top: calc((58px - 1.2em) / 2 ); }
+		.homepage .container>div:nth-child(2) { height: calc(100% - 90px); } /* 使轮播区域占满剩余的屏幕 */
+	</style>
+</head>
+<body class="homepage" id="homePage">
+
+<div id="rightContent">
+
+<header>
+	<h1 class="catalogue"><a onclick="helloLeft()">≡</a></h1>
+</header>
+
+<main>
+	<div class="container">
+
+		<div class="row">
+			<a class="last-game btn btn-block btn-sm" href="task13-vote.html">上次游戏：捉鬼拆词版<span>&rsaquo;</span></a>
+		</div>
+
+		<div class="row game-choice">
+			<!-- start writing carousel part -->
+			<div id="myCarousel" class="carousel slide">
+
+				<!-- 轮播指针 -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
+
+				<!-- 轮播项目 -->
+				<div class="carousel-inner">
+
+					<div class="item active">
+						<h2 class="game-name">捉鬼游戏</h2>
+
+						<div class="row">
+							<a class="btn btn-default" href="#">简化版</a>
+							<p>有1133个用户正在玩这款游戏</p>
+						</div>
+
+						<div class="row">
+							<a class="btn btn-default" href="#">猜词版</a>
+							<p>有1133个用户正在玩这款游戏</p>
+						</div>
+
+						<div class="row">
+							<a class="btn btn-default" href="#">白痴版</a>
+							<p>有1133个用户正在玩这款游戏</p>
+						</div>
+					</div>
+
+					<div class="item"><h2 class="game-name">第二屏</h2><div class="row reach"></div></div>
+					<div class="item"><h2 class="game-name">第三屏</h2><div class="row reach"></div></div>
+					<div class="item"><h2 class="game-name">第四屏</h2><div class="row reach"></div></div>
+				</div>
+
+				<!-- 轮播导航 -->
+				<a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+			</div>
+			<!-- end carousel part -->
+		</div>
+
+	</div>
+</main>
+
+</div>
+<div id="leftContent" class="left-content">
+	<p>
+		<span class="glyphicon glyphicon-volume-down"></span>公告<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+	<p>
+		<span class="glyphicon glyphicon-asterisk"></span>设置<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+	<p>
+		<span class="myfont-icon">?</span>帮助<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+	<p>
+		<span class="myfont-icon">i</span>关于<span class="glyphicon glyphicon-chevron-right"></span>
+	</p>
+</div>
+
+</body>
+</html>

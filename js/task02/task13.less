@@ -447,6 +447,7 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 		background-color: @resultBgColor;
 		
 		h3 {
+			float: left;
 			margin: 0 auto;
 			padding-top: 81px;
 			font-size: 22px;
@@ -633,6 +634,9 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 }
 /* 结束设计弹出层 */
 
+.pop-off {
+	height: 100%;
+}
 
 /* 开始设计header */
 .set-player header {
@@ -662,40 +666,78 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 /* 结束设计header */
 
 /* 开始设计main */
-.set-player main > .container {
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-}
+.set-player main {
 
-.pop-off {
-	height: 100%;
+	> .container {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+	}
 }
 
 .player-detail {
-	padding-bottom: 20%;
+	/*padding-bottom: 20%;*/
+	margin-top: 15px;
 	margin-bottom: 10px;
 	background-color: #fff;
-	border-bottom: 1px solid #ccc;
+	/*border-bottom: 1px solid #ccc;*/
 
-	h3 {
+	/*@media (min-width: 768px) {
+		& { padding-bottom: 150px; }
+	}*/
+
+	table {
+		width: 100%;
+
+		tr:first-child > th {
+			width: 50px;
+			padding: 15px;
+			line-height: 20px;
+
+			writing-mode: vertical-lr;
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid #ccc;
+			border-width: 0 1px 1px 0;
+		}
+	}
+
+	/*h3 {
+		float: left;
+		max-width: 80px;
+		height: 100%;
 		margin-top: 0;
 		margin-bottom: 0;
 		padding: 15px;
+
 		font-size: 18px;
 		text-align: center;
-		border-bottom: 1px solid #ccc;
-	}
+		writing-mode: vertical-lr;
+		border-right: 1px solid #ccc;
 
+		&:after {
+			display: table;
+			content: " ";
+			clear: both;
+		}
+	}*/
+
+	/*
 	&>div:nth-child(2) i { background-color: orange; }
 	&>div:nth-child(3) i { background-color: green; }
 	&>div:nth-child(4) i { background-color: gray; }
 	&>div:nth-child(5) i { background-color: red; }
+	*/
 }
 
 .player-detail-role {
 	margin: 6px 0;
 	text-align: center;
+	float: left;
+	width: 50%;
+	@media (min-width: 768px) {
+		& { width: 25%; }
+	}
 
 	i {
 		display: inline-block;
@@ -705,11 +747,30 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 		vertical-align: middle;
 		border-radius: 50%;
 	}
+
+	&:nth-of-type(1) i { background-color: orange; }
+	&:nth-of-type(2) i { background-color: green; }
+	&:nth-of-type(3) i { background-color: gray; }
+	&:nth-of-type(4) i { background-color: red; }
 	
 }
 
 .player-detail-role-num {
 	margin-left: 6px;
+}
+
+.clear-both { clear: both; }
+
+.player-detail-set {
+	padding: 5px;
+	color: @mainColor;
+	text-align: center;
+	border-top: 1px solid #ccc;
+
+	> span {
+		margin-left: 6px;
+		font-size: 12px;
+	}
 }
 
 .fill-page {
@@ -724,6 +785,13 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	padding-bottom: 10%;
 	margin-top: 10px;
 	background-color: #fff;
+
+	@media (min-width: 768px) {
+		& {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+	}
 }
 
 .player-num-label {

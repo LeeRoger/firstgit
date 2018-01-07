@@ -586,8 +586,8 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	left: 0;
 	z-index: 999;
 
-	/*display: block;*/
-	background-color: rgba(0,0,0,.2);
+	display: block;
+	background-color: rgba(0,0,0,.5);
 }
 
 .pop-err-num {
@@ -680,6 +680,7 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	margin-top: 15px;
 	margin-bottom: 10px;
 	background-color: #fff;
+	border-bottom: 1px solid #ccc;
 	/*border-bottom: 1px solid #ccc;*/
 
 	/*@media (min-width: 768px) {
@@ -691,15 +692,34 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 
 		tr:first-child > th {
 			width: 50px;
-			padding: 15px;
+			/*padding: 15px;
 			line-height: 20px;
 
-			writing-mode: vertical-lr;
+			writing-mode: tb-rl;
+			-webkit-writing-mode: vertical-rl;      
+			writing-mode: vertical-rl;
+			*writing-mode: tb-rl; */ /* ie7 */
+
+			/*text-orientation: upright;*/
 			text-align: center;
 			vertical-align: middle;
 			border: 1px solid #ccc;
-			border-width: 0 1px 1px 0;
+			border-width: 0 1px 0 0;
 		}
+	}
+
+	.player-detail-hint {
+		padding: 15px;
+		line-height: 20px;
+
+		writing-mode: tb-rl;     
+		writing-mode: vertical-rl;
+		-webkit-writing-mode: horizontal-tb; /* 谷歌有点问题，应该是bootstrap的原因，只能恢复默认值 */
+		*writing-mode: tb-rl;
+
+		/*word-break: break-all;
+		word-wrap: break-word;*/
+		text-align: center;
 	}
 
 	/*h3 {
@@ -762,7 +782,7 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 .clear-both { clear: both; }
 
 .player-detail-set {
-	padding: 5px;
+	padding: 5px 0;
 	color: @mainColor;
 	text-align: center;
 	border-top: 1px solid #ccc;
@@ -818,6 +838,115 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 		background-color: @mainBgColor;
 	}
 }
+
+/* 去除系统默认的样式 */
+/* 这步操作是为了不使用原有的样式，使之后的自定义样式有效。
+   不过要注意的是对基于 webkit 的浏览器，如Chrome, Safari, Opera等，滑块也要移除默认样式。 */
+input[type=range] {
+	-webkit-appearance: none;
+	width: 300px;
+	margin: 15px auto;
+	
+	border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+
+/* 给滑动轨道(track)添加样式 */
+/*正式开始自定义控件样式了。首先是自定义滑动控件的轨道 */
+input[type=range]::-webkit-slider-runnable-track {
+	height: 15px;
+	overflow: visible;
+	border-radius: 10px; /*将轨道设为圆角的*/
+	box-shadow: 0 1.5px 1px @mainColor, inset 0 1.5px 1px @mainColor; /*轨道内置阴影效果*/
+}
+/* 原始的控件获取到焦点时，会显示包裹整个控件的边框，所以还需要把边框取消。 */
+input[type=range]:focus {
+    outline: none;
+}
+
+/* 给滑块(thumb)添加样式 */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 33px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: url(images/img-js/progress-bar.png) center no-repeat;
+    background-size: auto 20px;
+    /*background: #ffffff; 
+    border-radius: 50%; */ /*外观设置为圆形*/
+    /*border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    /*box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+
+
+/* 实现多浏览器兼容 */
+/* 如果要兼容Firefox浏览器，只需要把上述css代码中的 
+::-webkit-slider-runnable-track 替换为 ::-moz-range-track ，
+就可以完成对轨道的美化了；
+
+把css代码中的 ::-webkit-slider-thumb 替换为 ::-moz-range-thumb ，
+这是对滑块的样式进行改造；
+
+而如果是要填充进度条就很简单了，不需要像之前在RangeSlider.js中
+ $input.css( ‘background’, ‘linear-gradient(to right, #059CFA, white ’ + this.value + ‘%, white)’ ); 
+ 这样实现填充，只需要新增如下的css代码即可：*/
+input[type=range]::-moz-range-progress {
+    /*background: linear-gradient(to right, #059CFA, white 100%, white); */
+    height: 13px;    
+    background-color: #FBB435;
+    border-radius: 10px;
+}
+
+input[type=range]::-moz-range-thumb {
+	-moz-appearance: none;
+    height: 25px;
+    width: 33px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    border: none;
+    background: url(images/img-js/progress-bar.png) center no-repeat;
+    background-size: auto 20px;
+}
+/* ie9+ */
+input[type=range] {
+	overflow: visible;
+
+	&::-ms-track {
+		height: 15px;
+		overflow: visible;
+		border-radius: 10px; /*将轨道设为圆角的*/
+		border: 2px solid @mainColor;
+		/*box-shadow: 0 2px 1px @mainColor, inset 0 1.5px 1px @mainColor;
+		border-color: transparent; /*去除原有边框*/
+    	color: transparent; /*去除轨道内的竖线*/
+	}
+
+	&::-ms-thumb {
+		height: 25px;
+	    width: 36px;
+	    margin-top: 0px; /*使滑块超出轨道部分的偏移量相等*/
+	    overflow: visible;
+	    border: none;
+	    background: url(images/img-js/progress-bar.png) center no-repeat;
+	    background-size: auto 20px;
+	}
+
+	&::-ms-fill-lower {
+	/*进度条已填充的部分*/
+    height: 11px;
+    border-radius: 10px;
+    background: #FBB435;
+	}
+
+	&::-ms-fill-upper {
+    /*进度条未填充的部分*/
+	    height: 11px;
+	    border-radius: 10px;
+	    background: #ffffff;
+	}
+}
+
 /* 结束设计main */
 
 /* 开始设计footer */

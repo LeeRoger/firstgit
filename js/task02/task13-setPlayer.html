@@ -12,6 +12,7 @@
 
 	<!-- 自己的样式文件 
 	<link href="myBootstrap.css" rel="stylesheet"> -->
+	<script src="slider.js"></script>
 	<link href="task13.css" rel="stylesheet">
 	<style>
 
@@ -19,8 +20,8 @@
 </head>
 <body class="set-player" id="setPlayer">
 
-<div class="pop-err is-fixed" id="popErr">
-	<div class="pop-err-num">
+<div class="pop-err" id="popErr"> <!-- "is-fixed" will be added -->
+	<div class="pop-err-num" id="popErrNum">
 		<p>请输入正确的玩家数量</p>
 		<div class="pop-err-num-choice">
 			<span class="pop-err-num-choice-cancel">取消</span>
@@ -43,7 +44,9 @@
 		<div class="player-detail">
 			<table>
 				<tr>
-					<th scope="row" rowspan="2">玩家配比</th>
+					<th scope="row" rowspan="2">
+						<div class="player-detail-hint">玩家配比</div>
+					</th>
 					<td>
 						<!-- 
 						<div class="not-container"><div class="not-row">
@@ -67,27 +70,27 @@
 						</div></div>
 						-->
 						<div class="player-detail-role">
-							<i></i>杀手<span class="player-detail-role-num"></span>
+							<i></i>杀手<span class="player-detail-role-num">1人</span>
 						</div>
 
 						<div class="player-detail-role">
-							<i></i>警察<span class="player-detail-role-num"></span>
+							<i></i>警察<span class="player-detail-role-num">1人</span>
 						</div>
 
 						<div class="player-detail-role">
-							<i></i>平民<span class="player-detail-role-num"></span>
+							<i></i>平民<span class="player-detail-role-num">1人</span>
 						</div>
 
 						<div class="player-detail-role">
-							<i></i>法官<span class="player-detail-role-num"></span>
+							<i></i>法官<span class="player-detail-role-num">1人</span>
 						</div>
 
 						<div class="clear-both"></div>
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<div class="player-detail-set">参数设置<span class="glyphicon glyphicon-pencil"></span></div>
+					<td class="player-detail-set">
+						参数设置<span class="glyphicon glyphicon-pencil"></span>
 					</td>
 				</tr>
 			</table>
@@ -101,9 +104,19 @@
 			<form name="player-num-set">
 				<label class="player-num-label">
 					<span>请输入玩家数量</span>
-					<input type="text" name="player-num-input">
+					<input id="playerNumInput" type="text" name="player-num-input" value="9" placeholder="">
 					<span>游戏玩家数量为4-18</span>
 				</label>
+				<input id="playerNumSetBar" type="range" value="9"  min="4" max="18" step="1">
+				<script>
+					var change = function($input) {
+						/*内容可自行定义*/
+						console.log("123");
+					}
+
+					$('#playerNumSetBar').RangeSlider({ min: 4,   max: 18,  step: 1,  callback: change});
+
+				</script>
 			</form>
 			</div>
 			</div>
@@ -113,10 +126,10 @@
 </main>
 
 <footer>
-	<button class="game-start btn btn-default btn-block" id=>去发牌</button>
+	<button class="game-start btn btn-default btn-block" id="gameStart">去发牌</button>
 </footer>
 
 </div>
-
+<script src="task02.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 var roleNumNodeList = document.getElementsByClassName("player-detail-role-num");
 var roleNum = { killer: 0, police: 0, civilian: 0, judge: 1 };
 var roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge];
-var playerRoleList = new Array(playerNum);
+var roleList = ["killer", "police", "civilian", "judge"];
 var playerRoleListShuffled = new Array(playerNum);
 
 // 获取input.value，需注意命名规范，下面三种方式都可以，当然还有更多写法
@@ -15,17 +15,6 @@ var popErr = document.getElementById("popErr");
 var popErrNum = document.getElementById("popErrNum");
 var choiceConfirm = document.getElementById("popErrNumChoiceConfirm");
 var gameStart = document.getElementById("gameStart");
-
-// 洗牌算法
-function shuffle(array) {
-    var _array = array.concat();
-    for (var i=_array.length; i>=0; i--) {
-        var j = Math.floor(Math.random() * (i+1));  // 0<=j<=i
-        var temp = _array[i];
-        _array[i] = _array[j];
-        _array[j] = temp;
-    }
-}
 
 // 获得玩家数量
 function getPlayerNum() {
@@ -85,6 +74,30 @@ function getBackground() {
 
 // 使得初始value值不为4时，仍能获得背景渐变
 getBackground();
+
+// 洗牌算法，从后往前遍历，将之与之前的任意元素(包含自身)交换
+function shuffle(array) {
+    var _array = array.concat();
+    for (var i=_array.length; i>=0; i--) {
+        var j = Math.floor(Math.random() * (i+1));  // 0<=j<=i
+        var temp = _array[i];
+        _array[i] = _array[j];
+        _array[j] = temp;
+    }
+    return _array;
+}
+
+// 为玩家分配角色
+function getPlayerRole() {
+    var playerRoleList = new Array(playerNum);
+    for (var i=0; i<playerNum; i++) {
+        for (var j=0; j<roleNumList.length; j++) {
+            playerRoleList.concat(roleList[i]);
+        }
+    }
+    playerRoleListShuffled = shuffle(playerRoleList);
+}
+
 
 playerNumSetBar.onchange = function() {
     playerNumInput.value = playerNumSetBar.value;

@@ -1,8 +1,10 @@
+// 后续应该不会写这么多变量，这个跟一个html页面关联度太高了
+// 应该能适用于所有的游戏，要不然每个游戏都要写
 var roleNumNodeList = document.getElementsByClassName("player-detail-role-num");
 var roleNum = { killer: 0, police: 0, civilian: 0, judge: 1 };
 var roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge];
 var roleList = ["killer", "police", "civilian", "judge"];
-var playerRoleListShuffled = new Array(playerNum);
+var playerRoleListShuffled = new Array();
 
 // 获取input.value，需注意命名规范，下面三种方式都可以，当然还有更多写法
 //var playerNumInput = playerNumSet.playerNumInput; // player-num-set.player-num-input或者player_num_set.player_num_input都是错误的
@@ -78,7 +80,7 @@ getBackground();
 // 洗牌算法，从后往前遍历，将之与之前的任意元素(包含自身)交换
 function shuffle(array) {
     var _array = array.concat();
-    for (var i=_array.length; i>=0; i--) {
+    for (var i=_array.length-1; i>=0; i--) {
         var j = Math.floor(Math.random() * (i+1));  // 0<=j<=i
         var temp = _array[i];
         _array[i] = _array[j];
@@ -89,12 +91,14 @@ function shuffle(array) {
 
 // 为玩家分配角色
 function getPlayerRole() {
-    var playerRoleList = new Array(playerNum);
-    for (var i=0; i<playerNum; i++) {
-        for (var j=0; j<roleNumList.length; j++) {
-            playerRoleList.concat(roleList[i]);
+    var playerRoleList = new Array();
+    for (var i=0; i<roleList.length; i++) {
+        for (var j=0; j<roleNumList[i]; j++) {
+            //playerRoleList.push(roleList[i]);
+            playerRoleList = playerRoleList.concat(roleList[i]);
         }
     }
+    console.log(playerRoleList); console.log(" 打乱前玩家角色");
     playerRoleListShuffled = shuffle(playerRoleList);
 }
 
@@ -136,6 +140,8 @@ gameStart.onclick = function() {
         console.log(roleNumList + ' button.onclick.roleNumList.beforeupdate');
         getRoleNum(playerNum);
         writeRoleNum();
+        getPlayerRole();
+        console.log(playerRoleListShuffled); console.log(" 打乱后玩家角色");
     } else {
         popErrHint();
     }

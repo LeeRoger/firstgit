@@ -817,6 +817,7 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	color: @mainColor;
 	text-align: center;
 	border-top: 1px solid #ccc;
+	cursor: pointer;
 
 	> span {
 		margin-left: 6px;
@@ -870,15 +871,45 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	}
 }
 
+.set-bar {
+	max-width: 350px;
+	min-width: 330px;
+	margin: 0 auto;
+	padding: 0 15px;
+	text-align: center;
+	
+	span {
+		display: inline-block;
+		height: 22px;
+		width: 22px;
+		margin-top: 15px; // 53/2 - 22/2
+		line-height: 20px;
+		font-size: 18px;
+		font-weight: 600;
+		color: #FBB435;
+		text-align: center;
+		border: 1px solid #ccc;
+		cursor: pointer;
+	}
+}
+
+.set-bar-down { float: left; }
+.set-bar-add { float: right; }
+
 /* 去除系统默认的样式 */
 /* 这步操作是为了不使用原有的样式，使之后的自定义样式有效。
    不过要注意的是对基于 webkit 的浏览器，如Chrome, Safari, Opera等，滑块也要移除默认样式。 */
 input[type=range] {
 	-webkit-appearance: none;
-	width: 300px;
-	margin: 15px auto;
+	   -moz-appearance: none;
+	        appearance: none;
+	display: inline-block;
+	width: 240px;
+	height: 3px;
+	margin: 25px auto;
+	//outline: none;
 	
-	border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+	//border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
 }
 input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
@@ -887,10 +918,10 @@ input[type=range]::-webkit-slider-thumb {
 /* 给滑动轨道(track)添加样式 */
 /*正式开始自定义控件样式了。首先是自定义滑动控件的轨道 */
 input[type=range]::-webkit-slider-runnable-track {
-	height: 15px;
+	height: 3px;
 	overflow: visible;
-	border-radius: 10px; /*将轨道设为圆角的*/
-	box-shadow: 0 1.5px 1px @mainColor, inset 0 1.5px 1px @mainColor; /*轨道内置阴影效果*/
+	/*border-radius: 3px; /*将轨道设为圆角的*/
+	/*box-shadow: 0 1.5px 1px @mainColor, inset 0 1.5px 1px @mainColor; /*轨道内置阴影效果*/
 }
 /* 原始的控件获取到焦点时，会显示包裹整个控件的边框，所以还需要把边框取消。 */
 input[type=range]:focus {
@@ -899,10 +930,10 @@ input[type=range]:focus {
 
 /* 给滑块(thumb)添加样式 */
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
+    -webkit-appearance: none;	
     height: 25px;
     width: 33px;
-    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    margin-top: -11px; /*使滑块超出轨道部分的偏移量相等*/
     background: url(images/img-js/progress-bar.png) center no-repeat;
     background-size: auto 20px;
     /*background: #ffffff; 
@@ -925,9 +956,10 @@ input[type=range]::-webkit-slider-thumb {
  这样实现填充，只需要新增如下的css代码即可：*/
 input[type=range]::-moz-range-progress {
     /*background: linear-gradient(to right, #059CFA, white 100%, white); */
-    height: 13px;    
+    height: 3px;    
+    outline: none;
     background-color: #FBB435;
-    border-radius: 10px;
+    //border-radius: 3px;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -944,10 +976,10 @@ input[type=range] {
 	overflow: visible;
 
 	&::-ms-track {
-		height: 15px;
+		height: 3px;
 		overflow: visible;
-		border-radius: 10px; /*将轨道设为圆角的*/
-		border: 2px solid @mainColor;
+		/*border-radius: 10px; /*将轨道设为圆角的*/
+		/*border: 2px solid @mainColor; */
 		/*box-shadow: 0 2px 1px @mainColor, inset 0 1.5px 1px @mainColor;
 		border-color: transparent; /*去除原有边框*/
     	color: transparent; /*去除轨道内的竖线*/
@@ -965,16 +997,17 @@ input[type=range] {
 
 	&::-ms-fill-lower {
 	/*进度条已填充的部分*/
-    height: 11px;
-    border-radius: 10px;
+    height: 3px;
+    /*border-radius: 10px;*/
     background: #FBB435;
 	}
 
 	&::-ms-fill-upper {
     /*进度条未填充的部分*/
-	    height: 11px;
-	    border-radius: 10px;
-	    background: #ffffff;
+	    height: 3px;
+	    //border-radius: 10px;
+	    //background: #ffffff;
+	    background-color: gray;
 	}
 }
 

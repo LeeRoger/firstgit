@@ -13,6 +13,9 @@ var playerNumInput = document.getElementById("playerNumInput");
 var playerNumSetBar = document.getElementById("playerNumSetBar");
 var playerNum = 0;
 
+var setBarDown = document.getElementById("setBarDown");
+var setBarAdd = document.getElementById("setBarAdd");
+
 var popErr = document.getElementById("popErr");
 var popErrNum = document.getElementById("popErrNum");
 var choiceConfirm = document.getElementById("popErrNumChoiceConfirm");
@@ -70,7 +73,7 @@ function popErrHint() {
 function getBackground() {
     var colorWidth = ((parseFloat(playerNumSetBar.value)-4)/14)*100;
     var colorBreak = ((parseFloat(playerNumSetBar.value)-4)/14)*100+0.1;
-    var linearGradient = 'linear-gradient(to right, #FBB435, #FBB435 ' + colorWidth + '%, white ' + colorBreak +'%, white)';
+    var linearGradient = 'linear-gradient(to right, #FBB435, #FBB435 ' + colorWidth + '%, gray ' + colorBreak +'%, gray)';
     playerNumSetBar.style.background = linearGradient;
 }
 
@@ -102,6 +105,34 @@ function getPlayerRole() {
     playerRoleListShuffled = shuffle(playerRoleList);
 }
 
+
+setBarAdd.onclick = function() {
+    if (parseInt(playerNumSetBar.value) === 18) {
+        alert("人不能更多了！");
+    } else {
+        playerNumSetBar.value = (parseInt(playerNumSetBar.value) + 1).toString();
+        console.log(typeof(playerNumSetBar.value));
+        getBackground();
+        getSameNum();
+        getPlayerNum();
+        getRoleNum(playerNum);
+        writeRoleNum();
+    }
+}
+
+setBarDown.onclick = function() {
+    if (parseInt(playerNumSetBar.value) === 4) {
+        alert("人不能更少了！");
+    } else {
+        playerNumSetBar.value = (parseInt(playerNumSetBar.value) - 1).toString();
+        console.log(typeof(playerNumSetBar.value));
+        getBackground();
+        getSameNum();
+        getPlayerNum();
+        getRoleNum(playerNum);
+        writeRoleNum();
+    }
+}
 
 playerNumSetBar.onchange = function() {
     playerNumInput.value = playerNumSetBar.value;

@@ -92,7 +92,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="player-detail-set">
+					<td class="player-detail-set" onclick="document.getElementById('playerNumInput').focus();">
 						参数设置<span class="glyphicon glyphicon-pencil"></span>
 					</td>
 				</tr>
@@ -110,7 +110,12 @@
 					<input id="playerNumInput" type="text" name="playerNumInput" value="9" placeholder="">
 					<span>游戏玩家数量为4-18</span>
 				</label>
-				<input id="playerNumSetBar" type="range" value="9"  min="4" max="18" step="1">
+				<div class="set-bar">
+					<span class="set-bar-down" id="setBarDown">-</span>
+					<input id="playerNumSetBar" type="range" value="9"  min="4" max="18" step="1">
+					<span class="set-bar-add" id="setBarAdd">+</span>
+					<div class="clear-both"></div>
+				</div>
 				<script>
 					var change = function($input) {
 						/*内容可自行定义*/

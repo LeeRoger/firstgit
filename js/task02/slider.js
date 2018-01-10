@@ -27,7 +27,7 @@ $.fn.RangeSlider = function(cfg){
         var colorWidth = ((parseFloat(this.value)-4)/14)*100;
         var colorBreak = ((parseFloat(this.value)-4)/14)*100+0.1;
         //console.log(colorBreak);
-        var linearGradient = 'linear-gradient(to right, #FBB435, #FBB435 ' + colorWidth + '%, white ' + colorBreak +'%, white)';
+        var linearGradient = 'linear-gradient(to right, #FBB435, #FBB435 ' + colorWidth + '%, gray ' + colorBreak +'%, gray)';
         //console.log(linearGradient);
         $input.css('background', linearGradient);
         /*$input.css( 'background-color', '#FBB435' );*/

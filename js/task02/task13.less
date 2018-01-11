@@ -826,10 +826,19 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 }
 
 .fill-page {
+	display: flex;
 	flex: 1;
+	flex-direction: column;
+	justify-content: center;
 	padding-left: 15px;
 	padding-right: 15px;
 	background-color: #fff;
+}
+
+.player-word {
+	padding: 5px 0;
+	color: #ccc;
+	border-bottom: 1px solid #ccc;
 }
 
 .player-num {

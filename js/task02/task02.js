@@ -78,7 +78,7 @@ function getBackground() {
 }
 
 // 使得初始value值不为4时，仍能获得背景渐变
-getBackground();
+document.getElementById('setPlayer').onload = getBackground();
 
 // 洗牌算法，从后往前遍历，将之与之前的任意元素(包含自身)交换
 function shuffle(array) {

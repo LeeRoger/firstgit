@@ -18,121 +18,38 @@
 
 	</style>
 </head>
-<body class="set-player" id="setPlayer">
-
-<div class="pop-err" id="popErr"> <!-- "is-fixed" will be added -->
-	<div class="pop-err-num" id="popErrNum">
-		<p>请输入正确的玩家数量</p>
-		<div class="pop-err-num-choice">
-			<span class="pop-err-num-choice-cancel">取消</span>
-			<span class="pop-err-num-choice-confirm" id="popErrNumChoiceConfirm">确认</span>
-		</div>
-	</div>
-</div>
-
-<div class="pop-off">
+<body class="check-player" id="checkPlayer">
 
 <header>
 	<h2>
-		<a class="back" href="task13-home.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
-		参数设置
-		<a class="help" href="#"><span class="question glyphicon glyphicon-question-sign"></span></a>
+		<a class="back" href="task13-setPlayer.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		查看身份
+		<a class="quit" href="#"><span class="glyphicon glyphicon-remove"></span></a>
 	</h2>
 	<div class="clear-both"></div>
 </header>
 
-<main style="height: calc(100% - 150px);">
-	<div class="container">
-
-		<div class="player-detail">
-			<table>
-				<tr>
-					<th scope="row" rowspan="2">
-						<div class="player-detail-hint">玩家配比</div>
-					</th>
-					<td>
-						<!-- 
-						<div class="not-container"><div class="not-row">
-
-						<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
-							<i></i>杀手<span class="player-detail-role-num"></span>
-						</div>
-
-						<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
-							<i></i>警察<span class="player-detail-role-num"></span>
-						</div>
-
-						<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
-							<i></i>平民<span class="player-detail-role-num"></span>
-						</div>
-
-						<div class="player-detail-role col-xs-6 col-sm-6 col-md-3 col-lg-3">
-							<i></i>法官<span class="player-detail-role-num"></span>
-						</div>
-
-						</div></div>
-						-->
-						<div class="player-detail-role">
-							<i></i>杀手<span class="player-detail-role-num">1人</span>
-						</div>
-
-						<div class="player-detail-role">
-							<i></i>警察<span class="player-detail-role-num">1人</span>
-						</div>
-
-						<div class="player-detail-role">
-							<i></i>平民<span class="player-detail-role-num">1人</span>
-						</div>
-
-						<div class="player-detail-role">
-							<i></i>法官<span class="player-detail-role-num">1人</span>
-						</div>
-
-						<div class="clear-both"></div>
-					</td>
-				</tr>
-				<tr>
-					<td class="player-detail-set">
-						参数设置<span class="glyphicon glyphicon-pencil"></span>
-					</td>
-				</tr>
-			</table>
+<main style="height: calc(100% - 135px);">
+	<div class="check-hidden-player-role">
+		<div class="check-player-role">
+			<span class="player-seq-num num-pos-out">3</span>
+			<img src="images/img-js/identity_look.png">
 		</div>
-
-		<div class="fill-page"></div>
-
-		<div class="player-num">
-			<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<form name="playerNumSet">
-				<label class="player-num-label">
-					<span>请输入玩家数量</span>
-					<input id="playerNumInput" type="text" name="playerNumInput" value="9" placeholder="">
-					<span>游戏玩家数量为4-18</span>
-				</label>
-				<input id="playerNumSetBar" type="range" value="9"  min="4" max="18" step="1">
-				<script>
-					var change = function($input) {
-						/*内容可自行定义*/
-						console.log("playerNumSetBar.onchange");
-					}
-
-					$('#playerNumSetBar').RangeSlider({ min: 4,   max: 18,  step: 1,  callback: change});
-
-				</script>
-			</form>
-			</div>
+		<div class="hidden-player-role is-hidden">
+			<span class="player-seq-num num-pos-out">3</span>
+			<img src="images/img-js/identity_result.png">
+			<div>角色:<span class="hidden-player-role-detail">幽灵</span>
 			</div>
 		</div>
-
 	</div>
 </main>
 
 <footer>
-	<button class="game-start btn btn-default btn-block" id="gameStart">去发牌</button>
+	<button class="check-hidden-role btn btn-default btn-block" id="checkHiddenRole">
+		<div class="check-role">查看<span class="player-seq-num">1</span>号身份</div>
+		<div class="hidden-role is-hidden">隐藏身份并传递给<span class="player-seq-num">2</span>号</div>
+	</button>
 </footer>
 
-</div>
-<script src="task02.js"></script>
 </body>
 </html>

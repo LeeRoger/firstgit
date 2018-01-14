@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>设置人数</title>
+	<title>查看身份</title>
 
 	<!-- 恢复使用bootstrap -->
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">   
@@ -31,15 +31,18 @@
 
 <main style="height: calc(100% - 135px);">
 	<div class="check-hidden-player-role">
-		<div class="check-player-role">
-			<span class="player-seq-num num-pos-out">3</span>
+		<div class="check-player-role" id="checkPlayerRole">
+			<span class="player-seq-num num-pos-out">1</span>
 			<img src="images/img-js/identity_look.png">
 		</div>
-		<div class="hidden-player-role is-hidden">
-			<span class="player-seq-num num-pos-out">3</span>
+		<div class="hidden-player-role is-hidden" id="hiddenPlayerRole">
+			<span class="player-seq-num num-pos-out">1</span>
 			<img src="images/img-js/identity_result.png">
-			<div>角色:<span class="hidden-player-role-detail">幽灵</span>
+
+			<div>角色:<span class="hidden-player-role-detail" id="playerRoleDetail">杀手</span>
 			</div>
+			<div>词组:<span class="hidden-player-role-word">西伯利亚</span></div>
+			<div class="hidden-player-role-hint">想办法猜到别人的词，同时还要注意不要暴露自己哦！</div>
 		</div>
 	</div>
 </main>
@@ -48,8 +51,9 @@
 	<button class="check-hidden-role btn btn-default btn-block" id="checkHiddenRole">
 		<div class="check-role">查看<span class="player-seq-num">1</span>号身份</div>
 		<div class="hidden-role is-hidden">隐藏身份并传递给<span class="player-seq-num">2</span>号</div>
+		<div class="now-begin is-hidden"><a href="task13-vote.html">隐藏身份并开始游戏</a></div>
 	</button>
 </footer>
-
+<script src="task03.js"></script>
 </body>
 </html>

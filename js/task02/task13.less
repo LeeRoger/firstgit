@@ -786,6 +786,7 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	text-align: center;
 	float: left;
 	width: 50%;
+	letter-spacing: 13px; // 为了使文字对齐
 	@media (min-width: 768px) {
 		& { width: 25%; }
 	}
@@ -799,10 +800,24 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 		border-radius: 50%;
 	}
 
+	span { letter-spacing: 0; }
+
+	&:nth-of-type(5) {
+		//padding-left: 0; // 占据一个字的位置
+		letter-spacing: 0;
+
+		span {
+			padding-left: 13px; // 占据一个字的位置
+			letter-spacing: 0px;
+		}
+	}
+
 	&:nth-of-type(1) i { background-color: orange; }
 	&:nth-of-type(2) i { background-color: green; }
 	&:nth-of-type(3) i { background-color: gray; }
 	&:nth-of-type(4) i { background-color: red; }
+	&:nth-of-type(5) i { background-color: orange; }
+	&:nth-of-type(6) i { background-color: green; }
 	
 }
 
@@ -1124,6 +1139,42 @@ input[type=range] {
 	transform: translate(-50%, -50%);
 	width: 80%;
 
+}
+
+.hidden-player-role {
+	height: 100%;
+	text-align: center;
+
+	img {
+		width: 50%;
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
+
+	> div { margin: 5px 0; }
+
+	> div:nth-of-type(1) {
+		font-size: 16px;
+		font-weight: 600;
+		color: @mainColor;
+	}
+
+	> div:nth-of-type(2) {
+
+		font-size: 18px;
+		font-weight: 600;
+		color: rgb(244,99,124);
+	}
+
+	> div:nth-of-type(3) {
+		margin-top: 10px;
+		padding: 15px;
+		font-size: 14px;
+		font-weight: 600;
+		color: #FBB435;
+		text-align: left;
+		border-top: 2px solid #fff;
+	}
 }
 
 

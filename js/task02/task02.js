@@ -1,9 +1,9 @@
 // 后续应该不会写这么多变量，这个跟一个html页面关联度太高了
 // 应该能适用于所有的游戏，要不然每个游戏都要写
 var roleNumNodeList = document.getElementsByClassName("player-detail-role-num");
-var roleNum = { killer: 0, police: 0, civilian: 0, judge: 1 };
-var roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge];
-var roleList = ["killer", "police", "civilian", "judge"];
+var roleNum = { killer: 0, police: 0, civilian: 0, judge: 1, sniper: 0, doctor: 0 };
+var roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge, roleNum.sniper, roleNum.doctor];
+var roleList = ["杀手", "警察", "平民", "法官", "狙击手", "医生"];
 var playerRoleListShuffled = new Array();
 
 // 获取input.value，需注意命名规范，下面三种方式都可以，当然还有更多写法
@@ -23,20 +23,23 @@ var gameStart = document.getElementById("gameStart");
 
 // 获得玩家数量
 function getPlayerNum() {
-    playerNum = playerNumInput.value; 
+    playerNum = parseInt(playerNumInput.value); 
 }
 
 // 更新角色数量数组
 function updateRoleNumList(roleNum) {
-    roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge];
+    roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge, roleNum.sniper, roleNum.doctor];
 }
 
 // 获得角色数量
 function getRoleNum(playerNum) {
-    roleNum.killer = ((playerNum-1)%4 == 3) ? Math.ceil((playerNum-1)/4) : Math.floor((playerNum-1)/4);
+    killers = ((playerNum-1)%4 == 3) ? Math.ceil((playerNum-1)/4) : Math.floor((playerNum-1)/4);
+    roleNum.killer = (killers > 1) ? killers-1 : killers;
+    roleNum.sniper = (roleNum.killer === killers) ? 0 : 1;
     console.log(roleNum.killer + '人' + ' FgetRoleNum.roleNum.killer');
     roleNum.police = roleNum.killer;
-    roleNum.civilian = playerNum - 1 - 2 * roleNum.killer;
+    roleNum.doctor = roleNum.sniper;
+    roleNum.civilian = playerNum - 1 - 2 * killers;
     console.log(roleNumList + ' FgetRoleNum.roleNumList.updatebefore');
     updateRoleNumList(roleNum);
     console.log(roleNumList + ' FgetRoleNum.roleNumList.updateafter');
@@ -103,6 +106,17 @@ function getPlayerRole() {
     }
     console.log(playerRoleList); console.log(" 打乱前玩家角色");
     playerRoleListShuffled = shuffle(playerRoleList);
+}
+
+// 本地储存游戏玩家角色列表
+function storeRoleList(list) {
+    var listString = list.join("#");
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("roleListString", listString);
+        console.log(localStorage.getItem("roleListString"));
+    } else {
+        alert("抱歉！您的浏览器不支持 Web Storage ...");
+    }
 }
 
 
@@ -173,6 +187,8 @@ gameStart.onclick = function() {
         writeRoleNum();
         getPlayerRole();
         console.log(playerRoleListShuffled); console.log(" 打乱后玩家角色");
+        storeRoleList(playerRoleListShuffled);
+        window.location.href = "task13-checkID.html"
     } else {
         popErrHint();
     }

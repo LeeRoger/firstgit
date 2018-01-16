@@ -1,6 +1,9 @@
 // 后续应该不会写这么多变量，这个跟一个html页面关联度太高了
 // 应该能适用于所有的游戏，要不然每个游戏都要写
 var roleNumNodeList = document.getElementsByClassName("player-detail-role-num");
+//var roleNum = { killer: 0, police: 0, civilian: 0, sniper: 0, doctor: 0 };
+//var roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.doctor, roleNum.sniper];
+//var roleList = ["杀手", "警察", "平民", "医生", "狙击手"];
 var roleNum = { killer: 0, police: 0, civilian: 0, judge: 1, sniper: 0, doctor: 0 };
 var roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge, roleNum.sniper, roleNum.doctor];
 var roleList = ["杀手", "警察", "平民", "法官", "狙击手", "医生"];
@@ -28,17 +31,20 @@ function getPlayerNum() {
 
 // 更新角色数量数组
 function updateRoleNumList(roleNum) {
+    //roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.doctor, roleNum.sniper];
     roleNumList = [roleNum.killer, roleNum.police, roleNum.civilian, roleNum.judge, roleNum.sniper, roleNum.doctor];
 }
 
 // 获得角色数量
 function getRoleNum(playerNum) {
-    killers = ((playerNum-1)%4 == 3) ? Math.ceil((playerNum-1)/4) : Math.floor((playerNum-1)/4);
+    //killers = (playerNum % 4 == 3) ? Math.ceil(playerNum / 4) : Math.floor(playerNum / 4);
+    killers = ((playerNum-1) % 4 == 3) ? Math.ceil((playerNum-1) / 4) : Math.floor((playerNum-1) / 4);
     roleNum.killer = (killers > 1) ? killers-1 : killers;
     roleNum.sniper = (roleNum.killer === killers) ? 0 : 1;
     console.log(roleNum.killer + '人' + ' FgetRoleNum.roleNum.killer');
     roleNum.police = roleNum.killer;
     roleNum.doctor = roleNum.sniper;
+    //roleNum.civilian = playerNum - 2 * killers;
     roleNum.civilian = playerNum - 1 - 2 * killers;
     console.log(roleNumList + ' FgetRoleNum.roleNumList.updatebefore');
     updateRoleNumList(roleNum);

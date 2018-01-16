@@ -49,7 +49,7 @@ function getClickCount() {
         } else {
             localStorage.clickcount = 1;
         }
-        return localStorage.clickcount;
+        return parseInt(localStorage.clickcount);
     } else {
         alert("抱歉！您的浏览器不支持 Web Storage ...");
         return false;
@@ -66,9 +66,10 @@ checkHiddenRole.onclick = function() {
     playerRoleList = getRoleList();
     clickCount = getClickCount();
     console.log(clickCount);
+    console.log(typeof(clickCount));
     updatePlayerSeqNum(clickCount, playerRoleList);
     // 点按钮后上方显示的编号为 1,2,2,3,3,...
-    if (clickCount < 2 * playerRoleList.length - 1) {
+    if (clickCount < 2 * playerRoleList.length - 1 && clickCount > 0) {
         display = clickCount % 2;
         updateDisplay(checkPlayerRole, 1-display);
         updateDisplay(checkRole, 1-display);
@@ -87,13 +88,17 @@ checkHiddenRole.onclick = function() {
             updateDisplay(hiddenRole, 0);
         }
         */
-    } else {
+    } else if (clickCount === 2 * playerRoleList.length - 1) {
         var nowBegin = document.getElementsByClassName("now-begin")[0];
+        
         updateDisplay(checkPlayerRole, 0);
         updateDisplay(hiddenPlayerRole, 1);
         updateDisplay(checkRole, 0);
         updateDisplay(hiddenRole, 0);
         updateDisplay(nowBegin, 1);
+
         localStorage.clickcount = -1;
+    } else {
+        window.location.href = "task13-judge.html";
     }
 }

@@ -1206,3 +1206,73 @@ input[type=range] {
 }
 
 /* 结束设计footer */
+
+
+
+/* 开始设计header */
+.judgepage header {
+	position: fixed;
+	top: 0; right: 0; left: 0;
+	height: 50px;
+	background-color: @voteBgColor;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+
+	a {
+		font-weight: normal;
+		color: #fff;
+		text-decoration: none;
+		cursor: pointer;
+		&:hover { color: #f8be5d; }
+
+		&.back { float: left; }
+		&.quit { float: right; }
+	}
+
+	h2 {
+		display: block; // 覆盖之前的样式
+		height: 50px;   // 覆盖之前的样式
+		margin: 0;
+		padding: 5px 10px;
+		color: #fff;
+		line-height: 40px;
+		font-size: 18px;
+		text-align: center;		
+	}
+}
+/* 结束设计header */
+
+/* 开始设计main */
+.judgepage main .container {
+	margin-top: 70px;
+}
+
+.vote {
+	position: relative;
+	height: 80px;
+}
+
+.identity-cover {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 99;
+	background-image: url(images/img-js/judge_pokerface.png),
+	                  url(images/img-js/judge_pokerbg.png);
+	background-repeat: no-repeat, repeat; // 这里不能写repeat-x repeat-y
+	background-position: 45% 10px, left top; // 因为图片本身视觉上是倾斜的，所以没有设为50%
+	background-size: auto 35px, auto auto;
+	//background: url(images/img-js/judge_pokerface.png) center no-repeat,
+	//            url(images/img-js/judge_pokerbg.png) repeat-x repeat-y;
+}
+
+.num-cover { // 新增样式，为了有纹路背景
+	margin-top: 54px;
+	margin-bottom: 0;
+	color: #fff;
+	background-color: rgba(63,186,199,.7) !important;
+}
+/* 结束设计mian */
+
+/* 开始设计footer */
+.judgepage footer {
+	z-index: 999;
+}

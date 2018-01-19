@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>法官日记</title>
+
+	
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- 自己的样式文件 
+	<link href="myBootstrap.css" rel="stylesheet">-->
+	<link href="task13.css" rel="stylesheet">
+</head>
+<body class="votepage judgepage judgeflow">
+
+<header>
+	<h2>
+		<a class="back" href="task13-judge.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		法官日记
+		<a class="quit" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+	</h2>
+	<div class="clear-both"></div>
+</header>
+
+<main>
+
+	<div class="container">
+		<div class="game-step" id="gameStep">
+
+			<h3 class="game-step-day">第一天
+				<span><i class="icon-angle-down"></i>
+				</span>
+				<div class="clear-both"></div>
+			</h3>
+
+			<div class="game-step-detail">
+				<div class="game-step-night">
+					<span class="time-sign"><img src="images/img-js/step_moon.png"></span>
+					<div class="game-step-detail-role" id="killerStep">杀手杀人</div>
+					<div class="game-step-detail-role" id="policeStep">警察验人</div>
+					<div class="game-step-detail-role" id="sniperStep">狙击狙人</div>
+					<div class="game-step-detail-role" id="docterStep">医生救人</div>
+				</div>
+				<div class="game-step-daylight">
+					<span class="time-sign"><img src="images/img-js/step_sun.png"></span>
+					<div class="game-step-detail-role" id="ghostStep">亡灵发表遗言</div>
+					<div class="game-step-detail-role" id="speakStep">玩家依次发言</div>
+					<div class="game-step-detail-role" id="voteStep">投票</div>
+				</div>
+			</div>
+
+			<div class="game-step-hidden is-hidden">
+				<span class="trangle-top"></span>
+			</div>
+
+		</div>
+	</div>
+
+</main>
+
+<div class="pop-hint" id="popHint"> <!-- "is-fixed" will be added -->
+	<div class="pop-hint-role">
+		<p>杀手请杀人</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="killerConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>杀手开始杀人</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="killerConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>警察开始验人</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="policeConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>狙击手开始狙人</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="sniperConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>医生开始救人</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="doctorConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>死者开始发表遗言</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="ghostConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>玩家请依次发言</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="speakConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role">
+		<p>开始投票</p>
+		<div class="pop-hint-role-choice">
+			<span class="pop-hint-role-choice-cancel">取消</span>
+			<span class="pop-hint-role-choice-confirm" id="voteConfirm">确认</span>
+		</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

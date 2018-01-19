@@ -591,10 +591,12 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 
 
 /* 开始设计弹出层 */
+.pop-hint,
 .pop-err {
 	display: none;
 }
 
+.pop-hint.is-fixed,
 .pop-err.is-fixed {
 	position: fixed;
 	top: 0;
@@ -607,11 +609,13 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 	background-color: rgba(0,0,0,.5);
 }
 
+.pop-hint-role,
 .pop-err-num {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	min-width: 280px;
 	max-width: 300px;
 
 	background-color: #fff;
@@ -623,10 +627,11 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 		font-size: 18px;
 		font-weight: bold;
 		color: #265378;
-		text-align: justify;
+		text-align: center;
 	}
 }
 
+.pop-hint-role-choice,
 .pop-err-num-choice {
 	span {
 		float: left;
@@ -1275,4 +1280,126 @@ input[type=range] {
 /* 开始设计footer */
 .judgepage footer {
 	z-index: 999;
+}
+/* 结束设计footer */
+
+
+
+
+/* 开始设计main */
+.judgeflow {
+	&, main { background-color: @mainBgColor; }
+	
+	main {
+		margin-bottom: 0;
+	}
+	main .container {
+		margin-top: 66px;
+		margin-bottom: 0;
+
+	}
+}
+
+.game-step {
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.game-step-day {
+	margin: 0;
+	padding: 10px 0;
+	padding-left: 21.6px; //10+11.578，为了居中
+	//text-indent: 16px;
+	font-size: 16px;
+	font-weight: 600;
+	color: @mainColor;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+
+	span {
+		float: right;
+		margin-right: 10px;
+		cursor: pointer;
+		/*
+		&:before {
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 19px;
+		} */
+
+		i:before {
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+}
+
+.game-step-detail {
+	margin-left: 20px;
+	padding-left: 30px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	border-left: 1px solid #ccc;
+
+	> div { // .game-step-night && .game-step-daylight
+		position: relative;
+		padding-top: 20px;
+	}
+}
+
+.game-step-detail-role {
+	//display: flex;
+	min-height: 40px;
+	padding-top: 10px;   // 为了使文字能够于页面居中
+	padding-right: 10px; // 为了使文字能够于页面居中
+	margin-bottom: 15px;
+	margin-right: 21px;  // 为了使文字能够于页面居中
+	//justify-content: center;
+	//align-items: center;
+	text-align: center;
+	color: #fff;
+	background-color: @voteBgColor;
+	cursor: pointer;
+
+	&:before {
+		position: absolute;
+		left: -8px;
+		margin-top: 2px; // (20-10)/2 (lineheight-height)/2
+		display: table;
+		content: "";
+		width: 8px;
+		height: 16px;
+		border: 8px solid #fff;
+		//border-color: #fff @voteBgColor;
+		border-right-color: @voteBgColor;
+		border-left-width: 0;
+	}
+}
+
+.game-step-detail-role.step-end {
+	background-color: rgb(146,183,165);
+
+	&:before {
+		border-right-color: rgb(146,183,165);
+	}
+}
+
+.time-sign {
+	position: absolute;
+	top: 24px; // 20+(40-32)/2 为了垂直居中
+	left: -46px;  // 30+32/2
+	width: 32px;
+	height: 32px;
+	padding: 5px;
+
+	text-align: center;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+
+	img {
+		height: 20px;
+		width: auto;
+		vertical-align: top; // 覆盖bootstrap样式
+	}
 }

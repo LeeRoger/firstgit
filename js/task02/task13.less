@@ -1403,3 +1403,56 @@ input[type=range] {
 		vertical-align: top; // 覆盖bootstrap样式
 	}
 }
+/* 结束设计main */
+
+
+
+
+/* 开始设计header */
+.judgenight header a img { margin: 0; }
+/* 结束设计header */
+
+/* 开始设计main */
+.judgenight {
+	background-color: @voteBgColor;
+
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		//align-content: space-between;
+		margin-top: 50px;
+		margin-bottom: 75px;
+		overflow: auto;
+		color: #fff;
+		background-color: @voteBgColor;
+	}
+}
+
+.night-answer {
+	padding-top: 30px; // main本身有50的上外边距
+	padding-bottom: 30px;
+	text-align: center;
+
+	img {
+		width: 30%;
+		max-width: 200px;
+		margin-bottom: 30px;
+	}
+}
+
+.night-after {
+	text-align: center;
+
+	img {
+		width: 10%;
+		max-width: 60px;
+	}
+}
+
+.night-after-step {
+	padding: 10px;
+	margin: 0 15%;
+	font-size: 16px;
+	background-color: rgb(36,167,198);
+}

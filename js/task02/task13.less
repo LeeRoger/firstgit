@@ -1313,8 +1313,15 @@ input[type=range] {
 }
 
 .game-step {
+	margin-bottom: 15px;
 	background-color: #fff;
 	border: 1px solid #ccc;
+}
+
+.game-step.not-today {
+	border: none;
+
+	.game-step-day { border: none; }
 }
 
 .game-step-day {
@@ -1349,7 +1356,7 @@ input[type=range] {
 .game-step-detail {
 	margin-left: 20px;
 	padding-left: 30px;
-	padding-right: 20px;
+	padding-right: 31px;
 	padding-bottom: 30px;
 	border-left: 1px solid #ccc;
 
@@ -1360,18 +1367,22 @@ input[type=range] {
 }
 
 .game-step-detail-role {
+	display: block;
 	//display: flex;
+	width: 100%;
 	min-height: 40px;
-	padding-top: 10px;   // 为了使文字能够于页面居中
-	padding-right: 10px; // 为了使文字能够于页面居中
+	//padding-top: 10px;   // 为了使文字能够于页面居中
+	padding-right: 20px; // 为了使文字能够于页面居中
 	margin-bottom: 15px;
-	margin-right: 21px;  // 为了使文字能够于页面居中
+	//margin-right: 21px;  // 为了使文字能够于页面居中
 	//justify-content: center;
 	//align-items: center;
 	text-align: center;
 	color: #fff;
 	background-color: @voteBgColor;
 	cursor: pointer;
+	border: none;
+	outline: none;
 
 	&:before {
 		position: absolute;
@@ -1385,6 +1396,14 @@ input[type=range] {
 		//border-color: #fff @voteBgColor;
 		border-right-color: @voteBgColor;
 		border-left-width: 0;
+	}
+
+	&:disabled {
+		background-color: rgb(131,176,155);
+	}
+
+	&:disabled:before {
+		border-right-color: rgb(131,176,155);
 	}
 }
 
@@ -1414,6 +1433,32 @@ input[type=range] {
 		width: auto;
 		vertical-align: top; // 覆盖bootstrap样式
 	}
+}
+
+.game-step-hidden {
+	//min-height: 88px;
+	padding-top: 12px;
+	background-color: @mainBgColor;
+}
+
+.game-step-before {
+	position: relative;
+	min-height: 100px;
+	//margin-top: 8px;
+	//border: 1px solid #fff;
+	background-color: #fff;
+	box-shadow: 0 0 1px #ccc;
+}
+
+.trangle-top {
+	position: absolute;
+	left: 50%; top: -12px;
+	margin-left: -8px;
+	width: 16px;
+	height: 12px;
+	border-right: 8px solid transparent;
+	border-bottom: 12px solid #fff;
+	border-left: 8px solid transparent;
 }
 /* 结束设计main */
 

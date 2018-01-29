@@ -70,6 +70,7 @@ function updatePopErr() {
         default:
             alert("程序出问题了");
     }
+    console.log(nextUrl);
 }
 
 // 弹出提醒框
@@ -110,53 +111,104 @@ var fvm = new StateMachine({
     },
     methods: {
         onBeforeTransition: function() {
+            //console.log(this.selector);
             var state = getState();
             var states = ["start", "killer", "police", "sniper", "doctor", "start"];
             var pos = states.indexOf(state);
             var stateClass = states[pos+1];
             var selector = "." + stateClass;
             console.log("onBeforeTransition初始值设置完毕");
+            var result = false;
             $(".game-step-detail-role").on("click", function() {
+                console.log("这里又是怎么执行的呢");
+                console.log($(this).hasClass(stateClass));
                 if ($(this).hasClass(stateClass)) {
                     updatePopErr();
                     popInfo();
                     console.log("同时执行了");
                     //return true;
                     $(selector).attr("disabled", "disabled");
-                    /*$("#roleConfirm").one("click", function() {
+                    //return true;
+                    $("#roleConfirm").click(function() {
                         console.log("done");
                         $("#popHint").removeClass("is-fixed");
-                        return true;
-                    });*/ /*
-                    $("#roleCancel").one("click", function() {
+                        $(selector).attr("disabled", "disabled");
+                        $(this).trigger("go");
+                        //return true;
+                    });
+                    $("#roleCancel").click(function() {
                         $("#popHint").removeClass("is-fixed");
                         $(selector).removeAttr("disabled");
                         console.log("有点奇怪");
-                        return false;
-                    });*/
+                        $(this).trigger("stay");
+                        //return false;
+                    });
                 } else {
-                    $("#hintWord").text("请按照正确的游戏步骤进行哦");
+                    $("#hintErrWord").text("请按照正确的游戏步骤进行哦");
+                    $(".hint-step").addClass("is-hidden");
+                    $(".hint-err-step").removeClass("is-hidden");
                     popInfo();
-                    $("#roleConfirm").one("click", function() {
+                    $("#errConfirm").one("click", function() {
+                        console.log("错误时点确认是执行了这里")
                         $("#popHint").removeClass("is-fixed");
+                        $(".hint-step").removeClass("is-hidden");
+                        $(".hint-err-step").addClass("is-hidden");
+                        //return false;
                     });
-                    $("#roleCancel").one("click", function() {
+                    $("#errCancel").one("click", function() {
                         $("#popHint").removeClass("is-fixed");
+                        $(".hint-step").removeClass("is-hidden");
+                        $(".hint-err-step").addClass("is-hidden");
+                        //return false;
                     });
+                    console.log("这里发生了什么");
                     return false;
                 }
             });
             console.log("onBeforeTransition");
+            //return result;
             //popInfo();
         },
         onLeaveStart: function() {
+            console.log("onLeaveStart");
+            return new Promise(function(resolve, reject) {
+                console.log("onLeaveStart内部");
+                $("#roleCancel").on("stay", reject);
+            });
+            /*
+            var selector = this.selector;
+            var result = true;
             if (! $("#roleCancel").one("click", function() {
                         $("#popHint").removeClass("is-fixed");
-                        $(".killer").removeAttr("disabled");
+                        $(selector).removeAttr("disabled");
                         console.log("究竟哪里有问题");
                         return false;
-                    })) { return false }
+                    })) { result = false }
+            return result;*/
         },
+        onEnterKiller: function() {
+            console.log("onEnterKiller");
+            return new Promise(function(resolve, reject) {
+                $("#roleConfirm").on("go", function() {
+                    resolve();
+                });
+                console.log("这里并没有起作用");
+            });
+            /*
+            var result = false;
+            if ($("#roleConfirm").one("click", function() {
+                $("#popHint").removeClass("is-fixed");
+                console.log("成功退出了");
+                return true;
+            })) { result = undefined }
+            console.log("未成功退出");
+            console.log(result);
+            return result;*/
+        },
+        onKill: function() {
+            console.log("onkill");
+            window.location.href = nextUrl;
+        }
         /*
         onLeaveState: function() {
             
@@ -177,12 +229,13 @@ var fvm = new StateMachine({
                 return false;
             }
         },*/
-        onKill: function() {
+        //onKill: function() {
             //$(".game-step-detail-role").off("click");
-            $("#roleConfirm").click(function() {
+            /*$("#roleConfirm").click(function() {
                 $("#popHint").removeClass("is-fixed");
                 console.log("成功了");
-            });
+            });*/
+
             
             /*
             $(".killer").one("click", function() {
@@ -193,8 +246,8 @@ var fvm = new StateMachine({
 
                 })
             })*/
-            console.log("onkill");
-        }
+            //console.log("onkill");
+        //}
     }
 });
 /*
@@ -212,7 +265,7 @@ $(".game-step-detail-role").click(function() {
     }
 });
 */
-$(".killer").one("click", function() {
+$(".killer").click(function() {
     //var keep = fvm.onBeforeTransition();
     //$(".game-step-detail-role").off("click");
     //console.log(keep);
@@ -221,6 +274,7 @@ $(".killer").one("click", function() {
         //fvm.onKill();
         //$(".game-step-detail-role").off("click");
         fvm.kill();
+        //fvm.onKill();
     //}
 });
 /*

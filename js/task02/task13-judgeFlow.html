@@ -64,17 +64,24 @@
 </main>
 
 <div class="pop-hint" id="popHint"> <!-- "is-fixed" will be added -->
-	<div class="pop-hint-role">
+	<div class="pop-hint-role hint-step">
 		<p id="hintWord">杀手请杀人</p>
 		<div class="pop-hint-role-choice">
-			<span class="pop-hint-role-choice-cancel" id="roleCancel">取消</span>
-			<span class="pop-hint-role-choice-confirm" id="roleConfirm">确认</span>
+			<span class="role-choice" id="roleCancel">取消</span>
+			<span class="role-choice" id="roleConfirm">确认</span>
 		</div>
 	</div>
-	
+<!--
+	<div class="pop-hint-role hint-err-step is-hidden">
+		<p id="hintErrWord">请按正常的游戏流程进行哦</p>
+		<div class="pop-hint-role-choice">
+			<span class="err-step" id="errCancel">取消</span>
+			<span class="err-step" id="errConfirm">确认</span>
+		</div>
+	</div>
+-->	
 </div>
 
-<script src="state-machine.js"></script>
-<script src="task04-judgeFlow.js"></script>
+<script src="task04-judgeFlow3.js"></script>
 </body>
 </html>

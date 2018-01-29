@@ -2,7 +2,6 @@ var playersJson = window.localStorage.playersJson;
 var players = jQuery.parseJSON(playersJson);
 var baseUrl = "task13-vote.html";
 var nextUrl = "";
-var day = window.localStorage.day ? window.localStorage.day : "1";
 
 // 获取玩家对象
 function getPlayers() {
@@ -26,11 +25,16 @@ function getState() {
 
 // 更新页面天数、状态变化时页面内容的变化
 function updateGameStep() {
+    var day = window.localStorage.day;
+    day = parseInt(day);
+    console.log(day);
     var addGameStep = $(".game-step:first").clone();
     for (var i=1; i<day; i++) {
         $("#game").append(addGameStep);
+        console.log("add");
     }
     for (var i=0; i<day-1; i++) {
+        $(".game-step").get(i).classList.add("not-today");
         $(".game-step-detail").get(i).classList.add("is-hidden");
         $(".game-step-hidden").get(i).classList.remove("is-hidden");
     }
@@ -41,6 +45,13 @@ function updateGameStep() {
         var selector = "." + states[i+1] + ":last";
         $(selector).attr("disabled", "disabled");
     }
+    var dayZn = ["一", "二", "三", "四", "五", "六", "七", "八", "九",
+                 "十", "十一", "十二", "十三", "十四", "十五", "十六",
+                 "十七", "十八"];
+    $(".day-number").each(function(index) {
+        $(this).text(dayZn[index]);
+    });
+    $(".down-up:last").addClass("flipy");
 }
     
 // 更新弹出框内容以及即将跳转的带参数的链接
@@ -100,24 +111,26 @@ $(".game-step-detail-role").on("click", function() {
         popInfo();
         $(selector).attr("disabled", "disabled");
 
-        $("#roleConfirm").one("click", function() {
+        $("#roleConfirm").click(function() {
             console.log("done");
             $("#popHint").removeClass("is-fixed");
             //$(selector).attr("disabled", "disabled");
             window.location.href = nextUrl;
         });
 
-        $("#roleCancel").one("click", function() {
+        $("#roleCancel").click(function() {
             $("#popHint").removeClass("is-fixed");
             $(selector).removeAttr("disabled");
         });
     } else {
+        /* 只用一个提示框有点问题，就是当前状态下点击下一个状态的按钮
+        然后取消，点击下下个状态的按钮，点击确认后页面居然跳转了
+        看来是对event-loop理解不够，或者对on理解不够，只能通过增加提示框规避
         $("#hintWord").text("请按照正确的游戏步骤进行哦");
         popInfo();
         $(".role-choice").one("click", function() {
             $("#popHint").removeClass("is-fixed");
-        })
-        /*
+        })*/
         $("#hintErrWord").text("请按照正确的游戏步骤进行哦");
         var showErrStep = function() {
             $(".hint-step").addClass("is-hidden");
@@ -134,10 +147,22 @@ $(".game-step-detail-role").on("click", function() {
         $(".err-step").one("click", function() {
             $("#popHint").removeClass("is-fixed");
             hiddenErrStep();           
-        });*/
+        });
     }
 });
 
+for(var i=0; i<4; i++) {
+    var selectors = [".killer", ".police", ".sniper", ".doctor"];
+    $(selectors[i]).click(function() {
+        console.log("选择正确则将开始游戏")
+    });
+}
+
+$(".down-up").click(function() {
+    $(this).toggleClass("flipy");
+    $(".game-step-hidden").not(":last").toggle("fast");
+});
+/*
 $(".killer").click(function() {
     //$(".game-step-detail-role").off("click");
     console.log("选择杀手则将开始游戏");
@@ -152,3 +177,4 @@ $(".sniper").click(function() {
 $(".doctor").click(function() {
     console.log("选择医生则将开始游戏");
 });
+*/

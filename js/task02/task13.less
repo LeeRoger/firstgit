@@ -1321,7 +1321,7 @@ input[type=range] {
 .game-step.not-today {
 	border: none;
 
-	.game-step-day { border: none; }
+	.game-step-day { border: 1px solid #ccc; }
 }
 
 .game-step-day {
@@ -1335,7 +1335,7 @@ input[type=range] {
 	text-align: center;
 	border-bottom: 1px solid #ccc;
 
-	span {
+	span.down-up {
 		float: right;
 		margin-right: 10px;
 		cursor: pointer;
@@ -1345,6 +1345,14 @@ input[type=range] {
 			font-weight: normal;
 			line-height: 19px;
 		} */
+		&.flipy {
+		    -moz-transform:scaleY(-1);
+		    -webkit-transform:scaleY(-1);
+		    -o-transform:scaleY(-1);
+		    transform:scaleY(-1);
+		    /*IE*/
+		    filter:FlipV;
+		}
 
 		i:before {
 			font-size: 18px;

@@ -52,6 +52,7 @@ judgeLook.onclick = function() {
         var players = getPlayers();
         var playersJson = JSON.stringify(players);
         window.localStorage.setItem("playersJson", playersJson);
+        window.localStorage.setItem("day", 1);
         window.location.href = "task13-judgeFlow.html" + "?state=start";  
     }
 } 

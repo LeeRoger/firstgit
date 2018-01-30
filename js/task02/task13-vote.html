@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>投票</title>
+	<title>游戏中</title>
 
-	<!--
-	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  -->
+	
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<!-- 自己的样式文件 -->
-	<link href="myBootstrap.css" rel="stylesheet">
+	<!-- 自己的样式文件 
+	<link href="myBootstrap.css" rel="stylesheet"> -->
 	<link href="task13.css" rel="stylesheet">
 	<script>
 		$(function(){
@@ -42,7 +42,7 @@
 <main>
 
 	<div class="vote-hint">
-		<div class="music">
+		<div class="music">                             
 			<div class="Audio">
 				<audio id="audioTag" src="media/财富自由.mp3"></audio>
 				<div class="controls">
@@ -51,18 +51,19 @@
 					</button>
 				</div>
 			</div>
-			<p>发言讨论结束，请大家投票</p>
+			<p class="audio-hint">发言讨论结束，请大家投票</p>
 		</div>
 		<div class="hint">
 			<img src="images/down.png">
-			<p>点击得票数最多的人的头像</p>
+			<p class="action-hint">点击得票数最多的人的头像</p>
 		</div>
 	</div>
 
 	<div class="container">
 
-		<div class="row">
-			<div class="col-xs-4 col-sm-4 col-md-
+		<div class="row" id="players">
+
+			<div class="player col-xs-4 col-sm-4 col-md-
 			 col-lg-4">
 				<div class="person">
 					<div class="vote">
@@ -70,179 +71,14 @@
 						<p class="number">1号</p>
 					</div>
 					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
+						<span class="action killer btn btn-xs"></span>
+						<span class="action police btn btn-xs"></span>
+						<span class="action sniper btn btn-xs"></span>
+						<span class="action doctor btn btn-xs"></span>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">水民</p>
-						<p class="number">2号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">警察</p>
-						<p class="number">3号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-		<!--
-		</div>
 
-		<div class="row"> -->
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">法官</p>
-						<p class="number">4号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">狙击手</p>
-						<p class="number">5号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">医生</p>
-						<p class="number">6号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-		<!--
-		</div>
-
-		<div class="row"> -->
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">杀手</p>
-						<p class="number">7号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">水民</p>
-						<p class="number">8号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">水民</p>
-						<p class="number">9号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-		<!--
-		</div>
-
-		<div class="row"> -->
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">杀手</p>
-						<p class="number">10号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">水民</p>
-						<p class="number">11号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<div class="person">
-					<div class="vote">
-						<p class="identity">警察</p>
-						<p class="number">12号</p>
-					</div>
-					<div class="usual-hidden">
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-						<span class="action btn btn-xs"></span>
-					</div>
-				</div>
-			</div>
 		</div>
 
 	</div>
@@ -250,8 +86,9 @@
 </main>
 
 <footer>
-	<button class="btn btn-lg" onclick="self.location='task13-result.html'"><a href="task13-result.html">投死</a></button>
+	<button class="next-step btn btn-lg" onclick="self.location='task13-result.html'"><a href="task13-result.html">投死</a></button>
 </footer>
-	
+
+<script src="task04-action.js"></script>
 </body>
 </html>

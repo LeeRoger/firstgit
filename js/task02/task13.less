@@ -368,6 +368,7 @@ html, body {
 			.vote {
 				border: 3px solid #fff;
 				background-color: #F3C881;
+				cursor: pointer;
 				
 				.identity {
 					padding: 17px 0;
@@ -381,6 +382,8 @@ html, body {
 			}
 
 			&:hover .usual-hidden { visibility: visible; }
+			&.judge:hover .usual-hidden { visibility: hidden; }
+			/*
 			.usual-hidden {
 				visibility: hidden;
 
@@ -398,11 +401,30 @@ html, body {
 					&:nth-child(3) { background-position: 0 -30px; }
 					&:nth-child(4) { background-position: -30px -30px; }
 				}
-			}
+			}*/
 		}
 	}
 }
-/* 不知道为什么写在上面就不行 */
+
+.usual-hidden {
+	min-height: 25px;
+	visibility: hidden;
+}
+.action {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	padding: 0;
+	margin-top: 10px;
+	border: none;
+	background: url(images/action.png) no-repeat;
+
+	&:nth-child(1) { background-position: 0 0; }
+	&:nth-child(2) { background-position: -30px 0; }
+	&:nth-child(3) { background-position: 0 -30px; }
+	&:nth-child(4) { background-position: -30px -30px; }
+}
+/* 不知道为什么写在上面就不行 */ // 因为层叠优先级不够
 span.icon-play  { background: url(images/play.png) no-repeat center; }
 span.icon-pause { background: url(images/pause.png) no-repeat center; }
 

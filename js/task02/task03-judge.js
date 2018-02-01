@@ -62,6 +62,12 @@ judgeLook.onclick = function() {
 players = {
     1: {role: "平民", alive: 1, deathWay: "狙击狙死", skills: 0},
     ...
+    killer: [2, null, 1...],
+    police: [...],
+    sniper: [...],
+    doctor: [...],
+    voter : [...],
+    death : [[...], [...], [...], ...]
 }
 */
 
@@ -102,5 +108,10 @@ function getPlayers(roleList) {
     for (var i=0; i<roleList.length; i++) {
         players[i+1] = creatPlayer(roleList, roleList[i]);
     }
+    var roles = ["killer", "police", "sniper", "doctor", "voter"];
+    for (var i=0; i<roles.length; i++) {
+        players[roles[i]] = [];
+    }
+    players.death = [];
     return players;
 }

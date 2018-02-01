@@ -47,11 +47,13 @@ function updatePageText() {
 		default:
 			alert("程序出问题了");
 	}
-	// 根据state更新按钮
+	// 根据state更新按钮显示
 	$(".action").each(function() {
-		if(!$(this).hasClass(state)) {
-			$(this).addClass("is-hidden");
-		}
+		if (state !== "voter") {
+			if(!$(this).hasClass(state)) {
+				$(this).addClass("is-hidden");
+			}
+		}		
 	});
 }
 
@@ -66,7 +68,7 @@ function updatePlayerRole() {
 	}
 	$("div.vote").each(function(index) {
 		$(this).children(".identity").text(roleList[index]);
-		console.log(typeof((index+1).toString()));
+		//console.log(typeof((index+1).toString()));
 		$(this).children(".number").text((index+1).toString() + "号");
 	})
 }
@@ -83,7 +85,66 @@ function getPlayers() {
     }
 }
 
+// 储存玩家对象
+function storePlayers(palyers) {
+	var playersJson = JSON.stringify(players);
+    window.localStorage.setItem("playersJson", playersJson);
+}
+
+// 确认该state下是否能发动技能
+function canSkill(players) {
+	var state = getState();
+	var correspond = {
+		killer: "杀手", police: "警察",
+		sniper: "狙击手", doctor: "医生"
+	};
+	var total = window.localStorage.roleListString.split('#').length;
+	var roleNum = 0;
+	for (var i=0; i<total; i++) {
+		if (players[i+1]["role"]===correspond[state] && players[i+1]["alive"]===1) {
+			roleNum += 1;
+		}
+	}
+	var result = (roleNum>0) ? true : false;
+	return result;
+}
+
+// 更新玩家对象
+function updatePlayers(players, actionNum, roleList) {
+	var state = getState();
+	var states = ["killer", "police", "sniper", "doctor","voter"];
+	var total = roleList.length;
+	var day = parseInt(window.localStorage.day);
+	var players = getPlayers();
+
+	switch (state) {
+		case "killer":
+			players["death"][day-1] = [];
+			players[state][day-1].push(actionNum);
+			if (actionNum !== "nobody") {
+				players[actionNum]["alive"] = 0;
+				players[actionNum]["deathWay"] = "杀手杀死";				
+				players["death"][day-1].push(actionNum);				
+			}
+			storePlayers(players);
+			break;
+		case "police":
+			players[state][day-1].push(actionNum);
+			storePlayers(players);
+			break;
+		case "sniper":
+			players["death"][day-1].push(actionNum);
+			players[state][day-1].push(actionNum);
+			if (actionNum !== "nobody") {
+				players[actionNum]["deathWay"] = "狙击狙死";
+				players["skills"] = (players["skills"]===0) ? 
+			}
+			
+	}
+}
+
 $(document).ready(function() {
 	updatePageText();
 	updatePlayerRole();
+	window.sessionStorage.setItem("actionNum", "nobody");
 });

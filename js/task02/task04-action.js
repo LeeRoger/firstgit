@@ -91,22 +91,34 @@ function storePlayers(palyers) {
     window.localStorage.setItem("playersJson", playersJson);
 }
 
-// 确认该state下是否能发动技能
+// 确认该state下该角色是否能发动技能，对于杀手好像没有必要
 function canSkill(players) {
 	var state = getState();
-	var correspond = {
-		killer: "杀手", police: "警察",
-		sniper: "狙击手", doctor: "医生"
-	};
-	var total = window.localStorage.roleListString.split('#').length;
-	var roleNum = 0;
-	for (var i=0; i<total; i++) {
-		if (players[i+1]["role"]===correspond[state] && players[i+1]["alive"]===1) {
-			roleNum += 1;
-		}
+	var roleList = window.localStorage.roleListString.split('#');
+	var total = roleList.length;
+	var skillNum = 0;
+	
+	switch (state) {
+		case "police":
+			for (var i=0; i<total; i++) {
+				if (players[i+1]["role"]==="警察" && players[i+1]["alive"]===1) {
+					skillNum += 1;
+				}
+			}
+			break;
+		case "sniper":
+			var i = roleList.indexOf("狙击手");
+			skillNum = (players[i+1]["alive"]===1) ? players[i+1]["skills"] : 0;
+			break;
+		case "doctor":
+			var i = roleList.indexOf("医生");
+			skillNum = (players[i+1]["alive"]===1) ? players[i+1]["skills"] : 0;
+			break;
+		default:
+			skillNum = 1;
 	}
-	var result = (roleNum>0) ? true : false;
-	return result;
+	//var result = (roleNum>0) ? true : false;
+	return skillNum>0;
 }
 
 // 更新玩家对象
@@ -116,11 +128,12 @@ function updatePlayers(players, actionNum, roleList) {
 	var total = roleList.length;
 	var day = parseInt(window.localStorage.day);
 	var players = getPlayers();
+	var actionNum = isNaN(parseInt(actionNum)) ? actionNum : parseInt(actionNum);
 
 	switch (state) {
 		case "killer":
 			players["death"][day-1] = [];
-			players[state][day-1].push(actionNum);
+			players[state].push(actionNum);
 			if (actionNum !== "nobody") {
 				players[actionNum]["alive"] = 0;
 				players[actionNum]["deathWay"] = "杀手杀死";				
@@ -129,17 +142,30 @@ function updatePlayers(players, actionNum, roleList) {
 			storePlayers(players);
 			break;
 		case "police":
-			players[state][day-1].push(actionNum);
+			players[state].push(actionNum);
 			storePlayers(players);
 			break;
-		case "sniper":
-			players["death"][day-1].push(actionNum);
-			players[state][day-1].push(actionNum);
+		case "sniper":			
+			players[state].push(actionNum);
 			if (actionNum !== "nobody") {
+				players[actionNum]["alive"] = 0;
 				players[actionNum]["deathWay"] = "狙击狙死";
-				players["skills"] = (players["skills"]===0) ? 
+				players[actionNum]["skills"] -= 1;
+				players["death"][day-1].push(actionNum);
 			}
-			
+			storePlayers(players);
+			break;
+		case "doctor":
+			players[state].push(actionNum);
+			var death = players["death"][day-1].concat();
+			if (actionNum !== "nobody") {
+				if (death.length===1 && players[death[0]]["deathWay"]!=="狙击狙死") {
+					players["death"][day-1] = [];
+					players[death[0]]["alive"] = 1;
+				} else if (death.length===2) {
+					
+				}
+			}
 	}
 }
 

@@ -73,7 +73,7 @@ players = {
 
 // 这样的写法有点混乱，不太符合面向对象编程的写法吧
 function creatPlayer(roleList, role, alive, deathWay, skills) {
-    var alive = arguments[2] ? arguments[2] : 1;
+    var alive = (arguments[2]!==undefined) ? arguments[2] : 1;
     var deathWay = arguments[3] ? arguments[3] : "";
     var skills = arguments[4] ? arguments[4] : 0;
     var killers = 0;
@@ -86,7 +86,9 @@ function creatPlayer(roleList, role, alive, deathWay, skills) {
     //console.log(role); console.log(role === "医生" || "狙击手");
     //console.log(role);
     // role === "医生" || "狙击手" 不是我想象的那样role是医生或者狙击手
-    skills = (role === "医生" || role === "狙击手") ? killers : 0;
+    if (roleList.indexOf("医生") !== -1) {
+        skills = (role === "医生" || role === "狙击手") ? killers : 0;
+    }
     //console.log(skills);
     /*if (role === "医生" || "狙击手") {
         skills = killers;
@@ -107,6 +109,11 @@ function getPlayers(roleList) {
     var players = new Object();
     for (var i=0; i<roleList.length; i++) {
         players[i+1] = creatPlayer(roleList, roleList[i]);
+    }
+    // 不包含医生和狙击手时，将他们的alive设为0
+    if (roleList.indexOf("狙击手") === -1) {
+        players[roleList.length+1] = creatPlayer(roleList, "狙击手", 0);
+        players[roleList.length+2] = creatPlayer(roleList, "医生", 0);
     }
     var roles = ["killer", "police", "sniper", "doctor", "voter"];
     for (var i=0; i<roles.length; i++) {

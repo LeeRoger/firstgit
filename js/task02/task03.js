@@ -7,7 +7,7 @@ function getRoleList() {
     if (typeof(storage.getItem("roleListString")) !== "undefined") {
         //roleListString = storage.getItem("roleListString");
         roleList = storage.getItem("roleListString").split("#");
-        console.log(roleList);
+        //console.log(roleList);
         return roleList;
     } else {
         alert("请返回并重新设置玩家人数");
@@ -65,8 +65,8 @@ checkHiddenRole.onclick = function() {
 
     playerRoleList = getRoleList();
     clickCount = getClickCount();
-    console.log(clickCount);
-    console.log(typeof(clickCount));
+    //console.log(clickCount);
+    //console.log(typeof(clickCount));
     updatePlayerSeqNum(clickCount, playerRoleList);
     // 点按钮后上方显示的编号为 1,2,2,3,3,...
     if (clickCount < 2 * playerRoleList.length - 1 && clickCount > 0) {

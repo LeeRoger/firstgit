@@ -369,6 +369,14 @@ html, body {
 				border: 3px solid #fff;
 				background-color: #F3C881;
 				cursor: pointer;
+
+				&.is-clicked { border-color: #5373e8; }
+				&.want-help { background-color: #dc9d38;  }
+
+				&.is-dead {
+					cursor: default;
+					background-color: #82AF9B;
+				}
 				
 				.identity {
 					padding: 17px 0;
@@ -497,9 +505,9 @@ span.icon-pause { background: url(images/pause.png) no-repeat center; }
 		background-color: @resultBgColor;
 		
 		h3 {
-			float: left;
+			//float: left;
 			margin: 0 auto;
-			padding-top: 81px;
+			padding-top: 83px;
 			font-size: 22px;
 			font-weight: 600;
 			color: #fff;
@@ -1527,6 +1535,8 @@ input[type=range] {
 		margin-bottom: 30px;
 	}
 }
+
+.night-answer-detail { padding: 2px; }
 
 .night-after {
 	text-align: center;

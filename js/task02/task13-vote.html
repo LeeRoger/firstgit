@@ -61,7 +61,7 @@
 
 	<div class="container">
 
-		<div class="row" id="players">
+		<div class="row" id="allPlayers">
 
 			<div class="player col-xs-4 col-sm-4 col-md-
 			 col-lg-4">
@@ -86,8 +86,18 @@
 </main>
 
 <footer>
-	<button class="next-step btn btn-lg" onclick="self.location='task13-result.html'"><a href="task13-result.html">投死</a></button>
+	<button class="next-step btn btn-lg">投死</button>
 </footer>
+
+<div class="pop-hint" id="popHint"> <!-- "is-fixed" will be added -->
+	<div class="pop-hint-role hint-step">
+		<p id="hintWord">杀手请杀人</p>
+		<div class="pop-hint-role-choice">
+			<span class="role-choice" id="roleCancel">取消</span>
+			<span class="role-choice" id="roleConfirm">确认</span>
+		</div>
+	</div>
+</div>
 
 <script src="task04-action.js"></script>
 </body>

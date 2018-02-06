@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>法官日记</title>
+
+	
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="CSS/font-awesome.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+	<!-- 自己的样式文件 
+	<link href="myBootstrap.css" rel="stylesheet">-->
+	<link href="task13.css" rel="stylesheet">
+</head>
+<body class="votepage judgepage judgeflow">
+
+<header>
+	<h2>
+		<a class="back" href="task13-judge.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		法官日记
+		<a class="quit" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+	</h2>
+	<div class="clear-both"></div>
+</header>
+
+<main>
+
+	<div class="container" id="game">
+		<div class="game-step">
+
+			<h3 class="game-step-day">第<span class="day-number">一</span>天
+				<span class="down-up"><i class="icon-angle-up"></i>
+				</span>
+				<div class="clear-both"></div>
+			</h3>
+
+			<div class="game-step-detail">
+				<div class="game-step-night">
+					<span class="time-sign"><img src="images/img-js/step_moon.png"></span>
+					<button class="game-step-detail-role killer">杀手杀人</button>
+					<button class="game-step-detail-role police">警察验人</button>
+				</div>
+				<div class="game-step-daylight">
+					<span class="time-sign"><img src="images/img-js/step_sun.png"></span>
+					<button class="game-step-detail-role ghost">亡灵发表遗言</button>
+					<button class="game-step-detail-role speak">玩家依次发言</button>
+					<button class="game-step-detail-role voter">投票</button>
+				</div>
+			</div>
+
+			<div class="game-step-hidden is-hidden">
+				<div class="game-step-before"><span class="trangle-top"></span></div>
+			</div>
+
+		</div>
+	</div>
+
+</main>
+
+<div class="pop-hint" id="popHint"> <!-- "is-fixed" will be added -->
+	<div class="pop-hint-role hint-step">
+		<p id="hintWord">杀手请杀人</p>
+		<div class="pop-hint-role-choice">
+			<span class="role-choice" id="roleCancel">取消</span>
+			<span class="role-choice" id="roleConfirm">确认</span>
+		</div>
+	</div>
+	
+	<div class="pop-hint-role hint-result-step is-hidden">
+		<p id="hintResultWord">游戏继续，前往下一天</p>
+		<div class="pop-hint-role-choice">
+			<span class="result-step" id="resunltCancel">取消</span>
+			<span class="result-step" id="resultConfirm">确认</span>
+		</div>
+	</div>
+
+	<div class="pop-hint-role hint-err-step is-hidden">
+		<p id="hintErrWord">请按正常的游戏流程进行哦</p>
+		<div class="pop-hint-role-choice">
+			<span class="err-step" id="errCancel">取消</span>
+			<span class="err-step" id="errConfirm">确认</span>
+		</div>
+	</div>
+
+</div>
+
+<script src="task04-judgeFlow4.js"></script>
+</body>
+</html>

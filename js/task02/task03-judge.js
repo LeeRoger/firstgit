@@ -53,7 +53,9 @@ judgeLook.onclick = function() {
         var playersJson = JSON.stringify(players);
         window.localStorage.setItem("playersJson", playersJson);
         window.localStorage.setItem("day", 1);
-        window.location.href = "task13-judgeFlow.html" + "?state=start";  
+        var roleList = localStorage.roleListString.split("#");
+        var flag = (roleList.indexOf("医生")===-1) ? "2" : "";
+        window.location.href = "task13-judgeFlow" + flag + ".html" + "?state=start";  
     }
 } 
 
